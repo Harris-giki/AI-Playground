@@ -1,0 +1,489 @@
+import type { Metadata } from "next";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import {
+  IconCalendar,
+  IconMapPin,
+  IconClock,
+  IconArrowRight,
+} from "@/components/icons";
+import { applyFormUrl, eventDateLabel } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "The Event · AI Playground · ImagineArt",
+  description:
+    "The two-day schedule and selection criteria for AI Playground, Pakistan's Biggest creative hackathon. Approx $5,000 prize pool.",
+};
+
+const qualities = [
+  {
+    title: "Storytelling instinct",
+    desc: "The ability to build a compelling narrative, fast.",
+  },
+  {
+    title: "Creative initiative",
+    desc: "You don't wait for permission to make something.",
+  },
+  {
+    title: "Adaptability",
+    desc: "Comfort with ambiguity, new tools, and thinking on your feet.",
+  },
+  {
+    title: "Genuine curiosity",
+    desc: "About where creativity is going, and the courage to meet it.",
+  },
+];
+
+const dayOne = [
+  { title: "Arrival", desc: "Doors open. Get your badge. Find your seat." },
+  {
+    title: "Orientation + Introduction",
+    desc: "Why we're here. What we're doing. Who's in the room.",
+  },
+  {
+    title: "Future of Design & Filmmaking",
+    desc: "A talk and live demo of ImagineArt. What the platform can do, and how to use it.",
+  },
+  {
+    title: "Networking + Food",
+    desc: "Eat. Meet. Find the people you want to work with.",
+  },
+  {
+    title: "Credits Assigned · Bingo",
+    desc: "Credits land in your space. Bingo loosens the room.",
+  },
+  {
+    title: "Challenge Brief, Stage 1 Begins",
+    desc: "20,000 credits. Premium models. 50 seconds to 1 minute. Build anything.",
+  },
+  {
+    title: "Stage 1 Submission · Assessment",
+    desc: "Submissions assessed. Shortlist announced.",
+  },
+  {
+    title: "Team Formation · Stage 2 Begins",
+    desc: "Shortlisted creators form teams of exactly 5. Story and script work begins.",
+  },
+  {
+    title: "Stage 2 Submission",
+    desc: "Scripts in. Day One closes.",
+  },
+];
+
+const dayTwo = [
+  {
+    title: "Shortlisted Teams Arrive",
+    desc: "Only the Stage 2 teams. Smaller room, sharper energy.",
+  },
+  {
+    title: "Orientation + Demo",
+    desc: "A quick recap and a deeper demo of the production toolset.",
+  },
+  {
+    title: "Stage 3: Asset Generation",
+    desc: "Three hours. Build everything you need to make the film exist.",
+  },
+  {
+    title: "Workshops (Parallel)",
+    desc: "Hands-on sessions for registered participants alongside the main jam.",
+  },
+  {
+    title: "Stage 3: Post Production",
+    desc: "Three hours. Edit, sound, polish.",
+  },
+  {
+    title: "Presentations",
+    desc: "Teams present their films to the room.",
+  },
+  {
+    title: "Awards",
+    desc: "Recognition for the work. Approx $5,000 in prizes for the top films.",
+  },
+  {
+    title: "Keynote",
+    desc: "We close on a note that matters. Where this is all going.",
+  },
+];
+
+export default function Details() {
+  return (
+    <>
+      {/* PAGE HERO ─────────────────────────────────── */}
+      <section className="relative pt-[180px] pb-16 px-6 sm:px-12 overflow-hidden hero-rule">
+        <div className="hero-grain" aria-hidden />
+        <div
+          className="absolute w-[460px] h-[460px] rounded-full blur-[140px] opacity-15 animate-float top-[-200px] left-1/2 -translate-x-1/2"
+          style={{ background: "var(--accent-dim)" }}
+        />
+
+        <div className="relative z-10 max-w-[1100px] mx-auto">
+          <span className="label-eyebrow mb-6">The Event</span>
+          <h1
+            className="title-display font-display mt-6 mb-8 descender-safe"
+            style={{
+              fontWeight: 800,
+              fontSize: "clamp(2.6rem, 7vw, 5.5rem)",
+              lineHeight: 1.06,
+              letterSpacing: "-0.025em",
+              maxWidth: "900px",
+            }}
+          >
+            Two days, three stages,
+            <br />
+            <em>one short film.</em>
+          </h1>
+          <p
+            className="font-display mb-8"
+            style={{
+              fontSize: "1.15rem",
+              fontWeight: 500,
+              color: "var(--ink-muted)",
+              maxWidth: "640px",
+              lineHeight: 1.55,
+            }}
+          >
+            AI Playground is ImagineArt&apos;s curated, invite-only creative
+            hackathon. Pakistan&apos;s Biggest. A hands-on experience for
+            storytellers, visual creators, and imaginative thinkers ready to meet
+            generative AI as a collaborator, not a threat.
+          </p>
+
+          <div className="flex items-center gap-3 flex-wrap mb-6">
+            <div className="prize-pill">
+              <span className="dot" aria-hidden />
+              <span className="amount">~$5,000</span>
+              <span className="label">Prize Pool</span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-x-8 gap-y-3 mt-6">
+            <div className="flex items-center gap-2.5">
+              <IconCalendar
+                className="w-[18px] h-[18px]"
+                style={{ color: "var(--accent-glow)" }}
+              />
+              <span
+                className="font-mono uppercase"
+                style={{
+                  fontSize: "0.92rem",
+                  letterSpacing: "0.1em",
+                  color: "var(--ink-muted)",
+                }}
+              >
+                {eventDateLabel}
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <IconClock
+                className="w-[18px] h-[18px]"
+                style={{ color: "var(--accent-glow)" }}
+              />
+              <span
+                className="font-mono uppercase"
+                style={{
+                  fontSize: "0.92rem",
+                  letterSpacing: "0.1em",
+                  color: "var(--ink-muted)",
+                }}
+              >
+                2 Days · 3 Stages
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <IconMapPin
+                className="w-[18px] h-[18px]"
+                style={{ color: "var(--accent-glow)" }}
+              />
+              <span
+                className="font-mono uppercase"
+                style={{
+                  fontSize: "0.92rem",
+                  letterSpacing: "0.1em",
+                  color: "var(--ink-muted)",
+                }}
+              >
+                Pakistan · Invite-Only
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="h-divider mx-6 sm:mx-12" />
+
+      {/* SCHEDULE ─────────────────────────────────── */}
+      <section
+        className="px-6 sm:px-12 py-28"
+        style={{ background: "var(--bg-raised)" }}
+      >
+        <div className="max-w-[1100px] mx-auto">
+          <ScrollReveal>
+            <span className="label-eyebrow mb-6">The Flow</span>
+            <h2
+              className="title-display font-display mt-6 mb-4 descender-safe"
+              style={{
+                fontSize: "clamp(2rem, 4.5vw, 3.4rem)",
+                fontWeight: 800,
+                lineHeight: 1.1,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Two days,
+              <br />
+              <em>moving fast.</em>
+            </h2>
+            <p
+              className="mb-14 leading-[1.7]"
+              style={{
+                color: "var(--ink-muted)",
+                maxWidth: "640px",
+                fontSize: "1rem",
+              }}
+            >
+              Day One pulls the room together and runs Stage 1 and Stage 2. Day Two
+              is for the shortlisted teams making the films, presenting, and taking
+              home a share of the approx $5,000 prize pool.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+            <ScrollReveal>
+              <div
+                className="rounded-sm p-8 h-full"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border)",
+                }}
+              >
+                <p
+                  className="font-mono uppercase mb-2"
+                  style={{
+                    fontSize: "0.92rem",
+                    letterSpacing: "0.14em",
+                    color: "var(--accent-glow)",
+                  }}
+                >
+                  Day 01
+                </p>
+                <h3
+                  className="font-display mb-8 descender-safe"
+                  style={{
+                    fontWeight: 700,
+                    fontSize: "1.5rem",
+                    lineHeight: 1.2,
+                    color: "var(--ink)",
+                  }}
+                >
+                  Arrival, Stage 1, Stage 2
+                </h3>
+                <div className="timeline">
+                  {dayOne.map((item) => (
+                    <div
+                      key={item.title}
+                      className="timeline-dot relative pl-5 pb-7 last:pb-0"
+                    >
+                      <p
+                        className="font-display font-semibold mb-1"
+                        style={{ color: "var(--ink)" }}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        className="leading-[1.55]"
+                        style={{ color: "var(--ink-muted)", fontSize: "0.92rem" }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.05}>
+              <div
+                className="rounded-sm p-8 h-full"
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border)",
+                }}
+              >
+                <p
+                  className="font-mono uppercase mb-2"
+                  style={{
+                    fontSize: "0.92rem",
+                    letterSpacing: "0.14em",
+                    color: "var(--accent-glow)",
+                  }}
+                >
+                  Day 02
+                </p>
+                <h3
+                  className="font-display mb-8 descender-safe"
+                  style={{
+                    fontWeight: 700,
+                    fontSize: "1.5rem",
+                    lineHeight: 1.2,
+                    color: "var(--ink)",
+                  }}
+                >
+                  Stage 3, Presentations, Keynote
+                </h3>
+                <div className="timeline">
+                  {dayTwo.map((item) => (
+                    <div
+                      key={item.title}
+                      className="timeline-dot relative pl-5 pb-7 last:pb-0"
+                    >
+                      <p
+                        className="font-display font-semibold mb-1"
+                        style={{ color: "var(--ink)" }}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        className="leading-[1.55]"
+                        style={{ color: "var(--ink-muted)", fontSize: "0.92rem" }}
+                      >
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <div className="h-divider mx-6 sm:mx-12" />
+
+      {/* WHO WE WANT ─────────────────────────────── */}
+      <section className="px-6 sm:px-12 py-28">
+        <div className="max-w-[1100px] mx-auto">
+          <ScrollReveal>
+            <span className="label-eyebrow mb-6">Who we want in the room</span>
+            <h2
+              className="title-display font-display mt-6 mb-6 descender-safe"
+              style={{
+                fontSize: "clamp(2rem, 4.5vw, 3.4rem)",
+                fontWeight: 800,
+                lineHeight: 1.1,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              The room is curated.
+              <br />
+              <em>Earn your seat.</em>
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.05}>
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12"
+              style={{ color: "var(--ink-muted)" }}
+            >
+              <p>
+                We&apos;re not looking for AI experts. We&apos;re looking for
+                storytellers. People who move fast, draw inspiration from anywhere,
+                and make something real when the pressure is on.
+              </p>
+              <p>
+                Filmmakers. Writers. Storytellers. Post-producers. Visual artists.
+                Designers. Animators. Creators who already work with AI, and ones
+                who haven&apos;t, but know it&apos;s time.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="quality-grid">
+              {qualities.map((q) => (
+                <div key={q.title} className="quality-item">
+                  <p
+                    className="font-display"
+                    style={{
+                      fontWeight: 700,
+                      color: "var(--ink)",
+                      fontSize: "1.1rem",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    {q.title}
+                  </p>
+                  <p
+                    className="leading-[1.6]"
+                    style={{
+                      color: "var(--ink-muted)",
+                      fontSize: "0.96rem",
+                    }}
+                  >
+                    {q.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <em className="pull-quote not-italic mt-10">
+              You don&apos;t need to be an AI expert. You need to be a creator who is
+              ready to evolve.
+            </em>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="h-divider mx-6 sm:mx-12" />
+
+      {/* CTA ─────────────────────────────────────── */}
+      <section
+        className="cta-glow relative px-6 sm:px-12 py-28 text-center overflow-hidden"
+        style={{ background: "var(--bg-raised)" }}
+      >
+        <div className="max-w-[800px] mx-auto relative z-10">
+          <ScrollReveal>
+            <span className="label-eyebrow justify-center mb-6">
+              Applications open
+            </span>
+            <h2
+              className="title-display font-display mt-6 mb-6 descender-safe"
+              style={{
+                fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
+                fontWeight: 800,
+                lineHeight: 1.08,
+                letterSpacing: "-0.02em",
+              }}
+            >
+              Not everyone gets in.
+              <br />
+              <em>The right people do.</em>
+            </h2>
+            <p
+              className="mx-auto mb-8 leading-[1.7]"
+              style={{
+                color: "var(--ink-muted)",
+                maxWidth: "560px",
+                fontSize: "1.05rem",
+              }}
+            >
+              Every submission is reviewed personally. Approx <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. If you&apos;re the right fit, you&apos;ll hear from us.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div className="flex justify-center gap-4 flex-wrap">
+              <a
+                href={applyFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Apply to AI Playground
+                <IconArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </>
+  );
+}
