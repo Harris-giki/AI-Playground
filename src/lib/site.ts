@@ -15,5 +15,11 @@ export const eventTargetISO = "2026-06-06T09:00:00+05:00";
 /** Closing date for applications shown on the countdown. */
 export const applicationsCloseISO = "2026-05-25T23:59:00+05:00";
 
-/** Placeholder. Replace with the real Google Form URL. */
-export const applyFormUrl = "https://forms.gle/your-form-id";
+/** Live registration form (ImagineArt · Ashby). */
+export const applyFormUrl =
+  "https://jobs.ashbyhq.com/imagineart/form/aiplayground";
+
+/** Social. */
+export const instagramUrl = "https://www.instagram.com/imagineartofficial/";
+export const linkedinUrl = "https://linkedin.com/company/imagineart";
+export const imagineArtUrl = "https://imagine.art";

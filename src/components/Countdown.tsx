@@ -63,10 +63,10 @@ export function Countdown() {
       <div className="flex gap-5 sm:gap-7 flex-wrap items-baseline">
         {units.map((unit) => (
           <div key={unit.label} className="flex flex-col items-start">
-            <span className="font-display text-[1.9rem] sm:text-[2.2rem] font-bold leading-none tracking-tight">
+            <span className="font-display text-[2.4rem] sm:text-[2.8rem] leading-none tracking-tight uppercase">
               {pad(unit.value)}
             </span>
-            <span className="font-mono text-[0.7rem] uppercase tracking-[0.14em] themed-ink-faint mt-1">
+            <span className="font-mono text-[0.7rem] uppercase tracking-[0.2em] themed-ink-muted mt-2">
               {unit.label}
             </span>
           </div>

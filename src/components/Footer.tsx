@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { IconLinkedin, IconInstagram } from "./icons";
-import { applyFormUrl, eventDateShort } from "@/lib/site";
+import {
+  applyFormUrl,
+  eventDateShort,
+  imagineArtUrl,
+  instagramUrl,
+  linkedinUrl,
+} from "@/lib/site";
 
 export function Footer() {
   return (
@@ -10,15 +16,18 @@ export function Footer() {
     >
       <div className="max-w-[1100px] mx-auto flex flex-col gap-12">
         <div className="flex flex-wrap justify-between items-start gap-10">
-          <div className="max-w-[420px]">
+          <div className="max-w-[460px]">
             <p
-              className="font-display text-[1.05rem] font-bold leading-snug"
-              style={{ color: "var(--ink-muted)" }}
+              className="font-display uppercase leading-[0.95] text-[clamp(1.4rem,2.4vw,2rem)]"
+              style={{
+                color: "var(--ink-muted)",
+                letterSpacing: "0.005em",
+              }}
             >
               &ldquo;AI doesn&apos;t replace people, it{" "}
               <em
                 className="not-italic"
-                style={{ color: "var(--accent-glow)" }}
+                style={{ color: "var(--accent)" }}
               >
                 replaces outdated ways of working.
               </em>
@@ -59,7 +68,7 @@ export function Footer() {
                 ImagineArt
               </span>
               <a
-                href="https://imagine.art"
+                href={imagineArtUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-[0.82rem] hover:text-[var(--ink)] transition-colors"
@@ -68,7 +77,7 @@ export function Footer() {
                 imagine.art
               </a>
               <a
-                href="https://instagram.com/imagineart.ai"
+                href={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-[0.82rem] hover:text-[var(--ink)] transition-colors"
@@ -77,7 +86,7 @@ export function Footer() {
                 Instagram
               </a>
               <a
-                href="https://linkedin.com/company/imagineart"
+                href={linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-[0.82rem] hover:text-[var(--ink)] transition-colors"
@@ -101,7 +110,7 @@ export function Footer() {
           </p>
           <div className="flex gap-2">
             <a
-              href="https://linkedin.com/company/imagineart"
+              href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -115,7 +124,7 @@ export function Footer() {
               <IconLinkedin className="w-4 h-4" />
             </a>
             <a
-              href="https://instagram.com/imagineart.ai"
+              href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

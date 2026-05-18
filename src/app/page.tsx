@@ -62,53 +62,97 @@ export default function Home() {
   return (
     <>
       {/* HERO — sized to fit on one screen ───────────── */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden px-6 sm:px-12 pt-24 pb-16 hero-rule">
+      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden px-6 sm:px-12 pt-24 pb-20 hero-rule">
         <div className="hero-grain" aria-hidden />
+        <div className="hero-dotgrid" aria-hidden />
+
+        <span className="corner-tick tl" aria-hidden />
+        <span className="corner-tick tr" aria-hidden />
+        <span className="corner-tick bl" aria-hidden />
+        <span className="corner-tick br" aria-hidden />
+
+        {/* Ambient orange glow orbs. */}
         <div
-          className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-25 animate-float top-[-200px] right-[-120px]"
+          className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-30 animate-float top-[-180px] right-[-100px]"
           style={{ background: "var(--accent-dim)" }}
         />
         <div
-          className="absolute w-[420px] h-[420px] rounded-full blur-[120px] opacity-15 animate-float bottom-[-160px] left-[-80px]"
+          className="absolute w-[460px] h-[460px] rounded-full blur-[130px] opacity-20 animate-float bottom-[-180px] left-[-60px]"
           style={{ background: "var(--accent-glow)", animationDelay: "-4s" }}
         />
+        <div
+          className="absolute w-[280px] h-[280px] rounded-full blur-[110px] opacity-15 animate-float top-[40%] right-[18%] hidden lg:block"
+          style={{ background: "var(--accent)", animationDelay: "-7s" }}
+          aria-hidden
+        />
 
-        <div className="relative z-10 max-w-[1100px] mx-auto w-full">
-          <p className="label-eyebrow animate-fade-up mb-5">
-            ImagineArt presents · {eventDateLabel}
-          </p>
+        {/* Vertical editorial rail. */}
+        <aside className="hero-rail" aria-hidden>
+          <div className="rail-marker">
+            <span className="num">01</span>
+            <span className="divider" />
+            <span className="year">2026</span>
+          </div>
+          <span className="rail-line" />
+          <span className="rail-vertical-text">
+            Edition · <em>Pakistan</em>
+          </span>
+          <span className="rail-line" />
+          <span className="rail-date">06.06.26</span>
+        </aside>
 
+        <div className="relative z-10 max-w-[1200px] mx-auto w-full lg:pr-24">
+          <div className="flex items-center gap-4 flex-wrap mb-6 animate-fade-up">
+            <p className="label-eyebrow">
+              ImagineArt presents · {eventDateLabel}
+            </p>
+            <span className="live-chip lg:hidden">
+              <span className="dot" />
+              <strong>Live</strong> · Accepting
+            </span>
+          </div>
+
+          {/* HERO HEADLINE — poster-scale. "AI" is solid signal-orange,
+              "PLAYGROUND" is set in outline (the brand's hollow display
+              treatment from the reference poster). */}
           <h1
-            className="title-display font-display animate-fade-up mb-5 descender-safe"
+            className="title-display animate-fade-up mb-6 descender-safe"
             style={{
-              fontWeight: 800,
-              fontSize: "clamp(2.6rem, 8vw, 6rem)",
-              lineHeight: 1.02,
-              letterSpacing: "-0.03em",
+              fontSize: "clamp(3.6rem, 14vw, 11rem)",
+              lineHeight: 1,
+              letterSpacing: "-0.005em",
               animationDelay: "0.1s",
             }}
           >
-            AI <em>Playground</em>
+            <span style={{ color: "var(--accent)" }}>AI</span>{" "}
+            <em
+              className="text-outline accent"
+              style={{ WebkitTextStrokeWidth: "0.022em" }}
+            >
+              Playground
+            </em>
           </h1>
 
+          {/* Sub-line — small, minimal, mono. Echoes the body-copy block in
+              the reference. */}
           <p
-            className="font-display animate-fade-up mb-7"
+            className="mb-9 animate-fade-up max-w-[520px]"
             style={{
-              fontSize: "clamp(1rem, 1.6vw, 1.25rem)",
-              fontWeight: 500,
+              fontSize: "0.95rem",
               color: "var(--ink-muted)",
-              maxWidth: "640px",
-              lineHeight: 1.45,
+              lineHeight: 1.55,
               animationDelay: "0.18s",
             }}
           >
             Pakistan&apos;s Biggest{" "}
-            <span style={{ color: "var(--accent-glow)" }}>Creative Hackathon</span>.
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Creative Hackathon
+            </span>
+            . Two days, three stages, one short film — built live with generative AI.
           </p>
 
-          {/* Unified action row: Apply + meta tags + prize pill */}
           <div
-            className="flex items-center gap-3 sm:gap-3.5 flex-wrap mb-8 animate-fade-up"
+            className="flex items-center gap-4 flex-wrap mb-5 animate-fade-up"
             style={{ animationDelay: "0.26s" }}
           >
             <a
@@ -118,10 +162,8 @@ export default function Home() {
               className="btn-primary"
             >
               Apply Now
+              <IconArrowRight className="w-4 h-4" />
             </a>
-            <span className="meta-tag">Invite-Only</span>
-            <span className="meta-tag">Two Days</span>
-            <span className="meta-tag">Three Stages</span>
             <div className="prize-pill">
               <span className="dot" aria-hidden />
               <span className="amount">~$5,000</span>
@@ -129,7 +171,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Countdown + read-more, side-by-side on desktop */}
+          <div
+            className="meta-row mb-12 animate-fade-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <span>Invite-Only</span>
+            <span className="sep" aria-hidden />
+            <span>Two Days</span>
+            <span className="sep" aria-hidden />
+            <span>Three Stages</span>
+            <span className="sep" aria-hidden />
+            <span>Six Spaces</span>
+          </div>
+
           <div
             className="flex items-end justify-between gap-6 flex-wrap animate-fade-up"
             style={{ animationDelay: "0.34s" }}
@@ -137,29 +191,59 @@ export default function Home() {
             <Countdown />
             <Link
               href="/details"
-              className="font-mono text-[0.88rem] uppercase tracking-[0.12em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--ink)] pb-1"
+              className="font-mono text-[0.78rem] uppercase tracking-[0.14em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--accent)] pb-1"
             >
               Read the full plan
               <IconArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
+
+        <div className="scroll-cue" aria-hidden>
+          <span className="label">Scroll</span>
+          <span className="track" />
+        </div>
       </section>
+
+      {/* MARQUEE TICKER ─────────────────────────────── */}
+      <div className="marquee" aria-hidden>
+        <div className="marquee-track">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="marquee-group">
+              <span className="accent">ImagineArt presents</span>
+              <span className="star" />
+              <em>AI Playground</em>
+              <span className="star" />
+              <span>Pakistan&apos;s Biggest Creative Hackathon</span>
+              <span className="star" />
+              <em>6 June 2026</em>
+              <span className="star" />
+              <span>Two Days · Three Stages · Six Spaces</span>
+              <span className="star" />
+              <span className="accent">~$5,000 Prize Pool</span>
+              <span className="star" />
+              <span>Invite-Only</span>
+              <span className="star" />
+              <em>Apply Now</em>
+              <span className="star" />
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* BELIEF / PHILOSOPHY ───────────────────────── */}
       <section className="px-6 sm:px-12 py-28">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
               <div>
                 <span className="label-eyebrow mb-6">The Philosophy</span>
                 <h2
-                  className="title-display font-display mt-6 descender-safe"
+                  className="title-display mt-6 descender-safe"
                   style={{
-                    fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
-                    fontWeight: 800,
-                    lineHeight: 1.1,
-                    letterSpacing: "-0.02em",
+                    fontSize: "clamp(2.6rem, 7vw, 6rem)",
+                    lineHeight: 1,
+                    letterSpacing: "-0.005em",
                   }}
                 >
                   AI doesn&apos;t replace people.
@@ -198,23 +282,27 @@ export default function Home() {
 
       {/* STAGES PREVIEW ────────────────────────────── */}
       <section className="px-6 sm:px-12 py-28">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="flex items-center justify-between gap-6 flex-wrap mb-12">
               <div>
                 <span className="label-eyebrow mb-6">The Structure</span>
                 <h2
-                  className="title-display font-display mt-6 descender-safe"
+                  className="title-display mt-6 descender-safe"
                   style={{
-                    fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
-                    fontWeight: 800,
-                    lineHeight: 1.1,
-                    letterSpacing: "-0.02em",
+                    fontSize: "clamp(2.6rem, 7vw, 6rem)",
+                    lineHeight: 1,
+                    letterSpacing: "-0.005em",
                   }}
                 >
                   Two days. Three stages.
                   <br />
-                  <em>One short film.</em>
+                  <em
+                    className="text-outline accent"
+                    style={{ WebkitTextStrokeWidth: "0.028em" }}
+                  >
+                    One short film.
+                  </em>
                 </h2>
               </div>
               <div className="prize-pill">
@@ -230,34 +318,35 @@ export default function Home() {
               <ScrollReveal key={t.num} delay={i * 0.05}>
                 <div className="stage-row">
                   <div
-                    className="font-mono pt-1"
+                    className="font-mono pt-2"
                     style={{
-                      color: "var(--accent-glow)",
+                      color: "var(--accent)",
                       letterSpacing: "0.08em",
-                      fontSize: "0.92rem",
+                      fontSize: "0.85rem",
                     }}
                   >
                     {t.num}
                   </div>
                   <div>
                     <h3
-                      className="font-display descender-safe"
+                      className="font-display descender-safe uppercase"
                       style={{
-                        fontWeight: 700,
-                        fontSize: "1.55rem",
-                        lineHeight: 1.2,
+                        fontWeight: 400,
+                        fontSize: "clamp(1.7rem, 3vw, 2.4rem)",
+                        lineHeight: 1,
+                        letterSpacing: "0.01em",
                         color: "var(--ink)",
-                        marginBottom: "0.6rem",
+                        marginBottom: "0.7rem",
                       }}
                     >
                       {t.title}
                     </h3>
                     <p
-                      className="leading-[1.7]"
+                      className="leading-[1.65]"
                       style={{
                         color: "var(--ink-muted)",
                         maxWidth: "640px",
-                        fontSize: "1rem",
+                        fontSize: "0.95rem",
                       }}
                     >
                       {t.desc}
@@ -287,16 +376,15 @@ export default function Home() {
 
       {/* SEGMENTS ──────────────────────────────────── */}
       <section className="px-6 sm:px-12 py-28">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <span className="label-eyebrow mb-6">What happens inside</span>
             <h2
-              className="title-display font-display mt-6 mb-12 descender-safe"
+              className="title-display mt-6 mb-12 descender-safe"
               style={{
-                fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
-                fontWeight: 800,
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(2.6rem, 7vw, 6rem)",
+                lineHeight: 1,
+                letterSpacing: "-0.005em",
               }}
             >
               Six spaces.
@@ -312,19 +400,20 @@ export default function Home() {
                   <span
                     className="font-mono uppercase block"
                     style={{
-                      fontSize: "0.78rem",
-                      letterSpacing: "0.12em",
-                      color: "var(--accent-glow)",
+                      fontSize: "0.7rem",
+                      letterSpacing: "0.16em",
+                      color: "var(--accent)",
                     }}
                   >
                     {s.tag}
                   </span>
                   <div
-                    className="font-display descender-safe"
+                    className="font-display descender-safe uppercase"
                     style={{
-                      fontSize: "1.65rem",
-                      fontWeight: 800,
-                      lineHeight: 1.12,
+                      fontSize: "1.85rem",
+                      fontWeight: 400,
+                      lineHeight: 1,
+                      letterSpacing: "0.01em",
                       color: "var(--ink)",
                     }}
                   >
@@ -335,7 +424,7 @@ export default function Home() {
                     style={{
                       color: "var(--ink-muted)",
                       maxWidth: "none",
-                      fontSize: "0.96rem",
+                      fontSize: "0.92rem",
                     }}
                   >
                     {s.desc}
@@ -354,33 +443,38 @@ export default function Home() {
         className="cta-glow relative px-6 sm:px-12 py-28 text-center overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
-        <div className="max-w-[800px] mx-auto relative z-10">
+        <div className="max-w-[900px] mx-auto relative z-10">
           <ScrollReveal>
             <span className="label-eyebrow justify-center mb-6">
               The room is small. The bar is high.
             </span>
             <h2
-              className="title-display font-display mt-6 mb-6 descender-safe"
+              className="title-display mt-6 mb-6 descender-safe"
               style={{
-                fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
-                fontWeight: 800,
-                lineHeight: 1.08,
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(2.8rem, 8vw, 6.5rem)",
+                lineHeight: 1,
+                letterSpacing: "-0.005em",
               }}
             >
               Ready?
               <br />
-              <em>Tell us who you are.</em>
+              <em
+                className="text-outline accent"
+                style={{ WebkitTextStrokeWidth: "0.026em" }}
+              >
+                Tell us who you are.
+              </em>
             </h2>
             <p
-              className="mx-auto mb-8 leading-[1.7]"
+              className="mx-auto mb-8 leading-[1.65]"
               style={{
                 color: "var(--ink-muted)",
                 maxWidth: "560px",
-                fontSize: "1.05rem",
+                fontSize: "0.98rem",
               }}
             >
-              Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest creative hackathon, and approx <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. Be honest. That&apos;s the only rule.
+              Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest creative hackathon, and approx{" "}
+              <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. Be honest. That&apos;s the only rule.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>

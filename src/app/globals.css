@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Bricolage Grotesque", sans-serif;
+  /* Anton is our display face (Futura Condensed Extra Bold spiritually).
+     DM Sans handles body. JetBrains Mono handles meta / labels. */
+  --font-display: "Anton", "Arial Narrow", "Impact", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --font-body: "DM Sans", sans-serif;
+  --font-body: "DM Sans", "Inter", sans-serif;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
@@ -11,6 +13,8 @@
   --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
   --animate-blink: blink 1s step-end infinite;
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-scroll-cue: scroll-cue 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0) translateX(0); }
@@ -24,13 +28,22 @@
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @keyframes scroll-cue {
+    0%   { transform: translateY(-30%); opacity: 0; }
+    35%  { opacity: 1; }
+    100% { transform: translateY(120%); opacity: 0; }
+  }
 }
 
 /* ── Theme Variables ───────────────────────── */
 
 :root {
   /* Dark (default): warm near-black with cream ink */
-  --ink: #f2ede8;
+  --ink: #f4efe8;
   --ink-muted: #8a8278;
   --ink-faint: #3a3530;
 
@@ -38,34 +51,45 @@
   --bg-raised: #141210;
   --bg-card: #1a1714;
 
-  --border: rgba(242, 237, 232, 0.08);
-  --border-strong: rgba(242, 237, 232, 0.18);
+  --border: rgba(244, 239, 232, 0.08);
+  --border-strong: rgba(244, 239, 232, 0.18);
 
-  --accent: #9333ea;
-  --accent-dim: #4c1d95;
-  --accent-glow: #c084fc;
-  --accent-shadow: rgba(147, 51, 234, 0.45);
+  /* Primary accent: bright signal orange (lifted from the poster reference). */
+  --accent: #ff5a2a;
+  --accent-dim: #b8350f;
+  --accent-glow: #ff7a4a;
+  --accent-shadow: rgba(255, 90, 42, 0.40);
+
+  /* Secondary brand palette — used sparingly for marquee stars, sparkles,
+     hover accents. Matches the swatch row in the brand reference. */
+  --c-orange: #ff5a2a;
+  --c-pink:   #e94a8a;
+  --c-rose:   #ffb5d6;
+  --c-green:  #3fae5e;
+  --c-blue:   #3fb7f0;
+  --c-purple: #7c4dec;
+  --c-yellow: #f5c84a;
 
   --nav-bg: rgba(13, 11, 9, 0.85);
 }
 
 [data-theme="light"] {
-  /* Light: cream paper with deep ink */
-  --ink: #1a1612;
+  /* Light: cream paper poster with deep ink */
+  --ink: #14110e;
   --ink-muted: #6a6055;
   --ink-faint: #b0a89c;
 
   --bg: #f5f1ec;
   --bg-raised: #ece6dc;
-  --bg-card: #e3dccf;
+  --bg-card: #e6dfd2;
 
-  --border: rgba(26, 22, 18, 0.10);
-  --border-strong: rgba(26, 22, 18, 0.22);
+  --border: rgba(20, 17, 14, 0.10);
+  --border-strong: rgba(20, 17, 14, 0.22);
 
-  --accent: #6d28d9;
-  --accent-dim: #4c1d95;
-  --accent-glow: #7c3aed;
-  --accent-shadow: rgba(91, 33, 182, 0.30);
+  --accent: #ff5a2a;
+  --accent-dim: #c73d14;
+  --accent-glow: #e9461a;
+  --accent-shadow: rgba(255, 90, 42, 0.30);
 
   --nav-bg: rgba(245, 241, 236, 0.85);
 }
@@ -82,13 +106,14 @@ html {
   html { overflow-x: hidden; }
 }
 
+/* Body is intentionally small and minimal — the headlines do the shouting. */
 body {
   font-family: var(--font-body);
   background-color: var(--bg);
   color: var(--ink);
-  font-size: 17px;
-  line-height: 1.7;
-  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -118,7 +143,7 @@ strong { color: var(--ink); font-weight: 500; }
 .themed-ink-muted { color: var(--ink-muted); }
 .themed-ink-faint { color: var(--ink-faint); }
 
-.themed-accent { color: var(--accent-glow); }
+.themed-accent { color: var(--accent); }
 
 .themed-card {
   background: var(--bg-card);
@@ -144,7 +169,7 @@ strong { color: var(--ink); font-weight: 500; }
 
 .font-display {
   font-family: var(--font-display), sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .font-mono {
@@ -157,13 +182,14 @@ strong { color: var(--ink); font-weight: 500; }
 
 .label-eyebrow {
   font-family: var(--font-mono), monospace;
-  font-size: 0.92rem;
-  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-glow);
+  color: var(--accent);
   display: inline-flex;
   align-items: center;
   gap: 0.9rem;
+  font-weight: 500;
 }
 
 .label-eyebrow::before {
@@ -174,34 +200,62 @@ strong { color: var(--ink); font-weight: 500; }
   background: var(--accent);
 }
 
-/* Display titles use Bricolage Grotesque (variable). The accent em is purple,
-   not italic. A small padding-bottom is kept as a safety net so descenders on
-   g / y / p never bump into adjacent elements at very tight line-heights. */
+/* Display titles use Anton — a condensed extra-bold poster face. Set in
+   ALL CAPS with a comfortable line-height. We intentionally avoid going
+   tighter than ~0.98 because Anton's ascender / cap-height is tall and
+   commas/periods from one line will collide with the next at huge sizes. */
 .title-display {
-  padding-bottom: 0.08em;
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  font-weight: 400; /* Anton ships at 400 but reads as ~900 */
+  letter-spacing: 0;
+  line-height: 1;
+  padding-bottom: 0.04em;
 }
 
+/* The accent word — `<em>` inside a title — fills with our signal orange. */
 .title-display em {
   font-style: normal;
-  color: var(--accent-glow);
+  color: var(--accent);
 }
 
 .descender-safe {
-  padding-bottom: 0.08em;
+  padding-bottom: 0.04em;
+}
+
+/* Outline / stroke text — the poster's "WIN $5000" treatment. Use on
+   words you want to feel hollow and graphic instead of solid. Stroke
+   width scales with font-size via `em` so it works at every scale. */
+.text-outline {
+  color: transparent !important;
+  -webkit-text-stroke-width: 0.035em;
+  -webkit-text-stroke-color: var(--ink);
+  text-stroke-width: 0.035em;
+  text-stroke-color: var(--ink);
+  font-style: normal;
+}
+
+/* Outlined accent words stroke in ink (cream on dark, near-black on light)
+   rather than orange — the ink contrast gives a cleaner poster impact in
+   both themes than the orange-on-anything alternative. */
+.text-outline.accent,
+.title-display em.text-outline {
+  -webkit-text-stroke-color: var(--ink);
+  text-stroke-color: var(--ink);
 }
 
 /* Pull-quote: left-bar emphasis */
 .pull-quote {
   display: block;
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-body), sans-serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-weight: 500;
+  font-size: 1.05rem;
   color: var(--ink);
   border-left: 3px solid var(--accent);
   padding-left: 1.25rem;
   max-width: 560px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* ── Hero Background ───────────────────────── */
@@ -210,15 +264,15 @@ strong { color: var(--ink); font-weight: 500; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(147,51,234,0.10), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 75%, rgba(192,132,252,0.08), transparent 60%);
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(255, 90, 42, 0.10), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 75%, rgba(255, 122, 74, 0.08), transparent 60%);
   pointer-events: none;
 }
 
 [data-theme="light"] .hero-grain {
   background:
-    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(109,40,217,0.10), transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 75%, rgba(124,58,237,0.07), transparent 60%);
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgba(255, 90, 42, 0.12), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 75%, rgba(233, 74, 138, 0.07), transparent 60%);
 }
 
 .hero-rule {
@@ -236,76 +290,77 @@ strong { color: var(--ink); font-weight: 500; }
 
 /* ── Buttons ───────────────────────────────── */
 
+/* Primary CTA: a loud signal-orange chip set in Anton uppercase —
+   the same energy as the poster's "AT OUR HQ" block. */
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.04em;
-  color: var(--bg);
-  background: var(--ink);
-  padding: 0.95rem 2.4rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: var(--accent);
+  padding: 0.85rem 1.7rem 0.7rem;
   border-radius: 2px;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   border: 1px solid transparent;
+  line-height: 1;
 }
 .btn-primary:hover {
-  background: var(--accent-glow);
+  background: var(--ink);
   color: var(--bg);
   transform: translateY(-1px);
-  box-shadow: 0 10px 30px var(--accent-shadow);
+  box-shadow: 0 12px 30px var(--accent-shadow);
 }
 
 .btn-ghost {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  letter-spacing: 0.08em;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--accent-glow);
+  color: var(--accent);
   background: transparent;
-  border: 1px solid var(--accent-dim);
-  padding: 0.85rem 1.6rem;
+  border: 1px solid var(--accent);
+  padding: 0.85rem 1.7rem 0.7rem;
   border-radius: 2px;
   text-decoration: none;
+  line-height: 1;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .btn-ghost:hover {
-  background: var(--accent-dim);
-  color: var(--ink);
-  border-color: var(--accent-dim);
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
 }
-
-[data-theme="light"] .btn-ghost { color: var(--accent); }
-[data-theme="light"] .btn-ghost:hover { color: #fff; }
 
 /* Meta-tag chip used in hero / stage pills */
 .meta-tag {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-muted);
   border: 1px solid var(--border);
-  padding: 0.48rem 1rem;
+  padding: 0.42rem 0.85rem;
   border-radius: 2px;
   background: transparent;
   white-space: nowrap;
 }
 
 /* Prize pill: a live, glowing capsule with a pulsing emerald dot and a
-   gold-gradient amount. Matches the Vyrothon "~$5,000" treatment in spirit
-   while keeping the editorial typeface. */
+   warm gradient on the amount. Tuned to the new orange-led palette. */
 .prize-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.55rem 1.1rem;
+  gap: 0.65rem;
+  padding: 0.5rem 1rem;
   border-radius: 999px;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -315,34 +370,35 @@ strong { color: var(--ink); font-weight: 500; }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #10b981;
+  background: var(--c-green);
   flex-shrink: 0;
   animation: pulse-dot 2s ease-in-out infinite;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.55);
+  box-shadow: 0 0 10px rgba(63, 174, 94, 0.55);
 }
 .prize-pill .amount {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.96rem;
-  letter-spacing: -0.005em;
-  background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444);
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #ffb14a, #ff5a2a, #e94a8a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   padding-bottom: 0.04em;
+  line-height: 1;
 }
 .prize-pill .label {
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--ink-muted);
 }
 
-/* Gold gradient text utility (used in CTAs / call-out spans). */
+/* Warm gradient utility — re-used for "$5,000" mentions in body copy. */
 .text-gradient-gold {
   font-family: var(--font-display);
-  background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444);
+  background: linear-gradient(135deg, #ffb14a, #ff5a2a, #e94a8a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -359,13 +415,21 @@ strong { color: var(--ink); font-weight: 500; }
   background: var(--border);
 }
 
+/* In light mode the default 10%-black border is invisible against cream
+   paper — bump these grids specifically so the cell boundaries read. */
+[data-theme="light"] .segment-grid,
+[data-theme="light"] .quality-grid {
+  border-color: var(--border-strong);
+  background: var(--border-strong);
+}
+
 .segment-card {
   padding: 2rem;
   background: var(--bg-card);
   transition: background 0.25s ease;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 .segment-card:hover { background: var(--bg-raised); }
 
@@ -443,7 +507,7 @@ strong { color: var(--ink); font-weight: 500; }
 
 .wordmark {
   font-family: var(--font-display), sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 1.05rem;
   letter-spacing: 0.04em;
   color: var(--ink);
@@ -452,8 +516,9 @@ strong { color: var(--ink); font-weight: 500; }
   display: inline-flex;
   align-items: baseline;
   gap: 0.18em;
+  text-transform: uppercase;
 }
-.wordmark .accent { color: var(--accent-glow); font-style: italic; }
+.wordmark .accent { color: var(--accent); font-style: normal; }
 .wordmark .subscript {
   font-family: var(--font-mono);
   font-size: 0.55rem;
@@ -483,6 +548,340 @@ strong { color: var(--ink); font-weight: 500; }
   height: 320px;
   background: radial-gradient(ellipse, var(--accent-shadow), transparent 65%);
   filter: blur(120px);
-  opacity: 0.45;
+  opacity: 0.55;
   pointer-events: none;
+}
+
+/* ── Hero Editorial Detail ─────────────────── */
+
+/* Faint dot-grid pattern; sits behind hero content, masked at edges so it
+   fades into the background instead of butting up against the rule lines. */
+.hero-dotgrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--border-strong) 1px,
+    transparent 0
+  );
+  background-size: 28px 28px;
+  opacity: 0.55;
+  pointer-events: none;
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 45%,
+    #000 30%,
+    transparent 85%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 45%,
+    #000 30%,
+    transparent 85%
+  );
+}
+
+[data-theme="light"] .hero-dotgrid { opacity: 0.7; }
+
+/* Tiny tick-marks in the four corners of the hero — editorial frame. */
+.corner-tick {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  opacity: 0.55;
+}
+.corner-tick::before,
+.corner-tick::after {
+  content: '';
+  position: absolute;
+  background: var(--border-strong);
+}
+.corner-tick::before { width: 14px; height: 1px; }
+.corner-tick::after  { width: 1px; height: 14px; }
+
+.corner-tick.tl { top: 18px; left: 18px; }
+.corner-tick.tl::before { top: 0; left: 0; }
+.corner-tick.tl::after  { top: 0; left: 0; }
+
+.corner-tick.tr { top: 18px; right: 18px; }
+.corner-tick.tr::before { top: 0; right: 0; }
+.corner-tick.tr::after  { top: 0; right: 0; }
+
+.corner-tick.bl { bottom: 18px; left: 18px; }
+.corner-tick.bl::before { bottom: 0; left: 0; }
+.corner-tick.bl::after  { bottom: 0; left: 0; }
+
+.corner-tick.br { bottom: 18px; right: 18px; }
+.corner-tick.br::before { bottom: 0; right: 0; }
+.corner-tick.br::after  { bottom: 0; right: 0; }
+
+/* Vertical editorial rail on the right side of the hero. */
+.hero-rail {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: clamp(1.25rem, 3vw, 3rem);
+  width: 64px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 0 5rem;
+  pointer-events: none;
+  z-index: 5;
+}
+@media (min-width: 1024px) {
+  .hero-rail { display: flex; }
+}
+
+.hero-rail .rail-line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--border-strong) 18%,
+    var(--border-strong) 82%,
+    transparent 100%
+  );
+}
+
+.hero-rail .rail-vertical-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.hero-rail .rail-vertical-text em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-rail .rail-marker {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  pointer-events: auto;
+  text-transform: uppercase;
+}
+
+.hero-rail .rail-marker .num {
+  font-size: 1.7rem;
+  background: linear-gradient(180deg, var(--ink), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.06em;
+}
+
+.hero-rail .rail-marker .divider {
+  width: 18px;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.hero-rail .rail-marker .year {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+/* Anchors the bottom of the rail. Mono, faint, editorial — keeps the
+   rail symmetrical without re-introducing a "live" chip. */
+.hero-rail .rail-date {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+
+/* Live indicator chip */
+.live-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 0.7rem 0.32rem 0.55rem;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+.live-chip .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-green);
+  animation: pulse-dot 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(63, 174, 94, 0.55);
+}
+.live-chip strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Thin meta divider row */
+.meta-row {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+.meta-row .sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  display: inline-block;
+}
+
+/* Scroll cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  pointer-events: none;
+  z-index: 5;
+}
+.scroll-cue .label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.scroll-cue .track {
+  position: relative;
+  width: 1px;
+  height: 42px;
+  background: var(--border-strong);
+  overflow: hidden;
+}
+.scroll-cue .track::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  animation: scroll-cue 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (max-width: 640px) {
+  .scroll-cue { display: none; }
+}
+
+/* ── Marquee Ticker ────────────────────────── */
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-raised);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 80px,
+    #000 calc(100% - 80px),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 80px,
+    #000 calc(100% - 80px),
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-weight: 400;
+}
+
+.marquee-group .accent { color: var(--accent); }
+.marquee-group em { font-style: normal; color: var(--ink-muted); }
+.marquee-group .star {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+/* Cycle the sparkle motif through the 4-color brand palette. */
+.marquee-group .star:nth-of-type(4n+1) { background: var(--c-orange); }
+.marquee-group .star:nth-of-type(4n+2) { background: var(--c-pink); }
+.marquee-group .star:nth-of-type(4n+3) { background: var(--c-green); }
+.marquee-group .star:nth-of-type(4n+4) { background: var(--c-blue); }
+
+/* ── Color sparkle row (brand motif from the reference) ── */
+
+.sparkle-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.sparkle-row .sparkle {
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  /* 4-point star via clip-path — matches the brand sparkles in the reference. */
+  clip-path: polygon(
+    50% 0%, 58% 42%, 100% 50%, 58% 58%,
+    50% 100%, 42% 58%, 0% 50%, 42% 42%
+  );
+  flex-shrink: 0;
 }

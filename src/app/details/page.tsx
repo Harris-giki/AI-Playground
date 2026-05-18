@@ -115,30 +115,33 @@ export default function Details() {
           style={{ background: "var(--accent-dim)" }}
         />
 
-        <div className="relative z-10 max-w-[1100px] mx-auto">
+        <div className="relative z-10 max-w-[1200px] mx-auto">
           <span className="label-eyebrow mb-6">The Event</span>
           <h1
-            className="title-display font-display mt-6 mb-8 descender-safe"
+            className="title-display mt-6 mb-8 descender-safe"
             style={{
-              fontWeight: 800,
-              fontSize: "clamp(2.6rem, 7vw, 5.5rem)",
-              lineHeight: 1.06,
-              letterSpacing: "-0.025em",
-              maxWidth: "900px",
+              fontSize: "clamp(3rem, 9vw, 7.5rem)",
+              lineHeight: 1,
+              letterSpacing: "-0.005em",
+              maxWidth: "1000px",
             }}
           >
             Two days, three stages,
             <br />
-            <em>one short film.</em>
+            <em
+              className="text-outline accent"
+              style={{ WebkitTextStrokeWidth: "0.024em" }}
+            >
+              one short film.
+            </em>
           </h1>
           <p
-            className="font-display mb-8"
+            className="mb-8"
             style={{
-              fontSize: "1.15rem",
-              fontWeight: 500,
+              fontSize: "0.98rem",
               color: "var(--ink-muted)",
               maxWidth: "640px",
-              lineHeight: 1.55,
+              lineHeight: 1.6,
             }}
           >
             AI Playground is ImagineArt&apos;s curated, invite-only creative
@@ -159,13 +162,13 @@ export default function Details() {
             <div className="flex items-center gap-2.5">
               <IconCalendar
                 className="w-[18px] h-[18px]"
-                style={{ color: "var(--accent-glow)" }}
+                style={{ color: "var(--accent)" }}
               />
               <span
                 className="font-mono uppercase"
                 style={{
-                  fontSize: "0.92rem",
-                  letterSpacing: "0.1em",
+                  fontSize: "0.78rem",
+                  letterSpacing: "0.14em",
                   color: "var(--ink-muted)",
                 }}
               >
@@ -175,13 +178,13 @@ export default function Details() {
             <div className="flex items-center gap-2.5">
               <IconClock
                 className="w-[18px] h-[18px]"
-                style={{ color: "var(--accent-glow)" }}
+                style={{ color: "var(--accent)" }}
               />
               <span
                 className="font-mono uppercase"
                 style={{
-                  fontSize: "0.92rem",
-                  letterSpacing: "0.1em",
+                  fontSize: "0.78rem",
+                  letterSpacing: "0.14em",
                   color: "var(--ink-muted)",
                 }}
               >
@@ -191,13 +194,13 @@ export default function Details() {
             <div className="flex items-center gap-2.5">
               <IconMapPin
                 className="w-[18px] h-[18px]"
-                style={{ color: "var(--accent-glow)" }}
+                style={{ color: "var(--accent)" }}
               />
               <span
                 className="font-mono uppercase"
                 style={{
-                  fontSize: "0.92rem",
-                  letterSpacing: "0.1em",
+                  fontSize: "0.78rem",
+                  letterSpacing: "0.14em",
                   color: "var(--ink-muted)",
                 }}
               >
@@ -215,16 +218,15 @@ export default function Details() {
         className="px-6 sm:px-12 py-28"
         style={{ background: "var(--bg-raised)" }}
       >
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <span className="label-eyebrow mb-6">The Flow</span>
             <h2
-              className="title-display font-display mt-6 mb-4 descender-safe"
+              className="title-display mt-6 mb-4 descender-safe"
               style={{
-                fontSize: "clamp(2rem, 4.5vw, 3.4rem)",
-                fontWeight: 800,
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)",
+                lineHeight: 1,
+                letterSpacing: "-0.005em",
               }}
             >
               Two days,
@@ -232,11 +234,11 @@ export default function Details() {
               <em>moving fast.</em>
             </h2>
             <p
-              className="mb-14 leading-[1.7]"
+              className="mb-14 leading-[1.65]"
               style={{
                 color: "var(--ink-muted)",
                 maxWidth: "640px",
-                fontSize: "1rem",
+                fontSize: "0.98rem",
               }}
             >
               Day One pulls the room together and runs Stage 1 and Stage 2. Day Two
@@ -255,21 +257,22 @@ export default function Details() {
                 }}
               >
                 <p
-                  className="font-mono uppercase mb-2"
+                  className="font-mono uppercase mb-3"
                   style={{
-                    fontSize: "0.92rem",
-                    letterSpacing: "0.14em",
-                    color: "var(--accent-glow)",
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.18em",
+                    color: "var(--accent)",
                   }}
                 >
                   Day 01
                 </p>
                 <h3
-                  className="font-display mb-8 descender-safe"
+                  className="font-display mb-8 descender-safe uppercase"
                   style={{
-                    fontWeight: 700,
-                    fontSize: "1.5rem",
-                    lineHeight: 1.2,
+                    fontWeight: 400,
+                    fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                    lineHeight: 1,
+                    letterSpacing: "0.01em",
                     color: "var(--ink)",
                   }}
                 >
@@ -282,14 +285,18 @@ export default function Details() {
                       className="timeline-dot relative pl-5 pb-7 last:pb-0"
                     >
                       <p
-                        className="font-display font-semibold mb-1"
-                        style={{ color: "var(--ink)" }}
+                        className="font-body mb-1"
+                        style={{
+                          color: "var(--ink)",
+                          fontWeight: 500,
+                          fontSize: "0.96rem",
+                        }}
                       >
                         {item.title}
                       </p>
                       <p
                         className="leading-[1.55]"
-                        style={{ color: "var(--ink-muted)", fontSize: "0.92rem" }}
+                        style={{ color: "var(--ink-muted)", fontSize: "0.88rem" }}
                       >
                         {item.desc}
                       </p>
@@ -308,21 +315,22 @@ export default function Details() {
                 }}
               >
                 <p
-                  className="font-mono uppercase mb-2"
+                  className="font-mono uppercase mb-3"
                   style={{
-                    fontSize: "0.92rem",
-                    letterSpacing: "0.14em",
-                    color: "var(--accent-glow)",
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.18em",
+                    color: "var(--accent)",
                   }}
                 >
                   Day 02
                 </p>
                 <h3
-                  className="font-display mb-8 descender-safe"
+                  className="font-display mb-8 descender-safe uppercase"
                   style={{
-                    fontWeight: 700,
-                    fontSize: "1.5rem",
-                    lineHeight: 1.2,
+                    fontWeight: 400,
+                    fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                    lineHeight: 1,
+                    letterSpacing: "0.01em",
                     color: "var(--ink)",
                   }}
                 >
@@ -335,14 +343,18 @@ export default function Details() {
                       className="timeline-dot relative pl-5 pb-7 last:pb-0"
                     >
                       <p
-                        className="font-display font-semibold mb-1"
-                        style={{ color: "var(--ink)" }}
+                        className="font-body mb-1"
+                        style={{
+                          color: "var(--ink)",
+                          fontWeight: 500,
+                          fontSize: "0.96rem",
+                        }}
                       >
                         {item.title}
                       </p>
                       <p
                         className="leading-[1.55]"
-                        style={{ color: "var(--ink-muted)", fontSize: "0.92rem" }}
+                        style={{ color: "var(--ink-muted)", fontSize: "0.88rem" }}
                       >
                         {item.desc}
                       </p>
@@ -359,16 +371,15 @@ export default function Details() {
 
       {/* WHO WE WANT ─────────────────────────────── */}
       <section className="px-6 sm:px-12 py-28">
-        <div className="max-w-[1100px] mx-auto">
+        <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <span className="label-eyebrow mb-6">Who we want in the room</span>
             <h2
-              className="title-display font-display mt-6 mb-6 descender-safe"
+              className="title-display mt-6 mb-6 descender-safe"
               style={{
-                fontSize: "clamp(2rem, 4.5vw, 3.4rem)",
-                fontWeight: 800,
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)",
+                lineHeight: 1,
+                letterSpacing: "-0.005em",
               }}
             >
               The room is curated.
@@ -400,12 +411,14 @@ export default function Details() {
               {qualities.map((q) => (
                 <div key={q.title} className="quality-item">
                   <p
-                    className="font-display"
+                    className="font-display uppercase"
                     style={{
-                      fontWeight: 700,
+                      fontWeight: 400,
                       color: "var(--ink)",
-                      fontSize: "1.1rem",
-                      marginBottom: "0.5rem",
+                      fontSize: "1.35rem",
+                      lineHeight: 1,
+                      letterSpacing: "0.01em",
+                      marginBottom: "0.65rem",
                     }}
                   >
                     {q.title}
@@ -414,7 +427,7 @@ export default function Details() {
                     className="leading-[1.6]"
                     style={{
                       color: "var(--ink-muted)",
-                      fontSize: "0.96rem",
+                      fontSize: "0.92rem",
                     }}
                   >
                     {q.desc}
@@ -440,33 +453,38 @@ export default function Details() {
         className="cta-glow relative px-6 sm:px-12 py-28 text-center overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
-        <div className="max-w-[800px] mx-auto relative z-10">
+        <div className="max-w-[900px] mx-auto relative z-10">
           <ScrollReveal>
             <span className="label-eyebrow justify-center mb-6">
               Applications open
             </span>
             <h2
-              className="title-display font-display mt-6 mb-6 descender-safe"
+              className="title-display mt-6 mb-6 descender-safe"
               style={{
-                fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
-                fontWeight: 800,
-                lineHeight: 1.08,
-                letterSpacing: "-0.02em",
+                fontSize: "clamp(2.8rem, 8vw, 6.5rem)",
+                lineHeight: 1,
+                letterSpacing: "-0.005em",
               }}
             >
               Not everyone gets in.
               <br />
-              <em>The right people do.</em>
+              <em
+                className="text-outline accent"
+                style={{ WebkitTextStrokeWidth: "0.024em" }}
+              >
+                The right people do.
+              </em>
             </h2>
             <p
-              className="mx-auto mb-8 leading-[1.7]"
+              className="mx-auto mb-8 leading-[1.65]"
               style={{
                 color: "var(--ink-muted)",
                 maxWidth: "560px",
-                fontSize: "1.05rem",
+                fontSize: "0.98rem",
               }}
             >
-              Every submission is reviewed personally. Approx <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. If you&apos;re the right fit, you&apos;ll hear from us.
+              Every submission is reviewed personally. Approx{" "}
+              <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. If you&apos;re the right fit, you&apos;ll hear from us.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>

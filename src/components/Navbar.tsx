@@ -57,7 +57,7 @@ export function Navbar() {
             WebkitBackdropFilter: "blur(18px)",
             border: "1px solid var(--border)",
             boxShadow:
-              "0 4px 30px rgba(0,0,0,0.18), 0 0 60px rgba(192,132,252,0.08)",
+              "0 4px 30px rgba(0,0,0,0.18), 0 0 60px rgba(255,90,42,0.10)",
           }}
         >
           <div className="hidden md:flex items-center gap-1">
@@ -81,10 +81,11 @@ export function Navbar() {
               href={applyFormUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-0.5 px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-colors"
+              className="ml-0.5 px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-all hover:brightness-110"
               style={{
-                color: "var(--accent-glow)",
-                border: "1px solid var(--accent-dim)",
+                color: "#ffffff",
+                background: "var(--accent)",
+                border: "1px solid var(--accent)",
               }}
             >
               Apply Now
@@ -173,10 +174,11 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] text-center"
+            className="block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] text-center transition-all hover:brightness-110"
             style={{
-              color: "var(--accent-glow)",
-              border: "1px solid var(--accent-dim)",
+              color: "#ffffff",
+              background: "var(--accent)",
+              border: "1px solid var(--accent)",
             }}
           >
             Apply Now

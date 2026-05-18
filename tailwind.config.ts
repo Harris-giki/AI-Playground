@@ -5,13 +5,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["Bricolage Grotesque", "sans-serif"],
+        display: ["Anton", "Arial Narrow", "Impact", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
-        body: ["DM Sans", "sans-serif"],
+        body: ["DM Sans", "Inter", "sans-serif"],
       },
       colors: {
         ink: {
-          DEFAULT: "#f2ede8",
+          DEFAULT: "#f4efe8",
           muted: "#8a8278",
           faint: "#3a3530",
         },
@@ -21,9 +21,18 @@ const config: Config = {
           card: "#1a1714",
         },
         accent: {
-          DEFAULT: "#9333ea",
-          dim: "#4c1d95",
-          glow: "#c084fc",
+          DEFAULT: "#ff5a2a",
+          dim: "#b8350f",
+          glow: "#ff7a4a",
+        },
+        brand: {
+          orange: "#ff5a2a",
+          pink: "#e94a8a",
+          rose: "#ffb5d6",
+          green: "#3fae5e",
+          blue: "#3fb7f0",
+          purple: "#7c4dec",
+          yellow: "#f5c84a",
         },
       },
       keyframes: {
