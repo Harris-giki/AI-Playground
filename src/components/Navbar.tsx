@@ -30,14 +30,8 @@ export function Navbar() {
       {/* Top-right: Theme toggle */}
       <button
         onClick={toggle}
-        className="fixed top-5 right-6 z-[100] w-9 h-9 rounded-full flex items-center justify-center transition-colors shrink-0"
-        style={{
-          background: "var(--nav-bg)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          border: "1px solid var(--border)",
-          color: "var(--ink)",
-        }}
+        className="fixed top-5 right-6 z-[100] w-9 h-9 rounded-full flex items-center justify-center transition-colors shrink-0 glass-edge"
+        style={{ color: "var(--ink)" }}
         aria-label="Toggle theme"
       >
         {theme === "dark" ? (
@@ -50,14 +44,14 @@ export function Navbar() {
       {/* Floating centre pill: nav links + Apply Now + mobile hamburger */}
       <nav className="fixed top-4 inset-x-0 z-[90] mx-auto max-w-fit px-4">
         <div
-          className="flex items-center gap-1.5 rounded-full px-2 py-2 shadow-lg"
+          className="flex items-center gap-1.5 rounded-full px-2 py-2"
           style={{
             background: "var(--nav-bg)",
-            backdropFilter: "blur(18px)",
-            WebkitBackdropFilter: "blur(18px)",
+            backdropFilter: "blur(22px) saturate(160%)",
+            WebkitBackdropFilter: "blur(22px) saturate(160%)",
             border: "1px solid var(--border)",
             boxShadow:
-              "0 4px 30px rgba(0,0,0,0.18), 0 0 60px rgba(255,90,42,0.10)",
+              "inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 28px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.03)",
           }}
         >
           <div className="hidden md:flex items-center gap-1">

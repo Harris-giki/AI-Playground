@@ -114,12 +114,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="w-9 h-9 rounded-sm flex items-center justify-center transition-all hover:-translate-y-0.5"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border)",
-                color: "var(--ink-muted)",
-              }}
+              className="glass-edge w-9 h-9 rounded-full flex items-center justify-center transition-all hover:-translate-y-0.5"
+              style={{ color: "var(--ink-muted)" }}
             >
               <IconLinkedin className="w-4 h-4" />
             </a>
@@ -128,12 +124,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="w-9 h-9 rounded-sm flex items-center justify-center transition-all hover:-translate-y-0.5"
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border)",
-                color: "var(--ink-muted)",
-              }}
+              className="glass-edge w-9 h-9 rounded-full flex items-center justify-center transition-all hover:-translate-y-0.5"
+              style={{ color: "var(--ink-muted)" }}
             >
               <IconInstagram className="w-4 h-4" />
             </a>

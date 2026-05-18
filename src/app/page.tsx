@@ -67,27 +67,18 @@ export default function Home() {
         <div className="hero-grain" aria-hidden />
         <div className="hero-dotgrid" aria-hidden />
 
-        <span className="corner-tick tl" aria-hidden />
-        <span className="corner-tick tr" aria-hidden />
-        <span className="corner-tick bl" aria-hidden />
-        <span className="corner-tick br" aria-hidden />
-
-        {/* Ambient orange glow orbs. */}
+        {/* Two ambient orange orbs — top-right and bottom-left. Removed the
+            third "centre" orb because it competed with the pennant. */}
         <div
-          className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-30 animate-float top-[-180px] right-[-100px]"
+          className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-25 animate-float top-[-180px] right-[-100px]"
           style={{ background: "var(--accent-dim)" }}
         />
         <div
-          className="absolute w-[460px] h-[460px] rounded-full blur-[130px] opacity-20 animate-float bottom-[-180px] left-[-60px]"
+          className="absolute w-[460px] h-[460px] rounded-full blur-[130px] opacity-15 animate-float bottom-[-180px] left-[-60px]"
           style={{ background: "var(--accent-glow)", animationDelay: "-4s" }}
         />
-        <div
-          className="absolute w-[280px] h-[280px] rounded-full blur-[110px] opacity-15 animate-float top-[40%] right-[18%] hidden lg:block"
-          style={{ background: "var(--accent)", animationDelay: "-7s" }}
-          aria-hidden
-        />
 
-        {/* Vertical editorial rail. */}
+        {/* Vertical editorial rail — kept lean: marker, line, vertical text. */}
         <aside className="hero-rail" aria-hidden>
           <div className="rail-marker">
             <span className="num">01</span>
@@ -98,8 +89,6 @@ export default function Home() {
           <span className="rail-vertical-text">
             Edition · <em>Pakistan</em>
           </span>
-          <span className="rail-line" />
-          <span className="rail-date">06.06.26</span>
         </aside>
 
         <div className="relative z-10 max-w-[1200px] mx-auto w-full lg:pr-24">
@@ -189,11 +178,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:min-w-[18rem] xl:min-w-[19rem] lg:max-w-[20rem] pt-6 lg:pt-0 lg:pl-8 xl:pl-10 lg:h-full lg:self-stretch">
-              <div className="flex flex-1 flex-col items-center justify-center w-full min-h-[100px]">
+            {/* Right strip: countdown sits inside a soft glass panel so it
+                reads as a deliberate card, not a floating cluster. */}
+            <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:min-w-[19rem] xl:min-w-[20rem] lg:max-w-[22rem] lg:h-full lg:self-stretch">
+              <div className="glass-soft flex flex-1 flex-col items-center justify-center w-full px-6 py-7 lg:py-10 min-h-[180px]">
                 <Countdown centered stableWidth />
               </div>
-              <div className="w-full shrink-0 flex justify-end pt-6 lg:pt-8">
+              <div className="w-full shrink-0 flex justify-end pt-5 lg:pt-6">
                 <Link
                   href="/details"
                   className="font-mono text-[0.78rem] uppercase tracking-[0.14em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--accent)] animate-fade-up text-right whitespace-nowrap"
@@ -245,9 +236,16 @@ export default function Home() {
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
               <div>
-                <span className="label-eyebrow mb-6">The Philosophy</span>
+                <div className="section-head mb-6">
+                  <span className="section-index">
+                    <span className="num">01</span>
+                    <span className="slash">/</span>
+                    <span>04</span>
+                  </span>
+                  <span className="label-eyebrow">The Philosophy</span>
+                </div>
                 <h2
-                  className="title-display mt-6 descender-safe"
+                  className="title-display mt-2 descender-safe"
                   style={{
                     fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                     lineHeight: 1,
@@ -292,11 +290,18 @@ export default function Home() {
       <section className="px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <div className="flex items-center justify-between gap-6 flex-wrap mb-12">
+            <div className="flex items-start justify-between gap-6 flex-wrap mb-10">
               <div>
-                <span className="label-eyebrow mb-6">The Structure</span>
+                <div className="section-head mb-6">
+                  <span className="section-index">
+                    <span className="num">02</span>
+                    <span className="slash">/</span>
+                    <span>04</span>
+                  </span>
+                  <span className="label-eyebrow">The Structure</span>
+                </div>
                 <h2
-                  className="title-display mt-6 descender-safe"
+                  className="title-display mt-2 descender-safe"
                   style={{
                     fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                     lineHeight: 1,
@@ -313,7 +318,7 @@ export default function Home() {
                   </em>
                 </h2>
               </div>
-              <div className="prize-pill">
+              <div className="prize-pill mt-2">
                 <span className="dot" aria-hidden />
                 <span className="amount">~$5,000</span>
                 <span className="label">Prize Pool</span>
@@ -321,26 +326,34 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div>
+          {/* Glass ledger that holds all three stages — replaces the bare
+              hairline-divided rows with a single deliberate container. */}
+          <div className="stages-shell">
             {stages.map((t, i) => (
               <ScrollReveal key={t.num} delay={i * 0.05}>
                 <div className="stage-row">
                   <div
-                    className="font-mono pt-2"
-                    style={{
-                      color: "var(--accent)",
-                      letterSpacing: "0.08em",
-                      fontSize: "0.85rem",
-                    }}
+                    className="stage-index"
+                    aria-hidden
                   >
-                    {t.num}
+                    {String(i + 1).padStart(2, "0")}
                   </div>
                   <div>
+                    <p
+                      className="font-mono uppercase mb-2"
+                      style={{
+                        color: "var(--accent)",
+                        letterSpacing: "0.22em",
+                        fontSize: "0.66rem",
+                      }}
+                    >
+                      Stage {String(i + 1).padStart(2, "0")}
+                    </p>
                     <h3
                       className="font-display descender-safe uppercase"
                       style={{
                         fontWeight: 400,
-                        fontSize: "clamp(1.7rem, 3vw, 2.4rem)",
+                        fontSize: "clamp(1.55rem, 2.8vw, 2.2rem)",
                         lineHeight: 1,
                         letterSpacing: "0.01em",
                         color: "var(--ink)",
@@ -354,12 +367,12 @@ export default function Home() {
                       style={{
                         color: "var(--ink-muted)",
                         maxWidth: "640px",
-                        fontSize: "0.95rem",
+                        fontSize: "0.94rem",
                       }}
                     >
                       {t.desc}
                     </p>
-                    <div className="flex gap-2.5 flex-wrap mt-5">
+                    <div className="flex gap-2 flex-wrap mt-5">
                       {t.pills.map((p) => (
                         <span key={p} className="meta-tag">
                           {p}
@@ -386,9 +399,16 @@ export default function Home() {
       <section className="px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <span className="label-eyebrow mb-6">What happens inside</span>
+            <div className="section-head mb-6">
+              <span className="section-index">
+                <span className="num">03</span>
+                <span className="slash">/</span>
+                <span>04</span>
+              </span>
+              <span className="label-eyebrow">What happens inside</span>
+            </div>
             <h2
-              className="title-display mt-6 mb-12 descender-safe"
+              className="title-display mt-2 mb-12 descender-safe"
               style={{
                 fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
@@ -408,21 +428,23 @@ export default function Home() {
                   <span
                     className="font-mono uppercase block"
                     style={{
-                      fontSize: "0.7rem",
-                      letterSpacing: "0.16em",
+                      fontSize: "0.68rem",
+                      letterSpacing: "0.22em",
                       color: "var(--accent)",
+                      marginBottom: "0.4rem",
                     }}
                   >
                     {s.tag}
                   </span>
                   <div
-                    className="font-display descender-safe uppercase"
+                    className="segment-name font-display descender-safe uppercase"
                     style={{
                       fontSize: "1.85rem",
                       fontWeight: 400,
                       lineHeight: 1,
                       letterSpacing: "0.01em",
                       color: "var(--ink)",
+                      marginBottom: "0.45rem",
                     }}
                   >
                     {s.name}
@@ -448,59 +470,66 @@ export default function Home() {
 
       {/* CTA ──────────────────────────────────────── */}
       <section
-        className="cta-glow relative px-6 sm:px-12 py-28 text-center overflow-hidden"
+        className="cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
-        <div className="max-w-[900px] mx-auto relative z-10">
+        <div className="max-w-[960px] mx-auto relative z-10">
           <ScrollReveal>
-            <span className="label-eyebrow justify-center mb-6">
-              The room is small. The bar is high.
-            </span>
-            <h2
-              className="title-display mt-6 mb-6 descender-safe"
-              style={{
-                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                lineHeight: 1,
-                letterSpacing: "-0.005em",
-              }}
-            >
-              Ready?
-              <br />
-              <em
-                className="text-outline accent"
-                style={{ WebkitTextStrokeWidth: "0.026em" }}
+            <div className="cta-shell text-center">
+              <div className="section-head mb-6 items-center mx-auto" style={{ alignItems: "center" }}>
+                <span className="section-index" style={{ justifyContent: "center" }}>
+                  <span className="num">04</span>
+                  <span className="slash">/</span>
+                  <span>04</span>
+                </span>
+                <span className="label-eyebrow justify-center">
+                  The room is small. The bar is high.
+                </span>
+              </div>
+              <h2
+                className="title-display mt-2 mb-6 descender-safe"
+                style={{
+                  fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
+                  lineHeight: 1,
+                  letterSpacing: "-0.005em",
+                }}
               >
-                Tell us who you are.
-              </em>
-            </h2>
-            <p
-              className="mx-auto mb-8 leading-[1.65]"
-              style={{
-                color: "var(--ink-muted)",
-                maxWidth: "560px",
-                fontSize: "0.98rem",
-              }}
-            >
-              Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest AI Film Making Competition — only{" "}
-              <span style={{ color: "var(--accent)", fontWeight: 500 }}>150 seats</span>{" "}
-              in the room, and approx{" "}
-              <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. Be honest. That&apos;s the only rule.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <div className="flex justify-center gap-4 flex-wrap">
-              <a
-                href={applyFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
+                Ready?
+                <br />
+                <em
+                  className="text-outline accent"
+                  style={{ WebkitTextStrokeWidth: "0.026em" }}
+                >
+                  Tell us who you are.
+                </em>
+              </h2>
+              <p
+                className="mx-auto mb-8 leading-[1.65]"
+                style={{
+                  color: "var(--ink-muted)",
+                  maxWidth: "560px",
+                  fontSize: "0.98rem",
+                }}
               >
-                Apply to AI Playground
-                <IconArrowRight className="w-4 h-4" />
-              </a>
-              <Link href="/details" className="btn-ghost">
-                Read more
-              </Link>
+                Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest AI Film Making Competition — only{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>150 seats</span>{" "}
+                in the room, and approx{" "}
+                <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. Be honest. That&apos;s the only rule.
+              </p>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <a
+                  href={applyFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Apply to AI Playground
+                  <IconArrowRight className="w-4 h-4" />
+                </a>
+                <Link href="/details" className="btn-ghost">
+                  Read more
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
         </div>

@@ -13,7 +13,7 @@
   --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
   --animate-blink: blink 1s step-end infinite;
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  --animate-marquee: marquee 38s linear infinite;
+  --animate-marquee: marquee 72s linear infinite;
   --animate-scroll-cue: scroll-cue 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 
   @keyframes float {
@@ -70,7 +70,7 @@
   --c-purple: #7c4dec;
   --c-yellow: #f5c84a;
 
-  --nav-bg: rgba(13, 11, 9, 0.85);
+  --nav-bg: rgba(13, 11, 9, 0.55);
 }
 
 [data-theme="light"] {
@@ -91,7 +91,7 @@
   --accent-glow: #e9461a;
   --accent-shadow: rgba(255, 90, 42, 0.30);
 
-  --nav-bg: rgba(245, 241, 236, 0.85);
+  --nav-bg: rgba(245, 241, 236, 0.55);
 }
 
 /* ── Base ──────────────────────────────────── */
@@ -182,8 +182,8 @@ strong { color: var(--ink); font-weight: 500; }
 
 .label-eyebrow {
   font-family: var(--font-mono), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent);
   display: inline-flex;
@@ -195,9 +195,45 @@ strong { color: var(--ink); font-weight: 500; }
 .label-eyebrow::before {
   content: '';
   display: block;
-  width: 2.4rem;
+  width: 1.6rem;
   height: 1px;
   background: var(--accent);
+}
+
+/* Section index — small mono ledger mark used above section eyebrows.
+   Pairs with a faint slash + total, e.g. "01 / 04". Adds a deliberate
+   editorial rhythm that AI templates almost never include. */
+.section-index {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.section-index .num {
+  color: var(--ink);
+  font-weight: 500;
+}
+.section-index .slash {
+  color: var(--ink-faint);
+  opacity: 0.7;
+}
+
+/* Stack the index above the eyebrow with a 1px hairline between them.
+   Used as `<div class="section-head">` wrapping both. */
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  align-items: flex-start;
+}
+.section-head .section-index + .label-eyebrow {
+  margin-top: 0.1rem;
 }
 
 /* Display titles use Anton — a condensed extra-bold poster face. Set in
@@ -296,6 +332,125 @@ strong { color: var(--ink); font-weight: 500; }
   font-feature-settings: "tnum" 1;
 }
 
+/* ──────────────────────────────────────────────
+   Glassmorphism — Apple-style frosted surfaces.
+   Three flavours:
+     .glass        — full frosted card (cards, panels, CTA shells)
+     .glass-soft   — barely-there fog (subtle column dividers)
+     .glass-edge   — thin inner highlight only (chips, pills)
+   ────────────────────────────────────────────── */
+
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.045),
+    rgba(244, 239, 232, 0.018)
+  );
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20),
+    0 1px 2px rgba(0, 0, 0, 0.30),
+    0 24px 60px -20px rgba(0, 0, 0, 0.55);
+  border-radius: 18px;
+}
+
+[data-theme="light"] .glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.32)
+  );
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(20, 17, 14, 0.04),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 24px 48px -22px rgba(20, 17, 14, 0.18);
+}
+
+.glass-soft {
+  background: rgba(244, 239, 232, 0.025);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid rgba(244, 239, 232, 0.07);
+  border-radius: 14px;
+}
+
+[data-theme="light"] .glass-soft {
+  background: rgba(255, 255, 255, 0.45);
+  border-color: rgba(20, 17, 14, 0.06);
+}
+
+.glass-edge {
+  background: rgba(244, 239, 232, 0.04);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.10);
+}
+
+[data-theme="light"] .glass-edge {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(20, 17, 14, 0.07);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Hover lift for interactive glass cards. */
+.glass.is-interactive,
+.glass-card {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass.is-interactive:hover,
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(244, 239, 232, 0.18);
+}
+[data-theme="light"] .glass.is-interactive:hover,
+[data-theme="light"] .glass-card:hover {
+  border-color: rgba(20, 17, 14, 0.14);
+}
+
+/* `glass-card` is `.glass` with a default content padding so it can be
+   used directly without re-specifying spacing every time. */
+.glass-card {
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.045),
+    rgba(244, 239, 232, 0.018)
+  );
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20),
+    0 1px 2px rgba(0, 0, 0, 0.30),
+    0 24px 60px -20px rgba(0, 0, 0, 0.55);
+  border-radius: 18px;
+  padding: clamp(1.25rem, 2.2vw, 2rem);
+}
+[data-theme="light"] .glass-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.32)
+  );
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(20, 17, 14, 0.04),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 24px 48px -22px rgba(20, 17, 14, 0.18);
+}
+
 /* ── Hero Background ───────────────────────── */
 
 .hero-grain {
@@ -392,17 +547,31 @@ strong { color: var(--ink); font-weight: 500; }
   white-space: nowrap;
 }
 
-/* Prize pill: a live, glowing capsule with a pulsing emerald dot and a
-   warm gradient on the amount. Tuned to the new orange-led palette. */
+/* Prize pill: glass capsule with a pulsing emerald dot and a warm
+   gradient on the amount. */
 .prize-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
   padding: 0.5rem 1rem;
   border-radius: 999px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: rgba(244, 239, 232, 0.04);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.10),
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 10px 24px -10px rgba(0, 0, 0, 0.4);
   white-space: nowrap;
+}
+[data-theme="light"] .prize-pill {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 10px 20px -10px rgba(20, 17, 14, 0.14);
 }
 .prize-pill .dot {
   width: 7px;
@@ -433,14 +602,25 @@ strong { color: var(--ink); font-weight: 500; }
   color: var(--ink-muted);
 }
 
-/* Hero-scale prize pill — intentionally LOUDER than the primary CTA so the
-   $5k pool reads first. Adds an orange ring + warm shadow to lift it. */
+/* Hero-scale prize pill — slightly larger glass capsule with a warm
+   orange aura. */
 .prize-pill-xl {
-  padding: 0.85rem 1.5rem;
-  gap: 0.85rem;
-  border-color: var(--accent);
-  background: var(--bg-card);
-  box-shadow: 0 10px 32px var(--accent-shadow);
+  padding: 0.55rem 1.15rem;
+  gap: 0.7rem;
+  border-color: rgba(255, 90, 42, 0.32);
+  background: rgba(255, 90, 42, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 122, 74, 0.18),
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 14px 32px -12px rgba(255, 90, 42, 0.35);
+}
+[data-theme="light"] .prize-pill-xl {
+  background: rgba(255, 246, 240, 0.85);
+  border-color: rgba(255, 90, 42, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 14px 28px -14px rgba(255, 90, 42, 0.30);
 }
 .prize-pill-xl .dot {
   width: 9px;
@@ -465,61 +645,250 @@ strong { color: var(--ink); font-weight: 500; }
   padding-bottom: 0.04em;
 }
 
-/* ── Segment / Stage Cards ─────────────────── */
+/* ── Segment Grid — asymmetric "six spaces" layout ──
+   12-col grid with a feature card, two mid-cards, and a full-width strip.
+   On mobile everything stacks to a single column. */
 
 .segment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
-  border: 1px solid var(--border);
-  background: var(--border);
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
 }
 
-/* In light mode the default 10%-black border is invisible against cream
-   paper — bump these grids specifically so the cell boundaries read. */
-[data-theme="light"] .segment-grid,
-[data-theme="light"] .quality-grid {
-  border-color: var(--border-strong);
-  background: var(--border-strong);
+/* Six children, deliberate layout: */
+.segment-card:nth-child(1) { grid-column: span 12; }
+.segment-card:nth-child(2) { grid-column: span 12; }
+.segment-card:nth-child(3) { grid-column: span 12; }
+.segment-card:nth-child(4) { grid-column: span 12; }
+.segment-card:nth-child(5) { grid-column: span 12; }
+.segment-card:nth-child(6) { grid-column: span 12; }
+
+@media (min-width: 768px) {
+  .segment-grid { gap: 1.1rem; }
+  .segment-card:nth-child(1) { grid-column: span 7; min-height: 320px; }
+  .segment-card:nth-child(2) { grid-column: span 5; min-height: 320px; }
+  .segment-card:nth-child(3) { grid-column: span 4; }
+  .segment-card:nth-child(4) { grid-column: span 4; }
+  .segment-card:nth-child(5) { grid-column: span 4; }
+  .segment-card:nth-child(6) { grid-column: span 12; }
 }
 
 .segment-card {
-  padding: 2rem;
-  background: var(--bg-card);
-  transition: background 0.25s ease;
+  position: relative;
+  padding: clamp(1.4rem, 2.2vw, 1.85rem);
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.045),
+    rgba(244, 239, 232, 0.015)
+  );
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 20px 48px -22px rgba(0, 0, 0, 0.45);
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
-.segment-card:hover { background: var(--bg-raised); }
+[data-theme="light"] .segment-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.32)
+  );
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 20px 36px -22px rgba(20, 17, 14, 0.16);
+}
+.segment-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(244, 239, 232, 0.18);
+}
+[data-theme="light"] .segment-card:hover {
+  border-color: rgba(20, 17, 14, 0.14);
+}
+
+/* Feature card — first segment scales up its display title. */
+.segment-card:nth-child(1) .segment-name {
+  font-size: clamp(2rem, 3.4vw, 2.85rem) !important;
+}
+
+/* ── Stages Shell — glass ledger that wraps the three stage rows ── */
+
+.stages-shell {
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.035),
+    rgba(244, 239, 232, 0.012)
+  );
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 24px 60px -24px rgba(0, 0, 0, 0.50);
+  border-radius: 20px;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.75rem);
+}
+[data-theme="light"] .stages-shell {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.28)
+  );
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 24px 44px -24px rgba(20, 17, 14, 0.18);
+}
 
 .stage-row {
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 2rem;
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--border);
+  grid-template-columns: clamp(3.4rem, 8vw, 5.2rem) 1fr;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(244, 239, 232, 0.07);
   align-items: start;
 }
-.stage-row:first-of-type { border-top: 1px solid var(--border); }
+[data-theme="light"] .stage-row {
+  border-bottom-color: rgba(20, 17, 14, 0.07);
+}
+.stage-row:first-of-type { padding-top: 0.25rem; }
+.stage-row:last-of-type { border-bottom: 0; padding-bottom: 0.25rem; }
 
-/* ── Quality Grid ──────────────────────────── */
+/* Big outlined stage number on the left of each row — replaces the small
+   "S-01" mono tag with a poster-scale ghost numeral. */
+.stage-index {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.2vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: transparent;
+  -webkit-text-stroke: 0.04em var(--accent);
+  text-stroke: 0.04em var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  user-select: none;
+  padding-top: 0.05em;
+}
+
+/* ── Quality Grid — glass tiles ────────────── */
 
 .quality-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  border: 1px solid var(--border);
-  background: var(--border);
+  gap: 1rem;
 }
 
 .quality-item {
-  padding: 1.75rem;
-  background: var(--bg-card);
+  padding: 1.6rem;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.045),
+    rgba(244, 239, 232, 0.015)
+  );
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.22),
+    0 18px 36px -22px rgba(0, 0, 0, 0.40);
+  transition: transform 0.35s ease, border-color 0.35s ease;
 }
+[data-theme="light"] .quality-item {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.32)
+  );
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 18px 30px -22px rgba(20, 17, 14, 0.16);
+}
+.quality-item:hover { transform: translateY(-2px); }
 
 @media (max-width: 720px) {
-  .quality-grid { grid-template-columns: 1fr; }
+  .quality-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+/* ── Day Card — schedule glass panel on /details ── */
+
+.day-card {
+  position: relative;
+  padding: clamp(1.5rem, 2.8vw, 2.1rem);
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.04),
+    rgba(244, 239, 232, 0.012)
+  );
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  border: 1px solid rgba(244, 239, 232, 0.10);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 28px 56px -24px rgba(0, 0, 0, 0.50);
+  height: 100%;
+}
+[data-theme="light"] .day-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.62),
+    rgba(255, 255, 255, 0.30)
+  );
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 28px 44px -24px rgba(20, 17, 14, 0.18);
+}
+
+/* ── CTA Shell — wraps the closing call to action ── */
+
+.cta-shell {
+  position: relative;
+  padding: clamp(2rem, 4vw, 3.25rem) clamp(1.5rem, 3vw, 2.75rem);
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.05),
+    rgba(244, 239, 232, 0.015)
+  );
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(244, 239, 232, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(244, 239, 232, 0.10),
+    0 1px 2px rgba(0, 0, 0, 0.25),
+    0 36px 72px -28px rgba(0, 0, 0, 0.55);
+}
+[data-theme="light"] .cta-shell {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.30)
+  );
+  border-color: rgba(20, 17, 14, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 1px 2px rgba(20, 17, 14, 0.04),
+    0 36px 56px -28px rgba(20, 17, 14, 0.18);
 }
 
 /* ── Timeline (Schedule) ───────────────────── */
@@ -641,8 +1010,10 @@ strong { color: var(--ink); font-weight: 500; }
 
 [data-theme="light"] .hero-dotgrid { opacity: 0.7; }
 
-/* Tiny tick-marks in the four corners of the hero — editorial frame. */
+/* Tiny tick-marks in the four corners of the hero — kept in CSS but
+   no longer rendered in markup. Reduces visual noise. */
 .corner-tick {
+  display: none;
   position: absolute;
   width: 14px;
   height: 14px;
@@ -869,7 +1240,13 @@ strong { color: var(--ink); font-weight: 500; }
   overflow: hidden;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: var(--bg-raised);
+  background: linear-gradient(
+    180deg,
+    rgba(244, 239, 232, 0.025),
+    rgba(244, 239, 232, 0.005)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   mask-image: linear-gradient(
     to right,
     transparent 0,
@@ -889,7 +1266,7 @@ strong { color: var(--ink); font-weight: 500; }
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 38s linear infinite;
+  animation: marquee 72s linear infinite;
 }
 
 .marquee:hover .marquee-track {
@@ -899,33 +1276,28 @@ strong { color: var(--ink); font-weight: 500; }
 .marquee-group {
   display: inline-flex;
   align-items: center;
-  gap: 2.5rem;
-  padding: 1rem 1.25rem;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.04em;
+  gap: 3rem;
+  padding: 0.95rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: var(--ink-muted);
   white-space: nowrap;
   flex-shrink: 0;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .marquee-group .accent { color: var(--accent); }
-.marquee-group em { font-style: normal; color: var(--ink-muted); }
+.marquee-group em { font-style: normal; color: var(--ink); font-weight: 500; }
 .marquee-group .star {
   display: inline-block;
-  width: 9px;
-  height: 9px;
-  background: var(--accent);
+  width: 5px;
+  height: 5px;
+  background: var(--ink-faint);
   transform: rotate(45deg);
   flex-shrink: 0;
 }
-/* Cycle the sparkle motif through the 4-color brand palette. */
-.marquee-group .star:nth-of-type(4n+1) { background: var(--c-orange); }
-.marquee-group .star:nth-of-type(4n+2) { background: var(--c-pink); }
-.marquee-group .star:nth-of-type(4n+3) { background: var(--c-green); }
-.marquee-group .star:nth-of-type(4n+4) { background: var(--c-blue); }
 
 /* ── Color sparkle row (brand motif from the reference) ── */
 

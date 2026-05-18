@@ -116,9 +116,16 @@ export default function Details() {
         />
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
-          <span className="label-eyebrow mb-6">The Event</span>
+          <div className="section-head mb-6">
+            <span className="section-index">
+              <span className="num">00</span>
+              <span className="slash">/</span>
+              <span>03</span>
+            </span>
+            <span className="label-eyebrow">The Event</span>
+          </div>
           <h1
-            className="title-display mt-6 mb-8 descender-safe"
+            className="title-display mt-2 mb-8 descender-safe"
             style={{
               fontSize: "clamp(2.75rem, 5.8vw, 4.75rem)",
               lineHeight: 1,
@@ -258,9 +265,16 @@ export default function Details() {
       >
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <span className="label-eyebrow mb-6">The Flow</span>
+            <div className="section-head mb-6">
+              <span className="section-index">
+                <span className="num">01</span>
+                <span className="slash">/</span>
+                <span>03</span>
+              </span>
+              <span className="label-eyebrow">The Flow</span>
+            </div>
             <h2
-              className="title-display mt-6 mb-4 descender-safe"
+              className="title-display mt-2 mb-4 descender-safe"
               style={{
                 fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
@@ -285,20 +299,14 @@ export default function Details() {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <ScrollReveal>
-              <div
-                className="rounded-sm p-8 h-full"
-                style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
-                }}
-              >
+              <div className="day-card">
                 <p
                   className="font-mono uppercase mb-3"
                   style={{
-                    fontSize: "0.72rem",
-                    letterSpacing: "0.18em",
+                    fontSize: "0.66rem",
+                    letterSpacing: "0.28em",
                     color: "var(--accent)",
                   }}
                 >
@@ -308,7 +316,7 @@ export default function Details() {
                   className="font-display mb-8 descender-safe uppercase"
                   style={{
                     fontWeight: 400,
-                    fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                    fontSize: "clamp(1.65rem, 2.8vw, 2.2rem)",
                     lineHeight: 1,
                     letterSpacing: "0.01em",
                     color: "var(--ink)",
@@ -345,18 +353,12 @@ export default function Details() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.05}>
-              <div
-                className="rounded-sm p-8 h-full"
-                style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
-                }}
-              >
+              <div className="day-card">
                 <p
                   className="font-mono uppercase mb-3"
                   style={{
-                    fontSize: "0.72rem",
-                    letterSpacing: "0.18em",
+                    fontSize: "0.66rem",
+                    letterSpacing: "0.28em",
                     color: "var(--accent)",
                   }}
                 >
@@ -366,7 +368,7 @@ export default function Details() {
                   className="font-display mb-8 descender-safe uppercase"
                   style={{
                     fontWeight: 400,
-                    fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                    fontSize: "clamp(1.65rem, 2.8vw, 2.2rem)",
                     lineHeight: 1,
                     letterSpacing: "0.01em",
                     color: "var(--ink)",
@@ -411,9 +413,16 @@ export default function Details() {
       <section className="px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <span className="label-eyebrow mb-6">Who we want in the room</span>
+            <div className="section-head mb-6">
+              <span className="section-index">
+                <span className="num">02</span>
+                <span className="slash">/</span>
+                <span>03</span>
+              </span>
+              <span className="label-eyebrow">Who we want in the room</span>
+            </div>
             <h2
-              className="title-display mt-6 mb-6 descender-safe"
+              className="title-display mt-2 mb-6 descender-safe"
               style={{
                 fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
@@ -510,58 +519,65 @@ export default function Details() {
 
       {/* CTA ─────────────────────────────────────── */}
       <section
-        className="cta-glow relative px-6 sm:px-12 py-28 text-center overflow-hidden"
+        className="cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
-        <div className="max-w-[900px] mx-auto relative z-10">
+        <div className="max-w-[960px] mx-auto relative z-10">
           <ScrollReveal>
-            <span className="label-eyebrow justify-center mb-6">
-              Applications open
-            </span>
-            <h2
-              className="title-display mt-6 mb-6 descender-safe"
-              style={{
-                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                lineHeight: 1,
-                letterSpacing: "-0.005em",
-              }}
-            >
-              Not everyone gets in.
-              <br />
-              <em
-                className="text-outline accent"
-                style={{ WebkitTextStrokeWidth: "0.024em" }}
+            <div className="cta-shell text-center">
+              <div className="section-head mb-6" style={{ alignItems: "center" }}>
+                <span className="section-index">
+                  <span className="num">03</span>
+                  <span className="slash">/</span>
+                  <span>03</span>
+                </span>
+                <span className="label-eyebrow justify-center">
+                  Applications open
+                </span>
+              </div>
+              <h2
+                className="title-display mt-2 mb-6 descender-safe"
+                style={{
+                  fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
+                  lineHeight: 1,
+                  letterSpacing: "-0.005em",
+                }}
               >
-                The right people do.
-              </em>
-            </h2>
-            <p
-              className="mx-auto mb-8 leading-[1.65]"
-              style={{
-                color: "var(--ink-muted)",
-                maxWidth: "560px",
-                fontSize: "0.98rem",
-              }}
-            >
-              Every submission is reviewed personally. Approx{" "}
-              <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films, and only{" "}
-              <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                150 seats
-              </span>{" "}
-              in the room. If you&apos;re the right fit, you&apos;ll hear from us.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <div className="flex justify-center gap-4 flex-wrap">
-              <a
-                href={applyFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
+                Not everyone gets in.
+                <br />
+                <em
+                  className="text-outline accent"
+                  style={{ WebkitTextStrokeWidth: "0.024em" }}
+                >
+                  The right people do.
+                </em>
+              </h2>
+              <p
+                className="mx-auto mb-8 leading-[1.65]"
+                style={{
+                  color: "var(--ink-muted)",
+                  maxWidth: "560px",
+                  fontSize: "0.98rem",
+                }}
               >
-                Apply to AI Playground
-                <IconArrowRight className="w-4 h-4" />
-              </a>
+                Every submission is reviewed personally. Approx{" "}
+                <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films, and only{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  150 seats
+                </span>{" "}
+                in the room. If you&apos;re the right fit, you&apos;ll hear from us.
+              </p>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <a
+                  href={applyFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Apply to AI Playground
+                  <IconArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </ScrollReveal>
         </div>
