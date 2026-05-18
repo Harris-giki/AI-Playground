@@ -120,7 +120,7 @@ export default function Details() {
           <h1
             className="title-display mt-6 mb-8 descender-safe"
             style={{
-              fontSize: "clamp(3rem, 9vw, 7.5rem)",
+              fontSize: "clamp(2.75rem, 5.8vw, 4.75rem)",
               lineHeight: 1,
               letterSpacing: "-0.005em",
               maxWidth: "1000px",
@@ -262,7 +262,7 @@ export default function Details() {
             <h2
               className="title-display mt-6 mb-4 descender-safe"
               style={{
-                fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)",
+                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
                 letterSpacing: "-0.005em",
               }}
@@ -415,7 +415,7 @@ export default function Details() {
             <h2
               className="title-display mt-6 mb-6 descender-safe"
               style={{
-                fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)",
+                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
                 letterSpacing: "-0.005em",
               }}
@@ -521,7 +521,7 @@ export default function Details() {
             <h2
               className="title-display mt-6 mb-6 descender-safe"
               style={{
-                fontSize: "clamp(2.8rem, 8vw, 6.5rem)",
+                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
                 letterSpacing: "-0.005em",
               }}

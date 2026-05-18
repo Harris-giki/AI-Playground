@@ -290,6 +290,12 @@ strong { color: var(--ink); font-weight: 500; }
 [data-theme="light"] .hero-banner--dark { display: none; }
 [data-theme="light"] .hero-banner--light { display: block; }
 
+/* Countdown: fixed-width digit columns — tabular figures where supported. */
+.countdown-stable-root .countdown-unit-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
 /* ── Hero Background ───────────────────────── */
 
 .hero-grain {

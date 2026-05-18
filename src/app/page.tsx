@@ -107,100 +107,103 @@ export default function Home() {
             ImagineArt presents · {eventDateLabel}
           </p>
 
-          {/* HERO HEADLINE — pennant lockup. Swaps between dark / light
-              source images via CSS so theme toggling is flash-free. */}
-          <HeroBanner />
+          {/* Main + right strip: countdown only in the right column, centered. */}
+          <div className="hero-split grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-12 xl:gap-14 lg:items-stretch mb-10 lg:mb-12">
+            <div className="flex flex-col gap-5 min-w-0">
+              <HeroBanner />
 
-          <p
-            className="mb-9 animate-fade-up max-w-[640px]"
-            style={{
-              fontSize: "0.95rem",
-              color: "var(--ink-muted)",
-              lineHeight: 1.65,
-              animationDelay: "0.18s",
-            }}
-          >
-            Pakistan&apos;s Biggest{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              AI Film Making Competition
-            </span>
-            . Two days, three stages, one short film — built live with generative AI.{" "}
-            For{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Content Creators
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Film Makers
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              AI Content Creators
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Storytellers
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Screenwriters
-            </span>{" "}
-            — and every creative mind ready to make.
-          </p>
+              <p
+                className="animate-fade-up max-w-[640px]"
+                style={{
+                  fontSize: "0.95rem",
+                  color: "var(--ink-muted)",
+                  lineHeight: 1.65,
+                  animationDelay: "0.18s",
+                }}
+              >
+                Pakistan&apos;s Biggest{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  AI Film Making Competition
+                </span>
+                . Two days, three stages, one short film — built live with
+                generative AI. For{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Content Creators
+                </span>
+                ,{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Film Makers
+                </span>
+                ,{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  AI Content Creators
+                </span>
+                ,{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Storytellers
+                </span>
+                ,{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Screenwriters
+                </span>{" "}
+                — and every creative mind ready to make.
+              </p>
 
-          {/* Prize pill — placed ABOVE the CTA and sized up so the prize is
-              the loudest thing under the headline. */}
-          <div
-            className="mb-4 animate-fade-up"
-            style={{ animationDelay: "0.26s" }}
-          >
-            <div className="prize-pill prize-pill-xl">
-              <span className="dot" aria-hidden />
-              <span className="amount">~$5,000</span>
-              <span className="label">Prize Pool</span>
+              <div
+                className="animate-fade-up"
+                style={{ animationDelay: "0.22s" }}
+              >
+                <div className="prize-pill prize-pill-xl inline-flex justify-center items-center text-center">
+                  <span className="dot" aria-hidden />
+                  <span className="amount">~$5,000</span>
+                  <span className="label">Prize Pool</span>
+                </div>
+              </div>
+
+              <div
+                className="animate-fade-up"
+                style={{ animationDelay: "0.26s" }}
+              >
+                <a
+                  href={applyFormUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                >
+                  Apply Now
+                  <IconArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+
+              <div
+                className="meta-row animate-fade-up"
+                style={{ animationDelay: "0.3s" }}
+              >
+                <span>Invite-Only</span>
+                <span className="sep" aria-hidden />
+                <span>Two Days</span>
+                <span className="sep" aria-hidden />
+                <span>Three Stages</span>
+                <span className="sep" aria-hidden />
+                <span>Limited Slots . 150 Seats</span>
+              </div>
             </div>
-          </div>
 
-          <div
-            className="flex items-center gap-4 flex-wrap mb-5 animate-fade-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <a
-              href={applyFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Apply Now
-              <IconArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          <div
-            className="meta-row mb-12 animate-fade-up"
-            style={{ animationDelay: "0.34s" }}
-          >
-            <span>Invite-Only</span>
-            <span className="sep" aria-hidden />
-            <span>Two Days</span>
-            <span className="sep" aria-hidden />
-            <span>Three Stages</span>
-            <span className="sep" aria-hidden />
-            <span>Limited Slots . 150 Seats</span>
-          </div>
-
-          <div
-            className="flex items-end justify-between gap-6 flex-wrap animate-fade-up"
-            style={{ animationDelay: "0.38s" }}
-          >
-            <Countdown />
-            <Link
-              href="/details"
-              className="font-mono text-[0.78rem] uppercase tracking-[0.14em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--accent)] pb-1"
-            >
-              Read the full plan
-              <IconArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:min-w-[18rem] xl:min-w-[19rem] lg:max-w-[20rem] pt-6 lg:pt-0 lg:pl-8 xl:pl-10 lg:h-full lg:self-stretch">
+              <div className="flex flex-1 flex-col items-center justify-center w-full min-h-[100px]">
+                <Countdown centered stableWidth />
+              </div>
+              <div className="w-full shrink-0 flex justify-end pt-6 lg:pt-8">
+                <Link
+                  href="/details"
+                  className="font-mono text-[0.78rem] uppercase tracking-[0.14em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--accent)] animate-fade-up text-right whitespace-nowrap"
+                  style={{ animationDelay: "0.38s" }}
+                >
+                  Read the full plan
+                  <IconArrowRight className="w-4 h-4 shrink-0" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -246,7 +249,7 @@ export default function Home() {
                 <h2
                   className="title-display mt-6 descender-safe"
                   style={{
-                    fontSize: "clamp(2.6rem, 7vw, 6rem)",
+                    fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                     lineHeight: 1,
                     letterSpacing: "-0.005em",
                   }}
@@ -295,7 +298,7 @@ export default function Home() {
                 <h2
                   className="title-display mt-6 descender-safe"
                   style={{
-                    fontSize: "clamp(2.6rem, 7vw, 6rem)",
+                    fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                     lineHeight: 1,
                     letterSpacing: "-0.005em",
                   }}
@@ -387,7 +390,7 @@ export default function Home() {
             <h2
               className="title-display mt-6 mb-12 descender-safe"
               style={{
-                fontSize: "clamp(2.6rem, 7vw, 6rem)",
+                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
                 letterSpacing: "-0.005em",
               }}
@@ -456,7 +459,7 @@ export default function Home() {
             <h2
               className="title-display mt-6 mb-6 descender-safe"
               style={{
-                fontSize: "clamp(2.8rem, 8vw, 6.5rem)",
+                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
                 lineHeight: 1,
                 letterSpacing: "-0.005em",
               }}
