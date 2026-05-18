@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { Wordmark } from "@/components/Wordmark";
 
 export const metadata: Metadata = {
-  title: "AI Playground · Pakistan's Biggest Creative Hackathon · 6 June 2026",
+  title: "AI Playground · Pakistan's Biggest AI Film Making Competition · 6 June 2026",
   description:
-    "ImagineArt presents AI Playground, Pakistan's Biggest creative hackathon. Two days. Three stages. Approx $5,000 prize pool. A curated, invite-only event for storytellers, visual creators, and imaginative thinkers ready to meet generative AI as a collaborator. 6 June 2026.",
+    "ImagineArt presents AI Playground, Pakistan's Biggest AI Film Making Competition. Two days. Three stages. Approx $5,000 prize pool. For Content Creators, Film Makers, AI Content Creators, Storytellers, Screenwriters — and every creative mind. Limited to 150 seats. 6 June 2026.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     shortcut: "/favicon.png",

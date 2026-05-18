@@ -11,7 +11,7 @@ import { applyFormUrl, eventDateLabel } from "@/lib/site";
 export const metadata: Metadata = {
   title: "The Event · AI Playground · ImagineArt",
   description:
-    "The two-day schedule and selection criteria for AI Playground, Pakistan's Biggest creative hackathon. Approx $5,000 prize pool.",
+    "The two-day schedule and selection criteria for AI Playground, Pakistan's Biggest AI Film Making Competition. Approx $5,000 prize pool. Limited to 150 seats.",
 };
 
 const qualities = [
@@ -136,18 +136,56 @@ export default function Details() {
             </em>
           </h1>
           <p
+            className="mb-5"
+            style={{
+              fontSize: "0.98rem",
+              color: "var(--ink-muted)",
+              maxWidth: "660px",
+              lineHeight: 1.6,
+            }}
+          >
+            AI Playground is ImagineArt&apos;s curated, invite-only{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              AI Film Making Competition
+            </span>
+            . Pakistan&apos;s Biggest. A hands-on, two-day experience built for the
+            people who already make things.
+          </p>
+          <p
             className="mb-8"
             style={{
               fontSize: "0.98rem",
               color: "var(--ink-muted)",
-              maxWidth: "640px",
+              maxWidth: "660px",
               lineHeight: 1.6,
             }}
           >
-            AI Playground is ImagineArt&apos;s curated, invite-only creative
-            hackathon. Pakistan&apos;s Biggest. A hands-on experience for
-            storytellers, visual creators, and imaginative thinkers ready to meet
-            generative AI as a collaborator, not a threat.
+            For{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Content Creators
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Film Makers
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              AI Content Creators
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Storytellers
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Screenwriters
+            </span>{" "}
+            — and every creative mind ready to meet generative AI as a
+            collaborator, not a threat. Limited to{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              150 seats
+            </span>
+            .
           </p>
 
           <div className="flex items-center gap-3 flex-wrap mb-6">
@@ -396,12 +434,34 @@ export default function Details() {
               <p>
                 We&apos;re not looking for AI experts. We&apos;re looking for
                 storytellers. People who move fast, draw inspiration from anywhere,
-                and make something real when the pressure is on.
+                and make something real when the pressure is on. Only{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  150 seats
+                </span>{" "}
+                — the room stays small on purpose.
               </p>
               <p>
-                Filmmakers. Writers. Storytellers. Post-producers. Visual artists.
-                Designers. Animators. Creators who already work with AI, and ones
-                who haven&apos;t, but know it&apos;s time.
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Content Creators
+                </span>
+                .{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Film Makers
+                </span>
+                .{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  AI Content Creators
+                </span>
+                .{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Storytellers
+                </span>
+                .{" "}
+                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  Screenwriters
+                </span>
+                . And every creative mind ready to use generative AI as a
+                collaborator, not a threat.
               </p>
             </div>
           </ScrollReveal>
@@ -484,7 +544,11 @@ export default function Details() {
               }}
             >
               Every submission is reviewed personally. Approx{" "}
-              <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. If you&apos;re the right fit, you&apos;ll hear from us.
+              <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films, and only{" "}
+              <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+                150 seats
+              </span>{" "}
+              in the room. If you&apos;re the right fit, you&apos;ll hear from us.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>

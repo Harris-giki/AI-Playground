@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Countdown } from "@/components/Countdown";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { HeroBanner } from "@/components/HeroBanner";
 import { IconArrowRight } from "@/components/icons";
 import { applyFormUrl, eventDateLabel } from "@/lib/site";
 
@@ -102,58 +103,67 @@ export default function Home() {
         </aside>
 
         <div className="relative z-10 max-w-[1200px] mx-auto w-full lg:pr-24">
-          <div className="flex items-center gap-4 flex-wrap mb-6 animate-fade-up">
-            <p className="label-eyebrow">
-              ImagineArt presents · {eventDateLabel}
-            </p>
-            <span className="live-chip lg:hidden">
-              <span className="dot" />
-              <strong>Live</strong> · Accepting
-            </span>
-          </div>
+          <p className="label-eyebrow mb-6 animate-fade-up">
+            ImagineArt presents · {eventDateLabel}
+          </p>
 
-          {/* HERO HEADLINE — poster-scale. "AI" is solid signal-orange,
-              "PLAYGROUND" is set in outline (the brand's hollow display
-              treatment from the reference poster). */}
-          <h1
-            className="title-display animate-fade-up mb-6 descender-safe"
-            style={{
-              fontSize: "clamp(3.6rem, 14vw, 11rem)",
-              lineHeight: 1,
-              letterSpacing: "-0.005em",
-              animationDelay: "0.1s",
-            }}
-          >
-            <span style={{ color: "var(--accent)" }}>AI</span>{" "}
-            <em
-              className="text-outline accent"
-              style={{ WebkitTextStrokeWidth: "0.022em" }}
-            >
-              Playground
-            </em>
-          </h1>
+          {/* HERO HEADLINE — pennant lockup. Swaps between dark / light
+              source images via CSS so theme toggling is flash-free. */}
+          <HeroBanner />
 
-          {/* Sub-line — small, minimal, mono. Echoes the body-copy block in
-              the reference. */}
           <p
-            className="mb-9 animate-fade-up max-w-[520px]"
+            className="mb-9 animate-fade-up max-w-[640px]"
             style={{
               fontSize: "0.95rem",
               color: "var(--ink-muted)",
-              lineHeight: 1.55,
+              lineHeight: 1.65,
               animationDelay: "0.18s",
             }}
           >
             Pakistan&apos;s Biggest{" "}
             <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Creative Hackathon
+              AI Film Making Competition
             </span>
-            . Two days, three stages, one short film — built live with generative AI.
+            . Two days, three stages, one short film — built live with generative AI.{" "}
+            For{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Content Creators
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Film Makers
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              AI Content Creators
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Storytellers
+            </span>
+            ,{" "}
+            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
+              Screenwriters
+            </span>{" "}
+            — and every creative mind ready to make.
           </p>
+
+          {/* Prize pill — placed ABOVE the CTA and sized up so the prize is
+              the loudest thing under the headline. */}
+          <div
+            className="mb-4 animate-fade-up"
+            style={{ animationDelay: "0.26s" }}
+          >
+            <div className="prize-pill prize-pill-xl">
+              <span className="dot" aria-hidden />
+              <span className="amount">~$5,000</span>
+              <span className="label">Prize Pool</span>
+            </div>
+          </div>
 
           <div
             className="flex items-center gap-4 flex-wrap mb-5 animate-fade-up"
-            style={{ animationDelay: "0.26s" }}
+            style={{ animationDelay: "0.3s" }}
           >
             <a
               href={applyFormUrl}
@@ -164,16 +174,11 @@ export default function Home() {
               Apply Now
               <IconArrowRight className="w-4 h-4" />
             </a>
-            <div className="prize-pill">
-              <span className="dot" aria-hidden />
-              <span className="amount">~$5,000</span>
-              <span className="label">Prize Pool</span>
-            </div>
           </div>
 
           <div
             className="meta-row mb-12 animate-fade-up"
-            style={{ animationDelay: "0.3s" }}
+            style={{ animationDelay: "0.34s" }}
           >
             <span>Invite-Only</span>
             <span className="sep" aria-hidden />
@@ -181,12 +186,12 @@ export default function Home() {
             <span className="sep" aria-hidden />
             <span>Three Stages</span>
             <span className="sep" aria-hidden />
-            <span>Six Spaces</span>
+            <span>Limited Slots . 150 Seats</span>
           </div>
 
           <div
             className="flex items-end justify-between gap-6 flex-wrap animate-fade-up"
-            style={{ animationDelay: "0.34s" }}
+            style={{ animationDelay: "0.38s" }}
           >
             <Countdown />
             <Link
@@ -214,7 +219,7 @@ export default function Home() {
               <span className="star" />
               <em>AI Playground</em>
               <span className="star" />
-              <span>Pakistan&apos;s Biggest Creative Hackathon</span>
+              <span>Pakistan&apos;s Biggest AI Film Making Competition</span>
               <span className="star" />
               <em>6 June 2026</em>
               <span className="star" />
@@ -473,7 +478,9 @@ export default function Home() {
                 fontSize: "0.98rem",
               }}
             >
-              Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest creative hackathon, and approx{" "}
+              Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest AI Film Making Competition — only{" "}
+              <span style={{ color: "var(--accent)", fontWeight: 500 }}>150 seats</span>{" "}
+              in the room, and approx{" "}
               <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. Be honest. That&apos;s the only rule.
             </p>
           </ScrollReveal>
