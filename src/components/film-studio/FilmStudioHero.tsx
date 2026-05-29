@@ -36,7 +36,7 @@ export function FilmStudioHero() {
         <video
           ref={videoRef}
           className="fs-hero-video h-full w-full object-cover"
-          src="/brand/showcase.mp4"
+          src="/brand/banner.mp4"
           autoPlay
           muted
           loop
