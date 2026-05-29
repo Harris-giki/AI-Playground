@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Countdown } from "@/components/Countdown";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { HeroBanner } from "@/components/HeroBanner";
+import { HeroVideoBg } from "@/components/HeroVideoBg";
+import { SegmentCard } from "@/components/SegmentCard";
 import { IconArrowRight } from "@/components/icons";
 import { applyFormUrl, eventDateLabel } from "@/lib/site";
 
@@ -64,17 +66,17 @@ export default function Home() {
     <>
       {/* HERO — sized to fit on one screen ───────────── */}
       <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden px-6 sm:px-12 pt-24 pb-20 hero-rule">
+        <HeroVideoBg />
         <div className="hero-grain" aria-hidden />
         <div className="hero-dotgrid" aria-hidden />
 
-        {/* Two ambient orange orbs — top-right and bottom-left. Removed the
-            third "centre" orb because it competed with the pennant. */}
+        {/* Soft ambient glow — kept low so sprint.mp4 reads through */}
         <div
-          className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-25 animate-float top-[-180px] right-[-100px]"
+          className="absolute w-[520px] h-[520px] rounded-full blur-[140px] opacity-15 animate-float top-[-180px] right-[-100px] z-[1]"
           style={{ background: "var(--accent-dim)" }}
         />
         <div
-          className="absolute w-[460px] h-[460px] rounded-full blur-[130px] opacity-15 animate-float bottom-[-180px] left-[-60px]"
+          className="absolute w-[460px] h-[460px] rounded-full blur-[130px] opacity-10 animate-float bottom-[-180px] left-[-60px] z-[1]"
           style={{ background: "var(--accent-glow)", animationDelay: "-4s" }}
         />
 
@@ -92,107 +94,79 @@ export default function Home() {
         </aside>
 
         <div className="relative z-10 max-w-[1200px] mx-auto w-full lg:pr-24">
-          <p className="label-eyebrow mb-6 animate-fade-up">
-            ImagineArt presents · {eventDateLabel}
-          </p>
+          <div className="hero-content-wrap">
+            <p className="label-eyebrow mb-5 sm:mb-6 animate-fade-up">
+              ImagineArt presents · {eventDateLabel}
+            </p>
 
-          {/* Main + right strip: countdown only in the right column, centered. */}
-          <div className="hero-split grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-12 xl:gap-14 lg:items-stretch mb-10 lg:mb-12">
-            <div className="flex flex-col gap-5 min-w-0">
-              <HeroBanner />
+            <div className="hero-split grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 xl:gap-12 lg:items-stretch">
+              <div className="hero-main-panel flex flex-col gap-4 sm:gap-5 min-w-0">
+                <HeroBanner />
 
-              <p
-                className="animate-fade-up max-w-[640px]"
-                style={{
-                  fontSize: "0.95rem",
-                  color: "var(--ink-muted)",
-                  lineHeight: 1.65,
-                  animationDelay: "0.18s",
-                }}
-              >
-                Pakistan&apos;s Biggest{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  AI Film Making Competition
-                </span>
-                . Two days, three stages, one short film — built live with
-                generative AI. For{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Content Creators
-                </span>
-                ,{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Film Makers
-                </span>
-                ,{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  AI Content Creators
-                </span>
-                ,{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Storytellers
-                </span>
-                ,{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Screenwriters
-                </span>{" "}
-                — and every creative mind ready to make.
-              </p>
+                <p
+                  className="hero-body-copy animate-fade-up max-w-[580px]"
+                  style={{ animationDelay: "0.18s" }}
+                >
+                  Pakistan&apos;s Biggest{" "}
+                  <span className="hero-accent">AI Film Making Competition</span>
+                  . Two days, three stages, one short film, built live with
+                  generative AI. For{" "}
+                  <span className="hero-accent">Content Creators</span>,{" "}
+                  <span className="hero-accent">Film Makers</span>,{" "}
+                  <span className="hero-accent">AI Content Creators</span>,{" "}
+                  <span className="hero-accent">Storytellers</span>,{" "}
+                  <span className="hero-accent">Screenwriters</span>, and every
+                  creative mind ready to make.
+                </p>
 
-              <div
-                className="animate-fade-up"
-                style={{ animationDelay: "0.22s" }}
-              >
-                <div className="prize-pill prize-pill-xl inline-flex justify-center items-center text-center">
-                  <span className="dot" aria-hidden />
-                  <span className="amount">~$5,000</span>
-                  <span className="label">Prize Pool</span>
+                <div
+                  className="animate-fade-up flex flex-wrap items-center gap-3"
+                  style={{ animationDelay: "0.22s" }}
+                >
+                  <div className="prize-pill prize-pill-xl prize-pill-hero inline-flex items-center">
+                    <span className="dot" aria-hidden />
+                    <span className="amount">~$5,000</span>
+                    <span className="label">Prize Pool</span>
+                  </div>
+                  <a
+                    href={applyFormUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                  >
+                    Apply Now
+                    <IconArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+
+                <div
+                  className="meta-row animate-fade-up"
+                  style={{ animationDelay: "0.26s" }}
+                >
+                  <span>Invite-Only</span>
+                  <span className="sep" aria-hidden />
+                  <span>Two Days</span>
+                  <span className="sep" aria-hidden />
+                  <span>Three Stages</span>
+                  <span className="sep" aria-hidden />
+                  <span>Limited Slots . 150 Seats</span>
                 </div>
               </div>
 
-              <div
-                className="animate-fade-up"
-                style={{ animationDelay: "0.26s" }}
-              >
-                <a
-                  href={applyFormUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                >
-                  Apply Now
-                  <IconArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-
-              <div
-                className="meta-row animate-fade-up"
-                style={{ animationDelay: "0.3s" }}
-              >
-                <span>Invite-Only</span>
-                <span className="sep" aria-hidden />
-                <span>Two Days</span>
-                <span className="sep" aria-hidden />
-                <span>Three Stages</span>
-                <span className="sep" aria-hidden />
-                <span>Limited Slots . 150 Seats</span>
-              </div>
-            </div>
-
-            {/* Right strip: countdown sits inside a soft glass panel so it
-                reads as a deliberate card, not a floating cluster. */}
-            <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:min-w-[19rem] xl:min-w-[20rem] lg:max-w-[22rem] lg:h-full lg:self-stretch">
-              <div className="glass-soft flex flex-1 flex-col items-center justify-center w-full px-6 py-7 lg:py-10 min-h-[180px]">
-                <Countdown centered stableWidth />
-              </div>
-              <div className="w-full shrink-0 flex justify-end pt-5 lg:pt-6">
-                <Link
-                  href="/details"
-                  className="font-mono text-[0.78rem] uppercase tracking-[0.14em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--accent)] animate-fade-up text-right whitespace-nowrap"
-                  style={{ animationDelay: "0.38s" }}
-                >
-                  Read the full plan
-                  <IconArrowRight className="w-4 h-4 shrink-0" />
-                </Link>
+              <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:w-auto lg:min-w-[13.5rem] xl:min-w-[14.5rem] lg:max-w-[15.5rem] lg:self-center">
+                <div className="hero-countdown-card flex flex-col items-center justify-center w-full px-5 py-5 sm:px-6 sm:py-6">
+                  <Countdown centered stableWidth compact />
+                </div>
+                <div className="w-full shrink-0 flex justify-end pt-4 lg:pt-5">
+                  <Link
+                    href="/details"
+                    className="font-mono text-[0.72rem] uppercase tracking-[0.14em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--accent)] animate-fade-up text-right whitespace-nowrap"
+                    style={{ animationDelay: "0.38s" }}
+                  >
+                    Read the full plan
+                    <IconArrowRight className="w-3.5 h-3.5 shrink-0" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -231,10 +205,10 @@ export default function Home() {
       </div>
 
       {/* BELIEF / PHILOSOPHY ───────────────────────── */}
-      <section className="px-6 sm:px-12 py-28">
+      <section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div className="philosophy-block grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
               <div>
                 <div className="section-head mb-6">
                   <span className="section-index">
@@ -284,10 +258,10 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-divider mx-6 sm:mx-12" />
+      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* STAGES PREVIEW ────────────────────────────── */}
-      <section className="px-6 sm:px-12 py-28">
+      <section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="flex items-start justify-between gap-6 flex-wrap mb-10">
@@ -393,10 +367,10 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-divider mx-6 sm:mx-12" />
+      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* SEGMENTS ──────────────────────────────────── */}
-      <section className="px-6 sm:px-12 py-28">
+      <section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
@@ -423,54 +397,25 @@ export default function Home() {
 
           <ScrollReveal>
             <div className="segment-grid">
-              {segments.map((s) => (
-                <div key={s.name} className="segment-card">
-                  <span
-                    className="font-mono uppercase block"
-                    style={{
-                      fontSize: "0.68rem",
-                      letterSpacing: "0.22em",
-                      color: "var(--accent)",
-                      marginBottom: "0.4rem",
-                    }}
-                  >
-                    {s.tag}
-                  </span>
-                  <div
-                    className="segment-name font-display descender-safe uppercase"
-                    style={{
-                      fontSize: "1.85rem",
-                      fontWeight: 400,
-                      lineHeight: 1,
-                      letterSpacing: "0.01em",
-                      color: "var(--ink)",
-                      marginBottom: "0.45rem",
-                    }}
-                  >
-                    {s.name}
-                  </div>
-                  <p
-                    className="leading-[1.6]"
-                    style={{
-                      color: "var(--ink-muted)",
-                      maxWidth: "none",
-                      fontSize: "0.92rem",
-                    }}
-                  >
-                    {s.desc}
-                  </p>
-                </div>
+              {segments.map((s, i) => (
+                <SegmentCard
+                  key={s.name}
+                  tag={s.tag}
+                  name={s.name}
+                  desc={s.desc}
+                  index={i}
+                />
               ))}
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      <div className="h-divider mx-6 sm:mx-12" />
+      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* CTA ──────────────────────────────────────── */}
       <section
-        className="cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
+        className="site-section cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
         <div className="max-w-[960px] mx-auto relative z-10">

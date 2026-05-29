@@ -108,7 +108,19 @@ export default function Details() {
   return (
     <>
       {/* PAGE HERO ─────────────────────────────────── */}
-      <section className="relative pt-[180px] pb-16 px-6 sm:px-12 overflow-hidden hero-rule">
+      <section className="relative pt-[180px] pb-16 px-6 sm:px-12 overflow-hidden hero-rule details-hero">
+        <div className="details-hero__video" aria-hidden>
+          <video
+            className="details-hero__video-media"
+            src="/brand/sprint.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          />
+          <div className="details-hero__video-scrim" />
+        </div>
         <div className="hero-grain" aria-hidden />
         <div
           className="absolute w-[460px] h-[460px] rounded-full blur-[140px] opacity-15 animate-float top-[-200px] left-1/2 -translate-x-1/2"
@@ -256,11 +268,11 @@ export default function Details() {
         </div>
       </section>
 
-      <div className="h-divider mx-6 sm:mx-12" />
+      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* SCHEDULE ─────────────────────────────────── */}
       <section
-        className="px-6 sm:px-12 py-28"
+        className="site-section px-6 sm:px-12 py-28"
         style={{ background: "var(--bg-raised)" }}
       >
         <div className="max-w-[1200px] mx-auto">
@@ -407,10 +419,10 @@ export default function Details() {
         </div>
       </section>
 
-      <div className="h-divider mx-6 sm:mx-12" />
+      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* WHO WE WANT ─────────────────────────────── */}
-      <section className="px-6 sm:px-12 py-28">
+      <section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
@@ -515,11 +527,11 @@ export default function Details() {
         </div>
       </section>
 
-      <div className="h-divider mx-6 sm:mx-12" />
+      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* CTA ─────────────────────────────────────── */}
       <section
-        className="cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
+        className="site-section cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
         <div className="max-w-[960px] mx-auto relative z-10">

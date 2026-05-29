@@ -11,6 +11,7 @@ import { applyFormUrl } from "@/lib/site";
 const links = [
   { href: "/", label: "Home" },
   { href: "/details", label: "The Event" },
+  { href: "/film-studio", label: "Film Studio" },
 ];
 
 export function Navbar() {

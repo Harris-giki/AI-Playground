@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Wordmark } from "@/components/Wordmark";
+import { SiteChrome } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "AI Playground · Pakistan's Biggest AI Film Making Competition · 6 June 2026",
@@ -45,6 +46,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider>
+          <SiteChrome />
           <Wordmark />
           <Navbar />
           <main>{children}</main>

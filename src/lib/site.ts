@@ -23,3 +23,6 @@ export const applyFormUrl =
 export const instagramUrl = "https://www.instagram.com/imagineartofficial/";
 export const linkedinUrl = "https://linkedin.com/company/imagineart";
 export const imagineArtUrl = "https://imagine.art";
+
+/** Film Studio product URL. */
+export const filmStudioUrl = "https://imagine.art/film-studio";
