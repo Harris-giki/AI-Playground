@@ -2086,6 +2086,20 @@ main {
 }
 
 /* Horizontal film showcase row */
+.fs-film-showcase {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.fs-film-showcase__track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  padding-bottom: 0.5rem;
+}
+
 .fs-film-card {
   display: block;
   width: clamp(220px, 28vw, 320px);
@@ -2165,6 +2179,7 @@ main {
   font-weight: 500;
   line-height: 1.35;
   color: rgba(255, 255, 255, 0.88);
+  text-align: center;
   transition: color 0.2s ease;
 }
 

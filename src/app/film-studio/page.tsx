@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { filmStudioUrl } from "@/lib/site";
+import { filmStudioTutorialUrl } from "@/lib/site";
 import { FilmStudioHero } from "@/components/film-studio/FilmStudioHero";
 import { FilmShowcase } from "@/components/film-studio/FilmShowcase";
 import { IconArrowRight } from "@/components/icons";
@@ -171,17 +171,16 @@ export default function FilmStudioPage() {
             Ready to direct?
           </h2>
           <p className="mx-auto mb-8 max-w-[520px] text-[0.96rem] leading-[1.65] text-white/60">
-            Open Film Studio in your browser and start with a practice project.
-            If you only have ten minutes, that is enough to generate your first
-            frame.
+            New to Film Studio? Watch this walkthrough to make your first film
+            in the browser — from your opening frame through to a finished short.
           </p>
           <a
-            href={filmStudioUrl}
+            href={filmStudioTutorialUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="fs-btn fs-btn-primary inline-flex"
           >
-            Launch Film Studio
+            Learn More
             <IconArrowRight className="h-4 w-4" />
           </a>
         </div>

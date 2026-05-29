@@ -10,13 +10,13 @@ export function FilmShowcase() {
 
   return (
     <>
-      <section className="fs-row px-6 sm:px-12">
-        <div className="fs-row-track -mx-6 flex gap-3 overflow-x-auto px-6 pb-2 sm:-mx-12 sm:gap-4 sm:px-12">
+      <section className="fs-row fs-film-showcase px-6 sm:px-12">
+        <div className="fs-film-showcase__track">
           {showcaseFilms.map((film) => (
             <button
               key={film.id}
               type="button"
-              className="fs-film-card group shrink-0 text-left"
+              className="fs-film-card group shrink-0 text-center"
               onClick={() => setActiveFilm(film)}
               aria-label={`Play ${film.title}`}
             >
