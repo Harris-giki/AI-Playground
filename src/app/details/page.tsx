@@ -108,7 +108,7 @@ export default function Details() {
   return (
     <>
       {/* PAGE HERO ─────────────────────────────────── */}
-      <section className="relative pt-[180px] pb-16 px-6 sm:px-12 overflow-hidden hero-rule details-hero">
+      <section className="relative pt-28 sm:pt-32 pb-12 sm:pb-14 px-6 sm:px-12 overflow-hidden hero-rule details-hero">
         <div className="details-hero__video" aria-hidden>
           <video
             className="details-hero__video-media"
