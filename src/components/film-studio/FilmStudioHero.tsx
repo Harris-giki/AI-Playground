@@ -53,6 +53,7 @@ export function FilmStudioHero() {
             <button
               type="button"
               onClick={togglePlay}
+              data-hover={playing ? "PAUSE" : "PLAY"}
               className="fs-control-btn"
               aria-label={playing ? "Pause video" : "Play video"}
             >
@@ -61,6 +62,7 @@ export function FilmStudioHero() {
             <button
               type="button"
               onClick={toggleMute}
+              data-hover={muted ? "UNMUTE" : "MUTE"}
               className="fs-control-btn"
               aria-label={muted ? "Unmute video" : "Mute video"}
             >
@@ -77,12 +79,13 @@ export function FilmStudioHero() {
               href={filmStudioUrl}
               target="_blank"
               rel="noopener noreferrer"
+              data-hover="OPEN"
               className="fs-btn fs-btn-primary"
             >
               <IconPlay className="h-4 w-4" />
               Open Film Studio
             </a>
-            <a href="#about" className="fs-btn fs-btn-secondary">
+            <a href="#about" data-hover="LEARN" className="fs-btn fs-btn-secondary">
               About the product
             </a>
           </div>

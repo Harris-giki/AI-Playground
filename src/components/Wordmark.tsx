@@ -19,6 +19,7 @@ export function Wordmark() {
   return (
     <Link
       href="/"
+      data-hover="HOME"
       aria-label="AI Playground, by ImagineArt"
       style={{
         position: "fixed",

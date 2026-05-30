@@ -53,10 +53,10 @@ export default function FilmStudioPage() {
               <p className="mb-3 font-mono text-[0.72rem] uppercase tracking-[0.28em] text-[#ff5a2a]">
                 About Film Studio
               </p>
-              <h2 className="title-display mb-5 text-[clamp(2rem,4.5vw,3.2rem)] leading-[0.95] text-white">
+              <h2 className="title-display mb-5 text-white">
                 A complete production environment for visual storytellers.
               </h2>
-              <p className="text-[0.96rem] leading-[1.7] text-white/68">
+              <p className="prose-body mb-5 text-white/68">
                 Real cinematography controls — cameras, lenses, focal lengths,
                 apertures, movements, genres — paired with generative AI. Runs
                 in your browser, no install. Write prompts like a director&apos;s
@@ -89,7 +89,7 @@ export default function FilmStudioPage() {
           <p className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.24em] text-white/40">
             The workspace
           </p>
-          <h2 className="title-display mb-10 text-[clamp(1.8rem,3.5vw,2.6rem)] text-white">
+          <h2 className="title-display mb-10 text-white">
             Four actions. One pipeline.
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -115,10 +115,10 @@ export default function FilmStudioPage() {
                 <p className="mb-3 font-mono text-[0.68rem] uppercase tracking-[0.24em] text-[#ff5a2a]">
                   The Cinematographer&apos;s Toolkit
                 </p>
-                <h2 className="title-display mb-5 text-[clamp(1.75rem,3.2vw,2.4rem)] leading-[0.98] text-white">
+                <h2 className="title-lg mb-5 text-white">
                   Four dials that shape every frame.
                 </h2>
-                <p className="text-[0.96rem] leading-[1.72] text-white/68">
+                <p className="prose-body text-white/68">
                   Camera body sets the underlying texture — digital cleanliness,
                   film grain, or large-format scale. Lens sets optical character:
                   anamorphic widescreen flares, vintage swirl, surgical macro detail.
@@ -156,7 +156,7 @@ export default function FilmStudioPage() {
           <p className="mb-2 font-mono text-[0.68rem] uppercase tracking-[0.24em] text-white/40">
             Video library
           </p>
-          <h2 className="title-display text-[clamp(1.8rem,3.5vw,2.6rem)] text-white">
+          <h2 className="title-display text-white">
             Showcase
           </h2>
         </div>
@@ -167,10 +167,10 @@ export default function FilmStudioPage() {
       {/* Bottom CTA */}
       <section className="fs-cta px-6 pb-28 sm:px-12">
         <div className="mx-auto max-w-[900px] text-center">
-          <h2 className="title-display mb-4 text-[clamp(2rem,4vw,3rem)] text-white">
+          <h2 className="title-display mb-4 text-white">
             Ready to direct?
           </h2>
-          <p className="mx-auto mb-8 max-w-[520px] text-[0.96rem] leading-[1.65] text-white/60">
+          <p className="prose-body mx-auto mb-8 max-w-[520px] text-white/60">
             New to Film Studio? Watch this walkthrough to make your first film
             in the browser — from your opening frame through to a finished short.
           </p>
@@ -178,6 +178,7 @@ export default function FilmStudioPage() {
             href={filmStudioTutorialUrl}
             target="_blank"
             rel="noopener noreferrer"
+            data-hover="LEARN"
             className="fs-btn fs-btn-primary inline-flex"
           >
             Learn More

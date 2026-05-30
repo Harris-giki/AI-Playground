@@ -11,31 +11,37 @@ const segments = [
   {
     tag: "Main Jam",
     name: "The Playground",
+    hover: "ENTER",
     desc: "You receive a prompt. You build a world. Using ImagineArt, you conceptualise and generate a short film from scratch. Live, under time, with a team you just met.",
   },
   {
     tag: "Learn",
     name: "The Workshop",
+    hover: "LEARN",
     desc: "Hands-on sessions running parallel for registered creators. Go deep on tools, techniques, and process with people who live inside this space.",
   },
   {
     tag: "Coffee & Social",
     name: "Korner",
+    hover: "MEET",
     desc: "Coffee. Conversation. No agenda. The best ideas at any creative event happen here, between the sessions, in the in-between.",
   },
   {
     tag: "Photobooth",
     name: "Fotopia",
+    hover: "SHOOT",
     desc: "A photobooth that doesn't behave. AI-powered, unpredictable, and worth the queue. Something to remember the day by.",
   },
   {
     tag: "Analogue",
     name: "Leave a piece of you behind",
+    hover: "MARK",
     desc: "An empty canvas. Real paint. No prompts. Just you. In a room full of machines, this is the most human thing we do.",
   },
   {
     tag: "Rec. Activities",
     name: "Play",
+    hover: "PLAY",
     desc: "Table tennis, Jenga, and whatever else the room decides. Creative people need to move, so we make space for that.",
   },
 ];
@@ -65,7 +71,10 @@ export default function Home() {
   return (
     <>
       {/* HERO — sized to fit on one screen ───────────── */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden px-6 sm:px-12 pt-24 pb-20 hero-rule">
+      <section
+        data-scroll-section
+        className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden px-6 sm:px-12 pt-24 pb-20 hero-rule"
+      >
         <HeroVideoBg />
         <div className="hero-grain" aria-hidden />
         <div className="hero-dotgrid" aria-hidden />
@@ -132,6 +141,7 @@ export default function Home() {
                     href={applyFormUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-hover="APPLY"
                     className="btn-primary"
                   >
                     Apply Now
@@ -160,6 +170,7 @@ export default function Home() {
                 <div className="w-full shrink-0 flex justify-end pt-4 lg:pt-5">
                   <Link
                     href="/details"
+                    data-hover="READ"
                     className="font-mono text-[0.72rem] uppercase tracking-[0.14em] inline-flex items-center gap-2 hover:gap-3 transition-all themed-ink-muted hover:text-[var(--accent)] animate-fade-up text-right whitespace-nowrap"
                     style={{ animationDelay: "0.38s" }}
                   >
@@ -182,15 +193,15 @@ export default function Home() {
               <span className="star" />
               <em>AI Playground</em>
               <span className="star" />
-              <span>Pakistan&apos;s Biggest AI Film Making Competition</span>
+              <span className="out">Film Making</span>
               <span className="star" />
               <em>6 June 2026</em>
               <span className="star" />
-              <span>Two Days · Three Stages · Six Spaces</span>
+              <span>Two Days · Three Stages</span>
               <span className="star" />
               <span className="accent">$5,000 Prize Pool</span>
               <span className="star" />
-              <span>Invite-Only</span>
+              <span className="out">Invite-Only</span>
               <span className="star" />
               <em>Apply Now</em>
               <span className="star" />
@@ -200,7 +211,7 @@ export default function Home() {
       </div>
 
       {/* BELIEF / PHILOSOPHY ───────────────────────── */}
-      <section className="site-section px-6 sm:px-12 py-28">
+      <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="philosophy-block grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
@@ -213,13 +224,13 @@ export default function Home() {
                   </span>
                   <span className="label-eyebrow">The Philosophy</span>
                 </div>
-                <h2 className="title-display mt-2 descender-safe">
+                <h2 className="title-display descender-safe">
                   AI doesn&apos;t replace people.
                   <br />
                   <em>It replaces outdated ways of working.</em>
                 </h2>
               </div>
-              <div className="flex flex-col gap-4" style={{ color: "var(--ink-muted)" }}>
+              <div className="prose-body flex flex-col gap-4 max-w-[540px]">
                 <p>
                   There&apos;s a conversation happening in every studio, agency, and
                   creative bedroom in Pakistan right now. You know the one.{" "}
@@ -249,7 +260,7 @@ export default function Home() {
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* STAGES PREVIEW ────────────────────────────── */}
-      <section className="site-section px-6 sm:px-12 py-28">
+      <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="flex items-start justify-between gap-6 flex-wrap mb-10">
@@ -262,7 +273,7 @@ export default function Home() {
                   </span>
                   <span className="label-eyebrow">The Structure</span>
                 </div>
-                <h2 className="title-display mt-2 descender-safe">
+                <h2 className="title-display descender-safe">
                   Two days. Three stages.
                   <br />
                   <em
@@ -286,7 +297,7 @@ export default function Home() {
           <div className="stages-shell">
             {stages.map((t, i) => (
               <ScrollReveal key={t.num} delay={i * 0.05}>
-                <div className="stage-row">
+                <div className="stage-row" data-hover={`STAGE ${String(i + 1).padStart(2, "0")}`}>
                   <div
                     className="stage-index"
                     aria-hidden
@@ -294,27 +305,13 @@ export default function Home() {
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   <div>
-                    <p
-                      className="font-mono uppercase mb-2"
-                      style={{
-                        color: "var(--accent)",
-                        letterSpacing: "0.22em",
-                        fontSize: "0.66rem",
-                      }}
-                    >
+                    <p className="label-stage mb-2">
                       Stage {String(i + 1).padStart(2, "0")}
                     </p>
-                    <h3 className="title-md descender-safe mb-[0.7rem]">
+                    <h3 className="title-lg descender-safe mb-[0.7rem]">
                       {t.title}
                     </h3>
-                    <p
-                      className="leading-[1.65]"
-                      style={{
-                        color: "var(--ink-muted)",
-                        maxWidth: "640px",
-                        fontSize: "0.94rem",
-                      }}
-                    >
+                    <p className="prose-body-sm max-w-[540px] mb-[1.8rem]">
                       {t.desc}
                     </p>
                     <div className="flex gap-2 flex-wrap mt-5">
@@ -341,7 +338,7 @@ export default function Home() {
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* SEGMENTS ──────────────────────────────────── */}
-      <section className="site-section px-6 sm:px-12 py-28">
+      <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
@@ -352,7 +349,7 @@ export default function Home() {
               </span>
               <span className="label-eyebrow">What happens inside</span>
             </div>
-            <h2 className="title-display mt-2 mb-12 descender-safe">
+            <h2 className="title-display mb-12 descender-safe">
               Six spaces.
               <br />
               <em>One energy.</em>
@@ -367,6 +364,7 @@ export default function Home() {
                   tag={s.tag}
                   name={s.name}
                   desc={s.desc}
+                  hover={s.hover}
                   index={i}
                 />
               ))}
@@ -379,6 +377,7 @@ export default function Home() {
 
       {/* CTA ──────────────────────────────────────── */}
       <section
+        data-scroll-section
         className="site-section cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
@@ -395,7 +394,7 @@ export default function Home() {
                   The room is small. The bar is high.
                 </span>
               </div>
-              <h2 className="title-display mt-2 mb-6 descender-safe">
+              <h2 className="title-display mb-6 descender-safe">
                 Ready?
                 <br />
                 <em
@@ -405,16 +404,9 @@ export default function Home() {
                   Tell us who you are.
                 </em>
               </h2>
-              <p
-                className="mx-auto mb-8 leading-[1.65]"
-                style={{
-                  color: "var(--ink-muted)",
-                  maxWidth: "560px",
-                  fontSize: "0.98rem",
-                }}
-              >
+              <p className="prose-cta mx-auto mb-8 max-w-[660px]">
                 Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest AI Film Making Competition — only{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>150 seats</span>{" "}
+                <span className="text-accent">150 seats</span>{" "}
                 in the room, and{" "}
                 <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. Be honest. That&apos;s the only rule.
               </p>
@@ -423,12 +415,13 @@ export default function Home() {
                   href={applyFormUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-hover="APPLY"
                   className="btn-primary"
                 >
                   Apply to AI Playground
                   <IconArrowRight className="w-4 h-4" />
                 </a>
-                <Link href="/details" className="btn-ghost">
+                <Link href="/details" data-hover="READ" className="btn-ghost">
                   Read more
                 </Link>
               </div>

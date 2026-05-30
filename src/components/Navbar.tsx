@@ -9,9 +9,9 @@ import { IconSun, IconMoon } from "./icons";
 import { applyFormUrl } from "@/lib/site";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/details", label: "The Event" },
-  { href: "/film-studio", label: "Film Studio" },
+  { href: "/", label: "Home", hover: "HOME" },
+  { href: "/details", label: "The Event", hover: "EVENT" },
+  { href: "/film-studio", label: "Film Studio", hover: "STUDIO" },
 ];
 
 export function Navbar() {
@@ -31,7 +31,8 @@ export function Navbar() {
       {themeToggleEnabled ? (
         <button
           onClick={toggle}
-          className="fixed top-5 right-6 z-[100] w-9 h-9 rounded-full flex items-center justify-center transition-colors shrink-0 glass-edge"
+          data-hover="THEME"
+          className="nav-theme-toggle fixed top-5 right-6 z-[100] w-9 h-9 rounded-full flex items-center justify-center transition-colors shrink-0 glass-edge"
           style={{ color: "var(--ink)" }}
           aria-label="Toggle theme"
         >
@@ -53,7 +54,8 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="relative px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-colors"
+                  data-hover={link.hover}
+                  className="nav-pill__link relative px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-colors"
                   style={{
                     color: active ? "var(--ink)" : "var(--ink-muted)",
                     background: active ? "var(--bg-card)" : "transparent",
@@ -67,6 +69,7 @@ export function Navbar() {
               href={applyFormUrl}
               target="_blank"
               rel="noopener noreferrer"
+              data-hover="APPLY"
               className="ml-0.5 px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-all hover:brightness-110"
               style={{
                 color: "#ffffff",
@@ -143,7 +146,8 @@ export function Navbar() {
               <Link
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] transition-colors"
+                data-hover={link.hover}
+                className="nav-pill__link block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] transition-colors"
                 style={{
                   color: active ? "var(--ink)" : "var(--ink-muted)",
                   background: active ? "var(--bg-card)" : "transparent",
@@ -160,6 +164,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
+            data-hover="APPLY"
             className="block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] text-center transition-all hover:brightness-110"
             style={{
               color: "#ffffff",

@@ -6,6 +6,8 @@ import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Wordmark } from "@/components/Wordmark";
 import { SiteChrome } from "@/components/SiteChrome";
+import { CustomCursor } from "@/components/CustomCursor";
+import { FlagWaveFilter } from "@/components/FlagWaveFilter";
 
 export const metadata: Metadata = {
   title: "AI Playground · Pakistan's Biggest AI Film Making Competition · 6 June 2026",
@@ -44,6 +46,8 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider>
+          <FlagWaveFilter />
+          <CustomCursor />
           <SiteChrome />
           <Wordmark />
           <Navbar />

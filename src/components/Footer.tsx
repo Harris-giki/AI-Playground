@@ -106,7 +106,7 @@ export function Footer() {
             <span className="site-footer__dot hidden sm:inline" aria-hidden>
               •
             </span>
-            <button type="button" className="site-footer__cookie">
+            <button type="button" data-hover="COOKIES" className="site-footer__cookie">
               Manage Cookie Preferences
             </button>
           </div>
@@ -117,6 +117,7 @@ export function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
+                data-hover={label.toUpperCase()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="site-footer__social w-8 h-8 flex items-center justify-center rounded-full transition-colors"
@@ -160,6 +161,7 @@ function FooterColumn({
             <a
               href={link.href}
               className="site-footer__link transition-colors"
+              data-hover={link.label.split(" ")[0].toUpperCase()}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -8,9 +8,10 @@ type SegmentCardProps = {
   name: string;
   desc: string;
   index: number;
+  hover?: string;
 };
 
-export function SegmentCard({ tag, name, desc, index }: SegmentCardProps) {
+export function SegmentCard({ tag, name, desc, index, hover }: SegmentCardProps) {
   const ref = useRef<HTMLElement>(null);
   const rotateX = useSpring(useMotionValue(0), { stiffness: 260, damping: 22 });
   const rotateY = useSpring(useMotionValue(0), { stiffness: 260, damping: 22 });
@@ -37,6 +38,7 @@ export function SegmentCard({ tag, name, desc, index }: SegmentCardProps) {
     <motion.article
       ref={ref}
       className="segment-card"
+      data-hover={hover}
       style={{
         rotateX,
         rotateY,
@@ -63,30 +65,9 @@ export function SegmentCard({ tag, name, desc, index }: SegmentCardProps) {
       <span className="segment-card__index font-mono" aria-hidden>
         {String(index + 1).padStart(2, "0")}
       </span>
-      <span
-        className="font-mono uppercase block"
-        style={{
-          fontSize: "0.68rem",
-          letterSpacing: "0.22em",
-          color: "var(--accent)",
-          marginBottom: "0.4rem",
-        }}
-      >
-        {tag}
-      </span>
-      <div className="segment-name title-md descender-safe mb-[0.45rem]">
-        {name}
-      </div>
-      <p
-        className="leading-[1.6]"
-        style={{
-          color: "var(--ink-muted)",
-          maxWidth: "none",
-          fontSize: "0.92rem",
-        }}
-      >
-        {desc}
-      </p>
+      <span className="label-day segment-card__tag mb-4 block">{tag}</span>
+      <div className="segment-name segment-card__title title-space descender-safe mb-4">{name}</div>
+      <p className="segment-card__desc prose-body-sm max-w-[38ch]">{desc}</p>
     </motion.article>
   );
 }

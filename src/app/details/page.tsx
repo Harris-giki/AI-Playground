@@ -108,7 +108,7 @@ export default function Details() {
   return (
     <>
       {/* PAGE HERO ─────────────────────────────────── */}
-      <section className="relative pt-28 sm:pt-32 pb-12 sm:pb-14 px-6 sm:px-12 overflow-hidden hero-rule details-hero">
+      <section data-scroll-section className="relative pt-28 sm:pt-32 pb-12 sm:pb-14 px-6 sm:px-12 overflow-hidden hero-rule details-hero">
         <div className="details-hero__video" aria-hidden>
           <video
             className="details-hero__video-media"
@@ -136,7 +136,7 @@ export default function Details() {
             </span>
             <span className="label-eyebrow">The Event</span>
           </div>
-          <h1 className="title-hero mt-2 mb-8 descender-safe max-w-[1000px]">
+          <h1 className="title-hero mb-8 descender-safe max-w-[1000px]">
             Two days, three stages,
             <br />
             <em
@@ -146,57 +146,21 @@ export default function Details() {
               one short film.
             </em>
           </h1>
-          <p
-            className="mb-5"
-            style={{
-              fontSize: "0.98rem",
-              color: "var(--ink-muted)",
-              maxWidth: "660px",
-              lineHeight: 1.6,
-            }}
-          >
+          <p className="prose-body mb-5 max-w-[660px]">
             AI Playground is ImagineArt&apos;s curated, invite-only{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              AI Film Making Competition
-            </span>
+            <span className="text-accent">AI Film Making Competition</span>
             . Pakistan&apos;s Biggest. A hands-on, two-day experience built for the
             people who already make things.
           </p>
-          <p
-            className="mb-8"
-            style={{
-              fontSize: "0.98rem",
-              color: "var(--ink-muted)",
-              maxWidth: "660px",
-              lineHeight: 1.6,
-            }}
-          >
+          <p className="prose-body mb-8 max-w-[660px]">
             For{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Content Creators
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Film Makers
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              AI Content Creators
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Storytellers
-            </span>
-            ,{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              Screenwriters
-            </span>{" "}
-            — and every creative mind ready to meet generative AI as a
-            collaborator, not a threat. Limited to{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-              150 seats
-            </span>
-            .
+            <span className="text-accent">Content Creators</span>,{" "}
+            <span className="text-accent">Film Makers</span>,{" "}
+            <span className="text-accent">AI Content Creators</span>,{" "}
+            <span className="text-accent">Storytellers</span>,{" "}
+            <span className="text-accent">Screenwriters</span>, and every
+            creative mind ready to meet generative AI as a collaborator, not a
+            threat. Limited to <span className="text-accent">150 seats</span>.
           </p>
 
           <div className="flex items-center gap-3 flex-wrap mb-6">
@@ -213,48 +177,21 @@ export default function Details() {
                 className="w-[18px] h-[18px]"
                 style={{ color: "var(--accent)" }}
               />
-              <span
-                className="font-mono uppercase"
-                style={{
-                  fontSize: "0.78rem",
-                  letterSpacing: "0.14em",
-                  color: "var(--ink-muted)",
-                }}
-              >
-                {eventDateLabel}
-              </span>
+              <span className="meta-inline">{eventDateLabel}</span>
             </div>
             <div className="flex items-center gap-2.5">
               <IconClock
                 className="w-[18px] h-[18px]"
                 style={{ color: "var(--accent)" }}
               />
-              <span
-                className="font-mono uppercase"
-                style={{
-                  fontSize: "0.78rem",
-                  letterSpacing: "0.14em",
-                  color: "var(--ink-muted)",
-                }}
-              >
-                2 Days · 3 Stages
-              </span>
+              <span className="meta-inline">2 Days · 3 Stages</span>
             </div>
             <div className="flex items-center gap-2.5">
               <IconMapPin
                 className="w-[18px] h-[18px]"
                 style={{ color: "var(--accent)" }}
               />
-              <span
-                className="font-mono uppercase"
-                style={{
-                  fontSize: "0.78rem",
-                  letterSpacing: "0.14em",
-                  color: "var(--ink-muted)",
-                }}
-              >
-                Pakistan · Invite-Only
-              </span>
+              <span className="meta-inline">Pakistan · Invite-Only</span>
             </div>
           </div>
         </div>
@@ -264,6 +201,7 @@ export default function Details() {
 
       {/* SCHEDULE ─────────────────────────────────── */}
       <section
+        data-scroll-section
         className="site-section px-6 sm:px-12 py-28"
         style={{ background: "var(--bg-raised)" }}
       >
@@ -277,19 +215,12 @@ export default function Details() {
               </span>
               <span className="label-eyebrow">The Flow</span>
             </div>
-            <h2 className="title-display mt-2 mb-4 descender-safe">
+            <h2 className="title-display mb-4 descender-safe">
               Two days,
               <br />
               <em>moving fast.</em>
             </h2>
-            <p
-              className="mb-14 leading-[1.65]"
-              style={{
-                color: "var(--ink-muted)",
-                maxWidth: "640px",
-                fontSize: "0.98rem",
-              }}
-            >
+            <p className="prose-body mb-14 max-w-[640px]">
               Day One pulls the room together and runs Stage 1 and Stage 2. Day Two
               is for the shortlisted teams making the films, presenting, and taking
               home a share of the $5,000 prize pool.
@@ -299,17 +230,8 @@ export default function Details() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <ScrollReveal>
               <div className="day-card">
-                <p
-                  className="font-mono uppercase mb-3"
-                  style={{
-                    fontSize: "0.66rem",
-                    letterSpacing: "0.28em",
-                    color: "var(--accent)",
-                  }}
-                >
-                  Day 01
-                </p>
-                <h3 className="title-md descender-safe mb-8">
+                <p className="label-day mb-3">Day 01</p>
+                <h3 className="title-lg descender-safe mb-8">
                   Arrival, Stage 1, Stage 2
                 </h3>
                 <div className="timeline">
@@ -318,22 +240,8 @@ export default function Details() {
                       key={item.title}
                       className="timeline-dot relative pl-5 pb-7 last:pb-0"
                     >
-                      <p
-                        className="font-body mb-1"
-                        style={{
-                          color: "var(--ink)",
-                          fontWeight: 500,
-                          fontSize: "0.96rem",
-                        }}
-                      >
-                        {item.title}
-                      </p>
-                      <p
-                        className="leading-[1.55]"
-                        style={{ color: "var(--ink-muted)", fontSize: "0.88rem" }}
-                      >
-                        {item.desc}
-                      </p>
+                      <p className="timeline-title">{item.title}</p>
+                      <p className="timeline-desc">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -342,17 +250,8 @@ export default function Details() {
 
             <ScrollReveal delay={0.05}>
               <div className="day-card">
-                <p
-                  className="font-mono uppercase mb-3"
-                  style={{
-                    fontSize: "0.66rem",
-                    letterSpacing: "0.28em",
-                    color: "var(--accent)",
-                  }}
-                >
-                  Day 02
-                </p>
-                <h3 className="title-md descender-safe mb-8">
+                <p className="label-day mb-3">Day 02</p>
+                <h3 className="title-lg descender-safe mb-8">
                   Stage 3, Presentations, Keynote
                 </h3>
                 <div className="timeline">
@@ -361,22 +260,8 @@ export default function Details() {
                       key={item.title}
                       className="timeline-dot relative pl-5 pb-7 last:pb-0"
                     >
-                      <p
-                        className="font-body mb-1"
-                        style={{
-                          color: "var(--ink)",
-                          fontWeight: 500,
-                          fontSize: "0.96rem",
-                        }}
-                      >
-                        {item.title}
-                      </p>
-                      <p
-                        className="leading-[1.55]"
-                        style={{ color: "var(--ink-muted)", fontSize: "0.88rem" }}
-                      >
-                        {item.desc}
-                      </p>
+                      <p className="timeline-title">{item.title}</p>
+                      <p className="timeline-desc">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -389,7 +274,7 @@ export default function Details() {
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* WHO WE WANT ─────────────────────────────── */}
-      <section className="site-section px-6 sm:px-12 py-28">
+      <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
@@ -400,7 +285,7 @@ export default function Details() {
               </span>
               <span className="label-eyebrow">Who we want in the room</span>
             </div>
-            <h2 className="title-display mt-2 mb-6 descender-safe">
+            <h2 className="title-display mb-6 descender-safe">
               The room is curated.
               <br />
               <em>Earn your seat.</em>
@@ -408,41 +293,22 @@ export default function Details() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.05}>
-            <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12"
-              style={{ color: "var(--ink-muted)" }}
-            >
+            <div className="prose-body grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12">
               <p>
                 We&apos;re not looking for AI experts. We&apos;re looking for
                 storytellers. People who move fast, draw inspiration from anywhere,
                 and make something real when the pressure is on. Only{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  150 seats
-                </span>{" "}
-                — the room stays small on purpose.
+                <span className="text-accent">150 seats</span> — the room stays
+                small on purpose.
               </p>
               <p>
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Content Creators
-                </span>
-                .{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Film Makers
-                </span>
-                .{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  AI Content Creators
-                </span>
-                .{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Storytellers
-                </span>
-                .{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  Screenwriters
-                </span>
-                . And every creative mind ready to use generative AI as a
-                collaborator, not a threat.
+                <span className="text-accent">Content Creators</span>.{" "}
+                <span className="text-accent">Film Makers</span>.{" "}
+                <span className="text-accent">AI Content Creators</span>.{" "}
+                <span className="text-accent">Storytellers</span>.{" "}
+                <span className="text-accent">Screenwriters</span>. And every
+                creative mind ready to use generative AI as a collaborator, not a
+                threat.
               </p>
             </div>
           </ScrollReveal>
@@ -450,19 +316,11 @@ export default function Details() {
           <ScrollReveal delay={0.1}>
             <div className="quality-grid">
               {qualities.map((q) => (
-                <div key={q.title} className="quality-item">
-                  <p className="title-md descender-safe mb-[0.65rem]">
+                <div key={q.title} className="quality-item" data-hover={q.title.split(" ")[0].toUpperCase()}>
+                  <p className="title-space descender-safe mb-[0.65rem]">
                     {q.title}
                   </p>
-                  <p
-                    className="leading-[1.6]"
-                    style={{
-                      color: "var(--ink-muted)",
-                      fontSize: "0.92rem",
-                    }}
-                  >
-                    {q.desc}
-                  </p>
+                  <p className="prose-body-sm">{q.desc}</p>
                 </div>
               ))}
             </div>
@@ -481,6 +339,7 @@ export default function Details() {
 
       {/* CTA ─────────────────────────────────────── */}
       <section
+        data-scroll-section
         className="site-section cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
@@ -497,7 +356,7 @@ export default function Details() {
                   Applications open
                 </span>
               </div>
-              <h2 className="title-display mt-2 mb-6 descender-safe">
+              <h2 className="title-display mb-6 descender-safe">
                 Not everyone gets in.
                 <br />
                 <em
@@ -507,26 +366,19 @@ export default function Details() {
                   The right people do.
                 </em>
               </h2>
-              <p
-                className="mx-auto mb-8 leading-[1.65]"
-                style={{
-                  color: "var(--ink-muted)",
-                  maxWidth: "560px",
-                  fontSize: "0.98rem",
-                }}
-              >
+              <p className="prose-cta mx-auto mb-8 max-w-[660px]">
                 Every submission is reviewed personally.{" "}
-                <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films, and only{" "}
-                <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  150 seats
-                </span>{" "}
-                in the room. If you&apos;re the right fit, you&apos;ll hear from us.
+                <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in
+                prizes for the top films, and only{" "}
+                <span className="text-accent">150 seats</span> in the room. If
+                you&apos;re the right fit, you&apos;ll hear from us.
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
                 <a
                   href={applyFormUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-hover="APPLY"
                   className="btn-primary"
                 >
                   Apply to AI Playground

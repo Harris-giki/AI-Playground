@@ -17,6 +17,7 @@ export function FilmShowcase() {
               key={film.id}
               type="button"
               className="fs-film-card group shrink-0 text-center"
+              data-hover="PLAY"
               onClick={() => setActiveFilm(film)}
               aria-label={`Play ${film.title}`}
             >
