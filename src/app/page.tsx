@@ -57,7 +57,7 @@ const stages = [
     num: "S-03",
     title: "Make the Film",
     desc: "Day 2. Teams generate assets, post-produce, and present to ImagineArt's creative directors and judges. Non-shortlisted attendees join parallel workshops.",
-    pills: ["Day 2", "75k to 100k Credits", "Judge Presentation", "~$5,000 Prize Pool"],
+    pills: ["Day 2", "75k to 100k Credits", "Judge Presentation", "$5,000 Prize Pool"],
   },
 ];
 
@@ -100,7 +100,7 @@ export default function Home() {
             </p>
 
             <div className="hero-split grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 xl:gap-12 lg:items-stretch">
-              <div className="hero-main-panel flex flex-col gap-4 sm:gap-5 min-w-0">
+              <div className="hero-main-panel flex flex-col gap-3 sm:gap-3.5 min-w-0">
                 <HeroBanner />
 
                 <p
@@ -125,7 +125,7 @@ export default function Home() {
                 >
                   <div className="prize-pill prize-pill-xl prize-pill-hero inline-flex items-center">
                     <span className="dot" aria-hidden />
-                    <span className="amount">~$5,000</span>
+                    <span className="amount">$5,000</span>
                     <span className="label">Prize Pool</span>
                   </div>
                   <a
@@ -171,11 +171,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className="scroll-cue" aria-hidden>
-          <span className="label">Scroll</span>
-          <span className="track" />
-        </div>
       </section>
 
       {/* MARQUEE TICKER ─────────────────────────────── */}
@@ -193,7 +188,7 @@ export default function Home() {
               <span className="star" />
               <span>Two Days · Three Stages · Six Spaces</span>
               <span className="star" />
-              <span className="accent">~$5,000 Prize Pool</span>
+              <span className="accent">$5,000 Prize Pool</span>
               <span className="star" />
               <span>Invite-Only</span>
               <span className="star" />
@@ -280,7 +275,7 @@ export default function Home() {
               </div>
               <div className="prize-pill mt-2">
                 <span className="dot" aria-hidden />
-                <span className="amount">~$5,000</span>
+                <span className="amount">$5,000</span>
                 <span className="label">Prize Pool</span>
               </div>
             </div>
@@ -420,7 +415,7 @@ export default function Home() {
               >
                 Every application is reviewed. Shortlisted creators receive a personal invite. Pakistan&apos;s Biggest AI Film Making Competition — only{" "}
                 <span style={{ color: "var(--accent)", fontWeight: 500 }}>150 seats</span>{" "}
-                in the room, and approx{" "}
+                in the room, and{" "}
                 <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films. Be honest. That&apos;s the only rule.
               </p>
               <div className="flex justify-center gap-4 flex-wrap">

@@ -43,19 +43,9 @@ export function Navbar() {
         </button>
       ) : null}
 
-      {/* Floating centre pill: nav links + Apply Now + mobile hamburger */}
-      <nav className="fixed top-4 inset-x-0 z-[90] mx-auto max-w-fit px-4">
-        <div
-          className="flex items-center gap-1.5 rounded-full px-2 py-2"
-          style={{
-            background: "var(--nav-bg)",
-            backdropFilter: "blur(22px) saturate(160%)",
-            WebkitBackdropFilter: "blur(22px) saturate(160%)",
-            border: "1px solid var(--border)",
-            boxShadow:
-              "inset 0 1px 0 rgba(255,255,255,0.08), 0 8px 28px rgba(0,0,0,0.22), 0 0 0 1px rgba(255,255,255,0.03)",
-          }}
-        >
+      {/* Floating centre pill — true viewport center */}
+      <nav className="nav-pill fixed top-4 left-1/2 z-[90] -translate-x-1/2">
+        <div className="nav-pill__inner flex items-center gap-1.5 rounded-full px-2 py-2">
           <div className="hidden md:flex items-center gap-1">
             {links.map((link) => {
               const active = pathname === link.href;

@@ -4,7 +4,7 @@
 export function HeroBanner() {
   return (
     <h1
-      className="hero-banner animate-fade-up mb-6"
+      className="hero-banner animate-fade-up"
       style={{ animationDelay: "0.1s" }}
     >
       <span className="sr-only">AI Playground</span>

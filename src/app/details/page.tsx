@@ -11,7 +11,7 @@ import { applyFormUrl, eventDateLabel } from "@/lib/site";
 export const metadata: Metadata = {
   title: "The Event · AI Playground · ImagineArt",
   description:
-    "The two-day schedule and selection criteria for AI Playground, Pakistan's Biggest AI Film Making Competition. Approx $5,000 prize pool. Limited to 150 seats.",
+    "The two-day schedule and selection criteria for AI Playground, Pakistan's Biggest AI Film Making Competition. $5,000 prize pool. Limited to 150 seats.",
 };
 
 const qualities = [
@@ -96,7 +96,7 @@ const dayTwo = [
   },
   {
     title: "Awards",
-    desc: "Recognition for the work. Approx $5,000 in prizes for the top films.",
+    desc: "Recognition for the work. $5,000 in prizes for the top films.",
   },
   {
     title: "Keynote",
@@ -202,7 +202,7 @@ export default function Details() {
           <div className="flex items-center gap-3 flex-wrap mb-6">
             <div className="prize-pill">
               <span className="dot" aria-hidden />
-              <span className="amount">~$5,000</span>
+              <span className="amount">$5,000</span>
               <span className="label">Prize Pool</span>
             </div>
           </div>
@@ -292,7 +292,7 @@ export default function Details() {
             >
               Day One pulls the room together and runs Stage 1 and Stage 2. Day Two
               is for the shortlisted teams making the films, presenting, and taking
-              home a share of the approx $5,000 prize pool.
+              home a share of the $5,000 prize pool.
             </p>
           </ScrollReveal>
 
@@ -515,7 +515,7 @@ export default function Details() {
                   fontSize: "0.98rem",
                 }}
               >
-                Every submission is reviewed personally. Approx{" "}
+                Every submission is reviewed personally.{" "}
                 <span className="text-gradient-gold font-bold">$5,000</span>&nbsp;in prizes for the top films, and only{" "}
                 <span style={{ color: "var(--accent)", fontWeight: 500 }}>
                   150 seats

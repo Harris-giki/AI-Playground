@@ -10,7 +10,7 @@ import { SiteChrome } from "@/components/SiteChrome";
 export const metadata: Metadata = {
   title: "AI Playground · Pakistan's Biggest AI Film Making Competition · 6 June 2026",
   description:
-    "ImagineArt presents AI Playground, Pakistan's Biggest AI Film Making Competition. Two days. Three stages. Approx $5,000 prize pool. For Content Creators, Film Makers, AI Content Creators, Storytellers, Screenwriters — and every creative mind. Limited to 150 seats. 6 June 2026.",
+    "ImagineArt presents AI Playground, Pakistan's Biggest AI Film Making Competition. Two days. Three stages. $5,000 prize pool. For Content Creators, Film Makers, AI Content Creators, Storytellers, Screenwriters — and every creative mind. Limited to 150 seats. 6 June 2026.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     shortcut: "/favicon.png",
