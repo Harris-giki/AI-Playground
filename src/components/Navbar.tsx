@@ -16,7 +16,7 @@ const links = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const { theme, toggle } = useTheme();
+  const { resolvedTheme, toggle, themeToggleEnabled } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -28,19 +28,20 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top-right: Theme toggle */}
-      <button
-        onClick={toggle}
-        className="fixed top-5 right-6 z-[100] w-9 h-9 rounded-full flex items-center justify-center transition-colors shrink-0 glass-edge"
-        style={{ color: "var(--ink)" }}
-        aria-label="Toggle theme"
-      >
-        {theme === "dark" ? (
-          <IconSun className="w-4 h-4" />
-        ) : (
-          <IconMoon className="w-4 h-4" />
-        )}
-      </button>
+      {themeToggleEnabled ? (
+        <button
+          onClick={toggle}
+          className="fixed top-5 right-6 z-[100] w-9 h-9 rounded-full flex items-center justify-center transition-colors shrink-0 glass-edge"
+          style={{ color: "var(--ink)" }}
+          aria-label="Toggle theme"
+        >
+          {resolvedTheme === "dark" ? (
+            <IconSun className="w-4 h-4" />
+          ) : (
+            <IconMoon className="w-4 h-4" />
+          )}
+        </button>
+      ) : null}
 
       {/* Floating centre pill: nav links + Apply Now + mobile hamburger */}
       <nav className="fixed top-4 inset-x-0 z-[90] mx-auto max-w-fit px-4">

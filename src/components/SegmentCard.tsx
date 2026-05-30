@@ -74,17 +74,7 @@ export function SegmentCard({ tag, name, desc, index }: SegmentCardProps) {
       >
         {tag}
       </span>
-      <div
-        className="segment-name font-display descender-safe uppercase"
-        style={{
-          fontSize: "1.85rem",
-          fontWeight: 400,
-          lineHeight: 1,
-          letterSpacing: "-0.02em",
-          color: "var(--ink)",
-          marginBottom: "0.45rem",
-        }}
-      >
+      <div className="segment-name title-md descender-safe mb-[0.45rem]">
         {name}
       </div>
       <p

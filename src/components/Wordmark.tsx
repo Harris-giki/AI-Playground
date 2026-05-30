@@ -10,9 +10,11 @@ import { useTheme } from "./ThemeProvider";
  * logo always sits comfortably against its background.
  */
 export function Wordmark() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const src =
-    theme === "light" ? "/brand/imagineart-purple.png" : "/brand/imagineart-white.svg";
+    resolvedTheme === "light"
+      ? "/brand/imagineart-purple.png"
+      : "/brand/imagineart-white.svg";
 
   return (
     <Link

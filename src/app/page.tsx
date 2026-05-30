@@ -218,14 +218,7 @@ export default function Home() {
                   </span>
                   <span className="label-eyebrow">The Philosophy</span>
                 </div>
-                <h2
-                  className="title-display mt-2 descender-safe"
-                  style={{
-                    fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                    lineHeight: 1,
-                    letterSpacing: "-0.005em",
-                  }}
-                >
+                <h2 className="title-display mt-2 descender-safe">
                   AI doesn&apos;t replace people.
                   <br />
                   <em>It replaces outdated ways of working.</em>
@@ -274,14 +267,7 @@ export default function Home() {
                   </span>
                   <span className="label-eyebrow">The Structure</span>
                 </div>
-                <h2
-                  className="title-display mt-2 descender-safe"
-                  style={{
-                    fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                    lineHeight: 1,
-                    letterSpacing: "-0.005em",
-                  }}
-                >
+                <h2 className="title-display mt-2 descender-safe">
                   Two days. Three stages.
                   <br />
                   <em
@@ -323,17 +309,7 @@ export default function Home() {
                     >
                       Stage {String(i + 1).padStart(2, "0")}
                     </p>
-                    <h3
-                      className="font-display descender-safe uppercase"
-                      style={{
-                        fontWeight: 400,
-                        fontSize: "clamp(1.55rem, 2.8vw, 2.2rem)",
-                        lineHeight: 1,
-                        letterSpacing: "0.01em",
-                        color: "var(--ink)",
-                        marginBottom: "0.7rem",
-                      }}
-                    >
+                    <h3 className="title-md descender-safe mb-[0.7rem]">
                       {t.title}
                     </h3>
                     <p
@@ -381,14 +357,7 @@ export default function Home() {
               </span>
               <span className="label-eyebrow">What happens inside</span>
             </div>
-            <h2
-              className="title-display mt-2 mb-12 descender-safe"
-              style={{
-                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                lineHeight: 1,
-                letterSpacing: "-0.005em",
-              }}
-            >
+            <h2 className="title-display mt-2 mb-12 descender-safe">
               Six spaces.
               <br />
               <em>One energy.</em>
@@ -431,14 +400,7 @@ export default function Home() {
                   The room is small. The bar is high.
                 </span>
               </div>
-              <h2
-                className="title-display mt-2 mb-6 descender-safe"
-                style={{
-                  fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                  lineHeight: 1,
-                  letterSpacing: "-0.005em",
-                }}
-              >
+              <h2 className="title-display mt-2 mb-6 descender-safe">
                 Ready?
                 <br />
                 <em

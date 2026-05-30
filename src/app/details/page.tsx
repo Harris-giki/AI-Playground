@@ -136,15 +136,7 @@ export default function Details() {
             </span>
             <span className="label-eyebrow">The Event</span>
           </div>
-          <h1
-            className="title-display mt-2 mb-8 descender-safe"
-            style={{
-              fontSize: "clamp(2.75rem, 5.8vw, 4.75rem)",
-              lineHeight: 1,
-              letterSpacing: "-0.005em",
-              maxWidth: "1000px",
-            }}
-          >
+          <h1 className="title-hero mt-2 mb-8 descender-safe max-w-[1000px]">
             Two days, three stages,
             <br />
             <em
@@ -285,14 +277,7 @@ export default function Details() {
               </span>
               <span className="label-eyebrow">The Flow</span>
             </div>
-            <h2
-              className="title-display mt-2 mb-4 descender-safe"
-              style={{
-                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                lineHeight: 1,
-                letterSpacing: "-0.005em",
-              }}
-            >
+            <h2 className="title-display mt-2 mb-4 descender-safe">
               Two days,
               <br />
               <em>moving fast.</em>
@@ -324,16 +309,7 @@ export default function Details() {
                 >
                   Day 01
                 </p>
-                <h3
-                  className="font-display mb-8 descender-safe uppercase"
-                  style={{
-                    fontWeight: 400,
-                    fontSize: "clamp(1.65rem, 2.8vw, 2.2rem)",
-                    lineHeight: 1,
-                    letterSpacing: "0.01em",
-                    color: "var(--ink)",
-                  }}
-                >
+                <h3 className="title-md descender-safe mb-8">
                   Arrival, Stage 1, Stage 2
                 </h3>
                 <div className="timeline">
@@ -376,16 +352,7 @@ export default function Details() {
                 >
                   Day 02
                 </p>
-                <h3
-                  className="font-display mb-8 descender-safe uppercase"
-                  style={{
-                    fontWeight: 400,
-                    fontSize: "clamp(1.65rem, 2.8vw, 2.2rem)",
-                    lineHeight: 1,
-                    letterSpacing: "0.01em",
-                    color: "var(--ink)",
-                  }}
-                >
+                <h3 className="title-md descender-safe mb-8">
                   Stage 3, Presentations, Keynote
                 </h3>
                 <div className="timeline">
@@ -433,14 +400,7 @@ export default function Details() {
               </span>
               <span className="label-eyebrow">Who we want in the room</span>
             </div>
-            <h2
-              className="title-display mt-2 mb-6 descender-safe"
-              style={{
-                fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                lineHeight: 1,
-                letterSpacing: "-0.005em",
-              }}
-            >
+            <h2 className="title-display mt-2 mb-6 descender-safe">
               The room is curated.
               <br />
               <em>Earn your seat.</em>
@@ -491,17 +451,7 @@ export default function Details() {
             <div className="quality-grid">
               {qualities.map((q) => (
                 <div key={q.title} className="quality-item">
-                  <p
-                    className="font-display uppercase"
-                    style={{
-                      fontWeight: 400,
-                      color: "var(--ink)",
-                      fontSize: "1.35rem",
-                      lineHeight: 1,
-                      letterSpacing: "0.01em",
-                      marginBottom: "0.65rem",
-                    }}
-                  >
+                  <p className="title-md descender-safe mb-[0.65rem]">
                     {q.title}
                   </p>
                   <p
@@ -547,14 +497,7 @@ export default function Details() {
                   Applications open
                 </span>
               </div>
-              <h2
-                className="title-display mt-2 mb-6 descender-safe"
-                style={{
-                  fontSize: "clamp(2.1rem, 4.25vw, 3.65rem)",
-                  lineHeight: 1,
-                  letterSpacing: "-0.005em",
-                }}
-              >
+              <h2 className="title-display mt-2 mb-6 descender-safe">
                 Not everyone gets in.
                 <br />
                 <em
