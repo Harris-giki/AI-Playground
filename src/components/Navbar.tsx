@@ -58,7 +58,6 @@ export function Navbar() {
                   className="nav-pill__link relative px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-colors"
                   style={{
                     color: active ? "var(--ink)" : "var(--ink-muted)",
-                    background: active ? "var(--bg-card)" : "transparent",
                   }}
                 >
                   {link.label}
@@ -148,10 +147,9 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 data-hover={link.hover}
                 className="nav-pill__link block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] transition-colors"
-                style={{
-                  color: active ? "var(--ink)" : "var(--ink-muted)",
-                  background: active ? "var(--bg-card)" : "transparent",
-                }}
+                  style={{
+                    color: active ? "var(--ink)" : "var(--ink-muted)",
+                  }}
               >
                 {link.label}
               </Link>

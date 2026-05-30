@@ -164,7 +164,7 @@ export default function Home() {
               </div>
 
               <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:w-auto lg:min-w-[13.5rem] xl:min-w-[14.5rem] lg:max-w-[15.5rem] lg:self-center">
-                <div className="hero-countdown-card flex flex-col items-center justify-center w-full px-5 py-5 sm:px-6 sm:py-6">
+                <div className="flex flex-col items-center justify-center w-full">
                   <Countdown centered stableWidth compact />
                 </div>
                 <div className="w-full shrink-0 flex justify-end pt-4 lg:pt-5">

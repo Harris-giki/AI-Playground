@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { applicationsCloseISO } from "@/lib/site";
 
 const TARGET = new Date(applicationsCloseISO).getTime();
@@ -10,14 +10,15 @@ function pad(n: number) {
 }
 
 function RollDigit({ value }: { value: number }) {
+  const digit = Math.min(9, Math.max(0, value));
   return (
-    <span className="cd-dgt">
+    <span className="cd-dgt" aria-hidden>
       <span
         className="cd-rl"
-        style={{ transform: `translateY(${-value}em)` }}
+        style={{ transform: `translate3d(0, ${-digit}em, 0)` }}
       >
-        {Array.from({ length: 10 }, (_, digit) => (
-          <span key={digit}>{digit}</span>
+        {Array.from({ length: 10 }, (_, n) => (
+          <span key={n}>{n}</span>
         ))}
       </span>
     </span>
@@ -28,36 +29,25 @@ function RollPair({ value, max = 99 }: { value: number; max?: number }) {
   const clamped = Math.min(max, Math.max(0, value));
   const text = pad(clamped);
   return (
-    <>
+    <span className="cd-num">
       <span className="sr-only">{text}</span>
-      <span className="cd-num" aria-hidden>
-        <RollDigit value={Number(text[0])} />
-        <RollDigit value={Number(text[1])} />
-      </span>
-    </>
+      <RollDigit value={Number(text[0])} />
+      <RollDigit value={Number(text[1])} />
+    </span>
   );
 }
 
-export type CountdownProps = {
+function CountdownFace({
+  diff,
+  centered,
+  stableWidth,
+  compact,
+}: {
+  diff: number;
   centered?: boolean;
   stableWidth?: boolean;
   compact?: boolean;
-};
-
-export function Countdown({
-  centered = false,
-  stableWidth = false,
-  compact = false,
-}: CountdownProps) {
-  const [diff, setDiff] = useState<number | null>(null);
-
-  useEffect(() => {
-    const tick = () => setDiff(TARGET - Date.now());
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
-
+}) {
   const rootAlign = centered
     ? "flex flex-col items-center text-center"
     : "";
@@ -65,31 +55,8 @@ export function Countdown({
     ? compact
       ? "cd-clock cd-clock--compact"
       : "cd-clock"
-    : centered
-      ? "cd-clock cd-clock--wrap"
-      : "cd-clock cd-clock--wrap";
-  const headingClass = compact
-    ? "cd-label cd-label--compact"
-    : "cd-label";
-  const placeholderMinH = compact ? "min-h-[52px]" : "min-h-[72px]";
-  const placeholderMaxW = compact
-    ? "max-w-[14rem] sm:max-w-[15rem]"
-    : "max-w-[17.5rem] sm:max-w-[18.5rem]";
-
-  if (diff === null) {
-    return (
-      <div
-        className={`animate-fade-up ${rootAlign}`}
-        aria-hidden
-        data-countdown-stable={stableWidth || undefined}
-      >
-        <p className={headingClass}>Applications Close In</p>
-        <div
-          className={`${rowClass} ${placeholderMinH} w-full ${placeholderMaxW}`}
-        />
-      </div>
-    );
-  }
+    : "cd-clock cd-clock--wrap";
+  const headingClass = compact ? "cd-label cd-label--compact" : "cd-label";
 
   if (diff <= 0) {
     return (
@@ -127,5 +94,35 @@ export function Countdown({
         ))}
       </div>
     </div>
+  );
+}
+
+export type CountdownProps = {
+  centered?: boolean;
+  stableWidth?: boolean;
+  compact?: boolean;
+};
+
+export function Countdown({
+  centered = false,
+  stableWidth = false,
+  compact = false,
+}: CountdownProps) {
+  const [diff, setDiff] = useState(0);
+
+  useLayoutEffect(() => {
+    const tick = () => setDiff(TARGET - Date.now());
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  return (
+    <CountdownFace
+      diff={diff}
+      centered={centered}
+      stableWidth={stableWidth}
+      compact={compact}
+    />
   );
 }
