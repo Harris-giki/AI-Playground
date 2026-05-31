@@ -30,3 +30,6 @@ export const filmStudioUrl = "https://imagine.art/film-studio";
 /** Film Studio getting-started tutorial (YouTube). */
 export const filmStudioTutorialUrl =
   "https://youtu.be/rNOTx0K9mzQ?si=PeAnIhtR6IYJ2Bpz";
+
+/** Total prize pool — USD. */
+export const prizePoolTotal = "$5,000";

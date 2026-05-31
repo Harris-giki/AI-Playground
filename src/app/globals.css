@@ -591,7 +591,7 @@ strong { color: var(--ink); font-weight: 500; }
    via [data-theme] selectors below so toggling has zero flash. */
 .hero-banner {
   display: block;
-  width: clamp(240px, 30vw, 520px);
+  width: clamp(300px, 42vw, 680px);
   margin: 0;
   line-height: 0;
   padding: 0;
@@ -603,22 +603,14 @@ strong { color: var(--ink); font-weight: 500; }
   height: auto;
   display: block;
   margin-bottom: -0.35rem;
-  filter: drop-shadow(0 14px 32px rgba(15, 14, 12, 0.22)) url(#flagwave);
-  transform-origin: 4% 50%;
-  animation: penn-sway 8s ease-in-out infinite;
+  filter: drop-shadow(0 14px 32px rgba(15, 14, 12, 0.22));
+  transform: none;
   pointer-events: none;
   vertical-align: top;
 }
 
 [data-theme="light"] .hero-banner-media {
   filter: drop-shadow(0 12px 28px rgba(20, 17, 14, 0.16));
-}
-
-@keyframes penn-sway {
-  0%, 100% { transform: rotate(-2deg) skewY(0.5deg) translateY(0); }
-  25%      { transform: rotate(-1deg) skewY(-0.4deg) translateY(-2px); }
-  50%      { transform: rotate(-2.4deg) skewY(0.8deg) translateY(1px); }
-  75%      { transform: rotate(-1.3deg) skewY(-0.2deg) translateY(-1px); }
 }
 
 /* Countdown: fixed-width digit columns — tabular figures where supported. */
@@ -714,6 +706,28 @@ strong { color: var(--ink); font-weight: 500; }
   font-size: 0.58rem;
   letter-spacing: 0.14em;
   margin-top: 0.35rem;
+}
+
+/* Hero deadline counter — larger than default compact */
+.hero-countdown-col .cd-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.6rem;
+}
+.hero-countdown-col .cd-clock {
+  gap: 0.75rem;
+  justify-content: center;
+}
+.hero-countdown-col .cd-unit {
+  min-width: 3.4rem;
+}
+.hero-countdown-col .cd-num {
+  font-size: clamp(2.1rem, 4.8vw, 3.6rem);
+}
+.hero-countdown-col .cd-key {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  margin-top: 0.45rem;
 }
 
 /* ──────────────────────────────────────────────
@@ -924,6 +938,73 @@ strong { color: var(--ink); font-weight: 500; }
 .prize-pill-hero {
   padding: 0.45rem 0.95rem !important;
   gap: 0.55rem !important;
+}
+
+/* ── Prize Pool section (index_6 #prize) ─────── */
+
+.prize-section {
+  position: relative;
+  overflow: hidden;
+  background: #08070a;
+  color: #f4ede0;
+  border-top: 1.5px solid #f4ede0;
+  border-bottom: 1.5px solid #f4ede0;
+}
+
+[data-theme="dark"] .prize-section {
+  background: #050403;
+}
+
+.prize-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.prize-section__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.prize-section__eyebrow {
+  color: var(--accent);
+}
+
+.prize-section__eyebrow::before {
+  background: var(--accent);
+}
+
+.prize-section__num {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(4.5rem, 18vw, 14rem);
+  line-height: 0.86;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  text-align: center;
+  margin: 1.5rem 0 0;
+  white-space: nowrap;
+}
+
+.prize-section__num-solid {
+  color: var(--accent);
+}
+
+.prize-section__num-outline {
+  color: transparent;
+  -webkit-text-stroke: 2.5px #f4ede0;
+  text-stroke: 2.5px #f4ede0;
+  filter: drop-shadow(0 0 28px rgba(244, 237, 224, 0.18));
+}
+
+@media (max-width: 880px) {
+  .prize-section__num {
+    font-size: clamp(3.5rem, 22vw, 7rem);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1695,14 +1776,6 @@ strong { color: var(--ink); font-weight: 500; }
   letter-spacing: 0.32em;
   color: var(--ink-muted);
   text-transform: uppercase;
-}
-.page-loader__counter {
-  font-family: var(--font-display), sans-serif;
-  font-size: clamp(5rem, 12vw, 9rem);
-  letter-spacing: -0.025em;
-  line-height: 1;
-  color: var(--ink);
-  font-weight: 900;
 }
 .page-loader__bar {
   width: 220px;
@@ -2795,8 +2868,7 @@ main {
   }
 
   .scroll-orbit__ring,
-  .marquee-track,
-  .hero-banner-media {
+  .marquee-track {
     animation: none !important;
   }
 

@@ -3,6 +3,7 @@ import { Countdown } from "@/components/Countdown";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { HeroBanner } from "@/components/HeroBanner";
 import { HeroVideoBg } from "@/components/HeroVideoBg";
+import { PrizePoolSection } from "@/components/PrizePoolSection";
 import { SegmentCard } from "@/components/SegmentCard";
 import { IconArrowRight } from "@/components/icons";
 import { applyFormUrl, eventDateLabel } from "@/lib/site";
@@ -163,9 +164,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:w-auto lg:min-w-[13.5rem] xl:min-w-[14.5rem] lg:max-w-[15.5rem] lg:self-center">
+              <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:w-auto lg:min-w-[17rem] xl:min-w-[19rem] lg:max-w-[22rem] lg:self-center">
                 <div className="flex flex-col items-center justify-center w-full">
-                  <Countdown centered stableWidth compact />
+                  <Countdown centered stableWidth />
                 </div>
                 <div className="w-full shrink-0 flex justify-end pt-4 lg:pt-5">
                   <Link
@@ -183,6 +184,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PrizePoolSection />
 
       {/* MARQUEE TICKER ─────────────────────────────── */}
       <div className="marquee" aria-hidden>

@@ -8,7 +8,6 @@ const STORAGE_KEY = "ai-playground-loaded";
 export function PageLoader() {
   const [visible, setVisible] = useState(false);
   const [done, setDone] = useState(false);
-  const [counter, setCounter] = useState("00");
 
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return;
@@ -16,27 +15,13 @@ export function PageLoader() {
     setVisible(true);
     document.body.style.overflow = "hidden";
 
-    let n = 0;
-    const tick = window.setInterval(() => {
-      n += Math.ceil(Math.random() * 9);
-      if (n >= 99) {
-        n = 99;
-        window.clearInterval(tick);
-      }
-      setCounter(String(n).padStart(2, "0"));
-    }, 60);
-
     const onLoad = () => {
       window.setTimeout(() => {
-        setCounter("99");
-        window.clearInterval(tick);
-        window.setTimeout(() => {
-          setDone(true);
-          sessionStorage.setItem(STORAGE_KEY, "1");
-          document.body.style.overflow = "";
-        }, 350);
-        window.setTimeout(() => setVisible(false), 1100);
+        setDone(true);
+        sessionStorage.setItem(STORAGE_KEY, "1");
+        document.body.style.overflow = "";
       }, 700);
+      window.setTimeout(() => setVisible(false), 1400);
     };
 
     if (document.readyState === "complete") {
@@ -46,7 +31,6 @@ export function PageLoader() {
     }
 
     return () => {
-      window.clearInterval(tick);
       window.removeEventListener("load", onLoad);
       document.body.style.overflow = "";
     };
@@ -61,7 +45,6 @@ export function PageLoader() {
       aria-label="Loading"
     >
       <p className="page-loader__reel">REEL · 01 · TAKE 01</p>
-      <p className="page-loader__counter">{counter}</p>
       <div className="page-loader__bar" />
     </div>
   );
