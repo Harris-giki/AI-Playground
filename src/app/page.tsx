@@ -103,7 +103,7 @@ export default function Home() {
           </span>
         </aside>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto w-full lg:pr-24">
+        <div className="hero-shell">
           <div className="hero-content-wrap">
             <p className="label-eyebrow mb-5 sm:mb-6 animate-fade-up">
               ImagineArt presents · {eventDateLabel}
@@ -114,7 +114,7 @@ export default function Home() {
                 <HeroBanner />
 
                 <p
-                  className="hero-body-copy animate-fade-up max-w-[580px]"
+                  className="hero-body-copy animate-fade-up"
                   style={{ animationDelay: "0.18s" }}
                 >
                   Pakistan&apos;s Biggest{" "}
@@ -164,7 +164,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="hero-countdown-col flex flex-col min-w-0 w-full lg:w-auto lg:min-w-[17rem] xl:min-w-[19rem] lg:max-w-[22rem] lg:self-center">
+              <div className="hero-countdown-col">
                 <div className="flex flex-col items-center justify-center w-full">
                   <Countdown centered stableWidth />
                 </div>
@@ -215,7 +215,7 @@ export default function Home() {
 
       {/* BELIEF / PHILOSOPHY ───────────────────────── */}
       <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="site-container px-0">
           <ScrollReveal>
             <div className="philosophy-block grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
               <div>
@@ -264,7 +264,7 @@ export default function Home() {
 
       {/* STAGES PREVIEW ────────────────────────────── */}
       <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="site-container px-0">
           <ScrollReveal>
             <div className="flex items-start justify-between gap-6 flex-wrap mb-10">
               <div>
@@ -342,7 +342,7 @@ export default function Home() {
 
       {/* SEGMENTS ──────────────────────────────────── */}
       <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
-        <div className="max-w-[1200px] mx-auto">
+        <div className="site-container px-0">
           <ScrollReveal>
             <div className="section-head mb-6">
               <span className="section-index">
@@ -384,7 +384,7 @@ export default function Home() {
         className="site-section cta-glow relative px-6 sm:px-12 py-28 overflow-hidden"
         style={{ background: "var(--bg-raised)" }}
       >
-        <div className="max-w-[960px] mx-auto relative z-10">
+        <div className="site-container relative z-10">
           <ScrollReveal>
             <div className="cta-shell text-center">
               <div className="section-head mb-6 items-center mx-auto" style={{ alignItems: "center" }}>

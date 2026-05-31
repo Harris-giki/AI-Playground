@@ -84,6 +84,12 @@
   --c-yellow: #f5c84a;
 
   --nav-bg: rgba(13, 11, 9, 0.55);
+
+  /* Layout — scales up on large displays */
+  --site-max: 1200px;
+  --hero-flag-max: 680px;
+  --hero-body-max: 580px;
+  --hero-countdown-num: clamp(2.1rem, 4.8vw, 3.6rem);
 }
 
 [data-theme="light"] {
@@ -106,6 +112,178 @@
   --accent-shadow: rgba(255, 90, 42, 0.30);
 
   --nav-bg: rgba(245, 241, 236, 0.55);
+}
+
+/* Shared page container — widens on large screens */
+.site-container {
+  width: 100%;
+  max-width: var(--site-max);
+  margin-inline: auto;
+}
+
+.hero-shell {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--site-max);
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .hero-shell {
+    padding-right: 5rem;
+  }
+}
+
+.hero-split {
+  align-items: stretch;
+}
+
+@media (min-width: 1440px) {
+  .hero-split {
+    gap: 3rem !important;
+  }
+}
+
+@media (min-width: 1680px) {
+  .hero-split {
+    gap: 3.75rem !important;
+  }
+}
+
+.hero-countdown-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  align-self: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-countdown-col {
+    width: auto;
+    min-width: 17rem;
+    max-width: 22rem;
+  }
+}
+
+/* ── Large screens (MBP 14"/16", external displays) ── */
+
+@media (min-width: 1440px) {
+  :root {
+    --site-max: 1320px;
+    --text-lede: clamp(1.12rem, 1.1vw, 1.5rem);
+    --text-body: 1.1rem;
+    --text-body-sm: 1rem;
+    --text-label: 12px;
+    --text-meta: 11px;
+    --d-xl: clamp(2.6rem, 4.8vw, 6.75rem);
+    --d-lg: clamp(2.15rem, 3.5vw, 5rem);
+    --d-stage-num: clamp(5.5rem, 12vw, 13rem);
+    --hero-flag-max: 780px;
+    --hero-body-max: 640px;
+    --hero-countdown-num: clamp(2.4rem, 3.2vw, 4.4rem);
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  .hero-countdown-col {
+    min-width: 20rem;
+    max-width: 26rem;
+  }
+
+  .hero-countdown-col .cd-num {
+    font-size: var(--hero-countdown-num);
+  }
+
+  .hero-countdown-col .cd-unit {
+    min-width: 3.75rem;
+  }
+
+  .hero-countdown-col .cd-label {
+    font-size: 0.8rem;
+  }
+
+  .hero-countdown-col .cd-key {
+    font-size: 0.75rem;
+  }
+
+  .prize-pill-hero .amount {
+    font-size: clamp(2rem, 2.8vw, 3.4rem) !important;
+  }
+
+  .btn-primary {
+    font-size: 1.2rem;
+    padding: 0.95rem 1.85rem 0.8rem;
+  }
+
+  .label-eyebrow {
+    font-size: 12px;
+  }
+
+  .meta-row {
+    font-size: 11px;
+  }
+
+  .nav-pill__link {
+    font-size: 13px;
+    padding: 0.55rem 1.1rem;
+  }
+
+  .prize-section__num {
+    font-size: clamp(5rem, 16vw, 16rem);
+  }
+}
+
+@media (min-width: 1680px) {
+  :root {
+    --site-max: 1440px;
+    --text-lede: clamp(1.18rem, 1vw, 1.62rem);
+    --d-xl: clamp(2.75rem, 4.2vw, 7.25rem);
+    --d-lg: clamp(2.25rem, 3.2vw, 5.25rem);
+    --hero-flag-max: 860px;
+    --hero-body-max: 700px;
+    --hero-countdown-num: clamp(2.6rem, 2.8vw, 4.85rem);
+  }
+
+  body {
+    font-size: 19px;
+  }
+
+  .hero-shell {
+    padding-right: 4rem;
+  }
+
+  .hero-countdown-col {
+    min-width: 22rem;
+    max-width: 28rem;
+  }
+
+  .prize-section__num {
+    font-size: clamp(5.5rem, 14vw, 17rem);
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --site-max: 1560px;
+    --text-lede: clamp(1.22rem, 0.95vw, 1.7rem);
+    --d-xl: clamp(2.9rem, 3.8vw, 7.75rem);
+    --hero-flag-max: 940px;
+    --hero-body-max: 760px;
+    --hero-countdown-num: clamp(2.75rem, 2.5vw, 5.25rem);
+  }
+
+  body {
+    font-size: 20px;
+  }
+
+  .hero-countdown-col {
+    min-width: 24rem;
+    max-width: 30rem;
+  }
 }
 
 /* ── Base ──────────────────────────────────── */
@@ -591,7 +769,7 @@ strong { color: var(--ink); font-weight: 500; }
    via [data-theme] selectors below so toggling has zero flash. */
 .hero-banner {
   display: block;
-  width: clamp(300px, 42vw, 680px);
+  width: clamp(300px, 42vw, var(--hero-flag-max));
   margin: 0;
   line-height: 0;
   padding: 0;
@@ -722,7 +900,7 @@ strong { color: var(--ink); font-weight: 500; }
   min-width: 3.4rem;
 }
 .hero-countdown-col .cd-num {
-  font-size: clamp(2.1rem, 4.8vw, 3.6rem);
+  font-size: var(--hero-countdown-num);
 }
 .hero-countdown-col .cd-key {
   font-size: 0.68rem;
@@ -918,6 +1096,7 @@ strong { color: var(--ink); font-weight: 500; }
   color: var(--ink-muted);
   text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
   margin-top: 0.15rem;
+  max-width: min(var(--hero-body-max), 100%);
 }
 
 [data-theme="light"] .hero-body-copy {

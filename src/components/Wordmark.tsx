@@ -38,7 +38,7 @@ export function Wordmark() {
         priority
         unoptimized
         style={{
-          height: "clamp(20px, 2.2vw, 26px)",
+          height: "clamp(20px, 2.2vw, 30px)",
           width: "auto",
           objectFit: "contain",
           display: "block",
