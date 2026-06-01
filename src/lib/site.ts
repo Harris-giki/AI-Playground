@@ -13,7 +13,7 @@ export const eventLocationLabel = "Invite-Only. Location revealed on selection."
 export const eventTargetISO = "2026-06-06T09:00:00+05:00";
 
 /** Closing date for applications shown on the countdown. */
-export const applicationsCloseISO = "2026-06-01T23:59:00+05:00";
+export const applicationsCloseISO = "2026-06-04T23:59:00+05:00";
 
 /** Live registration form (ImagineArt · Ashby). */
 export const applyFormUrl =
