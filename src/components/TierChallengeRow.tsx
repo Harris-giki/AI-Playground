@@ -17,14 +17,7 @@ export function TierChallengeRow({ tier }: Props) {
           <span className="meta-tag">{tier.format}</span>
         </div>
         <h3 className="title-lg descender-safe mb-[0.7rem]">{tier.name}</h3>
-        <p className="prose-body-sm max-w-[560px] mb-[1.8rem]">{tier.desc}</p>
-        <div className="flex gap-2 flex-wrap">
-          {tier.pills.map((pill) => (
-            <span key={pill} className="meta-tag">
-              {pill}
-            </span>
-          ))}
-        </div>
+        <p className="prose-body-sm max-w-[560px]">{tier.desc}</p>
       </div>
     </div>
   );

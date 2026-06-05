@@ -10,7 +10,6 @@ export type TierChallenge = {
   format: string;
   name: string;
   desc: string;
-  pills: string[];
   hover: string;
 };
 
@@ -124,8 +123,7 @@ export const tierChallenges: TierChallenge[] = [
     day: "Day 01",
     format: "Solo",
     name: "One Prompt Challenge",
-    desc: "Curate a single prompt and generate a 15-second clip in Film Studio. Everyone competes individually — this is the first filter.",
-    pills: ["Seedance", "720P", "3,000 credits", "Film Studio", "Portal submission"],
+    desc: "Curate and generate a 15-second clip in ImagineArt Creative Suite using Seedance or Kling 3.0. Everyone competes individually — this is the first filter.",
     hover: "TIER 01",
   },
   {
@@ -134,7 +132,6 @@ export const tierChallenges: TierChallenge[] = [
     format: "Teams of 3–5",
     name: "Story + Script",
     desc: "Qualifiers from Tier 1 form teams and craft the story and script for their short film. Narrative clarity matters as much as the idea.",
-    pills: ["Tier 1 qualifiers", "Teams of 3–5", "Story + Script", "Portal submission"],
     hover: "TIER 02",
   },
   {
@@ -143,13 +140,6 @@ export const tierChallenges: TierChallenge[] = [
     format: "Teams",
     name: "Assets + Post Production",
     desc: "Six hours to generate assets, post-produce, and present a complete short film using Workflows. This is where the room becomes a studio.",
-    pills: [
-      "6 hours total",
-      "3 hrs assets + 3 hrs post",
-      "75k–100k credits",
-      "Workflows",
-      "Short film",
-    ],
     hover: "TIER 03",
   },
 ];
