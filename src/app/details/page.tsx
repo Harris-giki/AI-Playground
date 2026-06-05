@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { TierChallengeRow } from "@/components/TierChallengeRow";
 import {
   IconCalendar,
   IconMapPin,
   IconClock,
   IconArrowRight,
 } from "@/components/icons";
+import {
+  dayOneSchedule,
+  dayTwoSchedule,
+  tierChallenges,
+} from "@/lib/event-details";
 import { applyFormUrl, eventDateLabel } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,77 +36,6 @@ const qualities = [
   {
     title: "Genuine curiosity",
     desc: "About where creativity is going, and the courage to meet it.",
-  },
-];
-
-const dayOne = [
-  { title: "Arrival", desc: "Doors open. Get your badge. Find your seat." },
-  {
-    title: "Orientation + Introduction",
-    desc: "Why we're here. What we're doing. Who's in the room.",
-  },
-  {
-    title: "Future of Design & Filmmaking",
-    desc: "A talk and live demo of ImagineArt. What the platform can do, and how to use it.",
-  },
-  {
-    title: "Networking + Food",
-    desc: "Eat. Meet. Find the people you want to work with.",
-  },
-  {
-    title: "Credits Assigned · Bingo",
-    desc: "Credits land in your space. Bingo loosens the room.",
-  },
-  {
-    title: "Challenge Brief, Stage 1 Begins",
-    desc: "20,000 credits. Premium models. 50 seconds to 1 minute. Build anything.",
-  },
-  {
-    title: "Stage 1 Submission · Assessment",
-    desc: "Submissions assessed. Shortlist announced.",
-  },
-  {
-    title: "Team Formation · Stage 2 Begins",
-    desc: "Shortlisted creators form teams of exactly 5. Story and script work begins.",
-  },
-  {
-    title: "Stage 2 Submission",
-    desc: "Scripts in. Day One closes.",
-  },
-];
-
-const dayTwo = [
-  {
-    title: "Shortlisted Teams Arrive",
-    desc: "Only the Stage 2 teams. Smaller room, sharper energy.",
-  },
-  {
-    title: "Orientation + Demo",
-    desc: "A quick recap and a deeper demo of the production toolset.",
-  },
-  {
-    title: "Stage 3: Asset Generation",
-    desc: "Three hours. Build everything you need to make the film exist.",
-  },
-  {
-    title: "Workshops (Parallel)",
-    desc: "Hands-on sessions for registered participants alongside the main jam.",
-  },
-  {
-    title: "Stage 3: Post Production",
-    desc: "Three hours. Edit, sound, polish.",
-  },
-  {
-    title: "Presentations",
-    desc: "Teams present their films to the room.",
-  },
-  {
-    title: "Awards",
-    desc: "Recognition for the work. $5,000 in prizes for the top films.",
-  },
-  {
-    title: "Keynote",
-    desc: "We close on a note that matters. Where this is all going.",
   },
 ];
 
@@ -137,7 +72,7 @@ export default function Details() {
             <span className="label-eyebrow">The Event</span>
           </div>
           <h1 className="title-hero mb-8 descender-safe max-w-[1000px]">
-            Two days, three stages,
+            Two days, three tiers,
             <br />
             <em
               className="text-outline accent"
@@ -184,7 +119,7 @@ export default function Details() {
                 className="w-[18px] h-[18px]"
                 style={{ color: "var(--accent)" }}
               />
-              <span className="meta-inline">2 Days · 3 Stages</span>
+              <span className="meta-inline">2 Days · 3 Tiers</span>
             </div>
             <div className="flex items-center gap-2.5">
               <IconMapPin
@@ -221,9 +156,8 @@ export default function Details() {
               <em>moving fast.</em>
             </h2>
             <p className="prose-body mb-14 max-w-[640px]">
-              Day One pulls the room together and runs Stage 1 and Stage 2. Day Two
-              is for the shortlisted teams making the films, presenting, and taking
-              home a share of the $5,000 prize pool.
+              Day One runs Tier 1 and Tier 2 at CEMTECH and Vyro. Day Two is Tier 3,
+              final submissions, and the $5,000 prize announcement.
             </p>
           </ScrollReveal>
 
@@ -232,15 +166,20 @@ export default function Details() {
               <div className="day-card">
                 <p className="label-day mb-3">Day 01</p>
                 <h3 className="title-lg descender-safe mb-8">
-                  Arrival, Stage 1, Stage 2
+                  Tier 1 & Tier 2
                 </h3>
                 <div className="timeline">
-                  {dayOne.map((item) => (
+                  {dayOneSchedule.map((item, index) => (
                     <div
-                      key={item.title}
+                      key={`day1-${index}`}
                       className="timeline-dot relative pl-5 pb-7 last:pb-0"
                     >
-                      <p className="timeline-title">{item.title}</p>
+                      <div className="timeline-head">
+                        <p className="timeline-title">{item.time}</p>
+                        {item.tag ? (
+                          <span className="timeline-tag">{item.tag}</span>
+                        ) : null}
+                      </div>
                       <p className="timeline-desc">{item.desc}</p>
                     </div>
                   ))}
@@ -252,15 +191,20 @@ export default function Details() {
               <div className="day-card">
                 <p className="label-day mb-3">Day 02</p>
                 <h3 className="title-lg descender-safe mb-8">
-                  Stage 3, Presentations, Keynote
+                  Tier 3 & Awards
                 </h3>
                 <div className="timeline">
-                  {dayTwo.map((item) => (
+                  {dayTwoSchedule.map((item, index) => (
                     <div
-                      key={item.title}
+                      key={`day2-${index}`}
                       className="timeline-dot relative pl-5 pb-7 last:pb-0"
                     >
-                      <p className="timeline-title">{item.title}</p>
+                      <div className="timeline-head">
+                        <p className="timeline-title">{item.time}</p>
+                        {item.tag ? (
+                          <span className="timeline-tag">{item.tag}</span>
+                        ) : null}
+                      </div>
                       <p className="timeline-desc">{item.desc}</p>
                     </div>
                   ))}
@@ -268,6 +212,31 @@ export default function Details() {
               </div>
             </ScrollReveal>
           </div>
+
+          <ScrollReveal delay={0.08}>
+            <div className="challenges-block">
+              <div className="section-head mb-6">
+                <span className="label-eyebrow">The Challenges</span>
+              </div>
+              <h2 className="title-display mb-4 descender-safe">
+                Three tiers.
+                <br />
+                <em>Prove it at every stage.</em>
+              </h2>
+              <p className="prose-body mb-10 max-w-[640px]">
+                Each tier narrows the room. Credits, tools, and time limits shift
+                — only the strongest stories make it to the final cut.
+              </p>
+
+              <div className="stages-shell stages-shell--tiers">
+                {tierChallenges.map((tier, index) => (
+                  <ScrollReveal key={tier.id} delay={index * 0.05}>
+                    <TierChallengeRow tier={tier} />
+                  </ScrollReveal>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

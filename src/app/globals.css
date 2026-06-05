@@ -1684,6 +1684,69 @@ strong { color: var(--ink); font-weight: 500; }
     0 28px 44px -24px rgba(20, 17, 14, 0.18);
 }
 
+/* Challenges block — below schedule on /details */
+.challenges-block {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid rgba(244, 239, 232, 0.08);
+}
+[data-theme="light"] .challenges-block {
+  border-top-color: rgba(20, 17, 14, 0.08);
+}
+
+.tier-row__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Extra breathing room between tier blocks on /details */
+.stages-shell--tiers .stage-row {
+  border-bottom: 0;
+  padding-bottom: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.stages-shell--tiers .animate-on-scroll + .animate-on-scroll {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(244, 239, 232, 0.08);
+}
+
+[data-theme="light"] .stages-shell--tiers .animate-on-scroll + .animate-on-scroll {
+  border-top-color: rgba(20, 17, 14, 0.08);
+}
+
+/* Timeline row header — time + optional tier/workshop tag */
+.timeline-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-head .timeline-title {
+  margin-bottom: 0;
+}
+
+.timeline-tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  line-height: 1;
+}
+[data-theme="light"] .timeline-tag {
+  background: color-mix(in srgb, var(--accent) 6%, white);
+}
+
 /* ── CTA Shell — wraps the closing call to action ── */
 
 .cta-shell {
