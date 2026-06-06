@@ -461,89 +461,10 @@ strong { color: var(--ink); font-weight: 500; }
   border-bottom: 1px solid var(--border);
 }
 
-/* ── Site notice banner (top news strip) ── */
+/* ── Challenge timer bar (/tier-1-2) ── */
 
 :root {
-  --notice-banner-h: 0px;
   --challenge-timer-bar-h: 0px;
-}
-
-html.has-notice-banner {
-  --notice-banner-h: 2.65rem;
-}
-
-.notice-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 110;
-  height: var(--notice-banner-h);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.45rem 1rem;
-  padding-top: max(0.45rem, env(safe-area-inset-top, 0px));
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--accent) 14%, var(--bg)),
-    color-mix(in srgb, var(--accent) 8%, var(--bg-raised)),
-    color-mix(in srgb, var(--accent) 14%, var(--bg))
-  );
-  border-bottom: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-[data-theme="light"] .notice-banner {
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--accent) 10%, white),
-    color-mix(in srgb, var(--accent) 5%, #faf8f5),
-    color-mix(in srgb, var(--accent) 10%, white)
-  );
-}
-
-.notice-banner__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  max-width: 72rem;
-  text-align: center;
-}
-
-.notice-banner__label {
-  flex-shrink: 0;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  line-height: 1;
-}
-
-.notice-banner__text {
-  margin: 0;
-  font-family: var(--font-body), sans-serif;
-  font-size: clamp(0.78rem, 1.5vw, 0.88rem);
-  line-height: 1.45;
-  color: var(--ink-muted);
-}
-
-html.has-notice-banner .nav-pill {
-  top: calc(1rem + var(--notice-banner-h)) !important;
-}
-
-html.has-notice-banner .nav-theme-toggle {
-  top: calc(1.25rem + var(--notice-banner-h)) !important;
-}
-
-html.has-notice-banner .wordmark-offset {
-  top: calc(1.4rem + var(--notice-banner-h)) !important;
 }
 
 html.has-challenge-timer-bar {
@@ -552,7 +473,7 @@ html.has-challenge-timer-bar {
 
 .challenge-timer-bar {
   position: fixed;
-  top: var(--notice-banner-h);
+  top: 0;
   left: 0;
   right: 0;
   z-index: 105;
@@ -561,6 +482,7 @@ html.has-challenge-timer-bar {
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
+  padding-top: max(0px, env(safe-area-inset-top, 0px));
   background: linear-gradient(
     180deg,
     rgba(244, 239, 232, 0.06),
@@ -588,29 +510,25 @@ html.has-challenge-timer-bar {
   justify-content: center;
 }
 
-html.has-notice-banner.has-challenge-timer-bar .nav-pill {
-  top: calc(1rem + var(--notice-banner-h) + var(--challenge-timer-bar-h)) !important;
+html.has-challenge-timer-bar .nav-pill {
+  top: calc(1rem + var(--challenge-timer-bar-h)) !important;
 }
 
-html.has-notice-banner.has-challenge-timer-bar .nav-theme-toggle {
-  top: calc(1.25rem + var(--notice-banner-h) + var(--challenge-timer-bar-h)) !important;
+html.has-challenge-timer-bar .nav-theme-toggle {
+  top: calc(1.25rem + var(--challenge-timer-bar-h)) !important;
 }
 
-html.has-notice-banner.has-challenge-timer-bar .wordmark-offset {
-  top: calc(1.4rem + var(--notice-banner-h) + var(--challenge-timer-bar-h)) !important;
+html.has-challenge-timer-bar .wordmark-offset {
+  top: calc(1.4rem + var(--challenge-timer-bar-h)) !important;
 }
 
 html.has-challenge-timer-bar .challenge-page-hero {
-  padding-top: calc(
-    7.5rem + var(--notice-banner-h) + var(--challenge-timer-bar-h)
-  ) !important;
+  padding-top: calc(7.5rem + var(--challenge-timer-bar-h)) !important;
 }
 
 @media (min-width: 640px) {
   html.has-challenge-timer-bar .challenge-page-hero {
-    padding-top: calc(
-      8.5rem + var(--notice-banner-h) + var(--challenge-timer-bar-h)
-    ) !important;
+    padding-top: calc(8.5rem + var(--challenge-timer-bar-h)) !important;
   }
 }
 
@@ -652,22 +570,12 @@ html.has-challenge-timer-bar .challenge-page-hero {
 }
 
 @media (max-width: 640px) {
-  html.has-notice-banner.has-challenge-timer-bar {
+  html.has-challenge-timer-bar {
     --challenge-timer-bar-h: 4.5rem;
   }
 
   .tier1-timer--compact {
     gap: 0.65rem;
-  }
-}
-
-@media (max-width: 640px) {
-  html.has-notice-banner {
-    --notice-banner-h: 3.35rem;
-  }
-
-  .notice-banner__inner {
-    gap: 0.45rem;
   }
 }
 
