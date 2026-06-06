@@ -50,15 +50,15 @@ const segments = [
 const stages = [
   {
     num: "S-01",
-    title: "Concept & Storyboard",
-    desc: "Choose a spec ad or a film — pitch with concept images, a storyboard, and brief text. Not evaluated alone; everyone continues to Tier 2.",
-    pills: ["Spec ad · Film", "Solo", "No cut", "Day 1"],
+    title: "Script Polish",
+    desc: "Choose a spec ad or a film — write your full script and story first. Not evaluated alone; everyone continues to Tier 2.",
+    pills: ["Spec ad · Film", "Solo", "Full script", "Day 1"],
   },
   {
     num: "S-02",
-    title: "Script Polish",
-    desc: "Everyone refines their Tier 1 concept into a polished script. Tier 1 and Tier 2 reviewed together — shortlist announced Day 1 evening.",
-    pills: ["Teams of 3–5", "Combined review", "Shortlist Day 1", "Script"],
+    title: "Concept & Storyboard",
+    desc: "Build the visual storyboard and concept from your script. Tier 1 and Tier 2 reviewed together — shortlist announced Day 1 evening.",
+    pills: ["Teams of 3–5", "Storyboard", "Combined review", "Shortlist Day 1"],
   },
   {
     num: "S-03",

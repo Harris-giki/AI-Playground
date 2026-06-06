@@ -20,26 +20,26 @@ export type TiersGuideline = {
 
 export const tiersChallenge = {
   heroEyebrow: "Tier 1 & 2",
-  title: "Concept to Script",
+  title: "Script to Storyboard",
   subtitle:
-    "Day 1 in two acts — build your visual storyboard and concept in Tier 1, then refine it into a full script and story in Tier 2. Both are reviewed together; shortlisted participants are announced that evening.",
+    "Day 1 in two acts — write your full script and story in Tier 1, then build the visual storyboard and concept in Tier 2. Both are reviewed together; shortlisted participants are announced that evening.",
   tier1: {
     label: "Tier 1",
-    title: "Concept & Storyboard",
+    title: "Script Polish",
     heading: "Spec ad or film — your call",
     paragraphs: [
       "Pick one track: a spec ad for a brand or product you invent (or reimagine), or a film concept — any genre, mood, or story that excites you.",
-      "Use concept images to build a visual storyboard and write a short pitch that explains what it is, who it's for, and why it works.",
+      "Write your full script and story first — the clearest version of what you want to make on screen. Not evaluated on its own; this feeds directly into Tier 2.",
     ],
     tracks: ["Spec ad", "Film"],
   },
   tier2: {
     label: "Tier 2",
-    title: "Script Polish",
-    heading: "From idea to full script",
+    title: "Concept & Storyboard",
+    heading: "Visualize the script",
     paragraphs: [
-      "Take your Tier 1 concept and develop it into a polished script and complete story — the clearest version of what you want to make on screen.",
-      "This is not a separate evaluation. Tier 1 and Tier 2 submissions are reviewed together as one package.",
+      "Take your Tier 1 script and build a visual storyboard — concept images that map key frames, tone, and direction.",
+      "Add a brief pitch that ties the visuals to your story. Tier 1 and Tier 2 are reviewed together as one package.",
     ],
   },
   guidelines: [
@@ -50,32 +50,32 @@ export const tiersChallenge = {
       highlight: "Spec ad · Film",
     },
     {
-      id: "storyboard",
-      title: "Visual storyboard",
-      desc: "Concept images that map key frames, tone, and direction — your visual pitch before production.",
-      highlight: "Concept images",
-    },
-    {
       id: "script",
       title: "Script & story",
-      desc: "In Tier 2, submit your full script and story — not just a logline. Show us the narrative you intend to film.",
+      desc: "In Tier 1, submit your full script and story — not just a logline. Nail the narrative before you visualize it.",
       highlight: "Full script",
+    },
+    {
+      id: "storyboard",
+      title: "Visual storyboard",
+      desc: "In Tier 2, use concept images to map key frames and visual direction based on your script.",
+      highlight: "Concept images",
     },
     {
       id: "workflows",
       title: "Workflows (Flow)",
-      desc: "We recommend using ImagineArt Flow for concept art and storyboard frames. You can also use other ImagineArt features — like Film Studio — if that fits your process better.",
+      desc: "We recommend using ImagineArt Flow for storyboard frames and concept art in Tier 2. You can also use other ImagineArt features — like Film Studio — if that fits your process better.",
       tag: "Flow",
       recommended: true,
     },
   ] satisfies TiersGuideline[],
   submission: {
-    title: "Submit your concept & script",
+    title: "Submit your script & storyboard",
     intro:
       "One submission at the end of Day 1 — include everything below. Tier 1 and Tier 2 are reviewed together.",
     deliverables: [
-      "Visual storyboard with concept images",
       "Your full script and story",
+      "Visual storyboard with concept images",
       "Brief concept pitch text",
     ],
     portalLabel: "Tier 1 & 2 portal",

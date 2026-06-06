@@ -9,7 +9,7 @@ import { filmStudioUrl, workflowsUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Tier 1 & 2 · AI Playground · ImagineArt",
   description:
-    "Tier 1 and Tier 2 of AI Playground: visual storyboard, concept pitch, and polished script. Reviewed together on Day 1.",
+    "Tier 1 and Tier 2 of AI Playground: full script first, then visual storyboard. Reviewed together on Day 1.",
 };
 
 export default function TiersChallengePage() {
@@ -142,9 +142,9 @@ export default function TiersChallengePage() {
               <em>works.</em>
             </h2>
             <p className="prose-body mb-12 max-w-[560px]">
-              Tier 1 builds the visual storyboard and concept. Tier 2 adds your
-              full script and story. Submit everything together — video comes on
-              Day 2 for shortlisted teams only.
+              Tier 1 is your script and story. Tier 2 is the visual storyboard.
+              Submit everything together — video comes on Day 2 for shortlisted
+              teams only.
             </p>
           </ScrollReveal>
 
@@ -217,7 +217,7 @@ export default function TiersChallengePage() {
               <em>Everything included.</em>
             </h2>
             <p className="prose-body mb-10 max-w-[560px]">
-              Visual storyboard, full script, and story — scan the QR code or open
+              Full script, visual storyboard, and story — scan the QR code or open
               the form below. Need the full schedule?{" "}
               <Link href="/details" className="text-accent font-medium">
                 See The Event
