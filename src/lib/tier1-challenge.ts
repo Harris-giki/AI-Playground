@@ -16,41 +16,46 @@ export type Tier1Guideline = {
 };
 
 export const tier1Challenge = {
-  title: "One Prompt Film",
-  subtitle: "Introduce yourself as a superhero. One prompt. One film.",
-  duration: "20–30 seconds",
+  title: "Concept & Storyboard",
+  subtitle:
+    "Choose a spec ad or a film — then pitch it with concept images, a storyboard, and a brief write-up. No video required yet.",
   prompt: {
-    label: "The Prompt",
-    heading: "One prompt film",
+    label: "The Brief",
+    heading: "Spec ad or film — your call",
     paragraphs: [
-      "Born human, I always felt there lived a superhero in me. It wasn't until the age of generative AI that I could finally portray myself as one.",
-      "In this short film, I'm introducing myself as a superhero. It might not be a typical \"hello, this is [insert name]\" video, but by the end, you'll have a complete sense of who I am, superpowers and all. Fair warning: my superpowers may not always be flashy, but they are superpowers nonetheless. You'll see.",
+      "For Tier 1, pick one track: a spec ad for a brand or product you invent (or reimagine), or a film concept — any genre, mood, or story that excites you.",
+      "Use concept images to build a visual storyboard and write a short pitch that explains what it is, who it's for, and why it works. Show us the idea before anything gets produced.",
     ],
   },
   guidelines: [
     {
-      id: "brief",
-      title: "Stay on brief",
-      desc: "Stick to the prompt as closely as possible. Your film should answer the brief — not drift into something else entirely.",
+      id: "choose",
+      title: "Pick your track",
+      desc: "Spec ad or film — choose one and commit. Both paths use the same deliverable: concept images, a storyboard, and brief pitch text.",
+      highlight: "Spec ad · Film",
     },
     {
-      id: "duration",
-      title: "Run time",
-      desc: "The film should be between 20 and 30 seconds long.",
-      highlight: "20–30 sec",
+      id: "explore",
+      title: "Explore freely",
+      desc: "No fixed theme. For a spec ad, nail the brand world and message. For a film, nail the story and visual tone.",
+    },
+    {
+      id: "storyboard",
+      title: "Storyboard it",
+      desc: "Use concept images to map key frames and visual direction — whether you're selling a product or telling a story.",
+      highlight: "Concept images",
+    },
+    {
+      id: "pitch",
+      title: "Pitch it",
+      desc: "Include brief written text that explains the concept — what's the idea, what's the feeling, and why should we care?",
     },
     {
       id: "workflows",
-      title: "Workflows",
-      desc: "We recommend using Workflows to make your film. Note that Workflows runs on Seedance 2.0 — a powerful but credit-heavy model.",
-      tag: "Seedance 2.0",
+      title: "Workflows (Flow)",
+      desc: "We recommend using ImagineArt Flow to build your concept art and storyboard frames. You can also use other ImagineArt features — like Film Studio — if that fits your process better.",
+      tag: "Flow",
       recommended: true,
-    },
-    {
-      id: "kling",
-      title: "Need more takes?",
-      desc: "If you need multiple generations, step out of Workflows and use the conventional flow with a more credit-efficient model. We recommend Kling 3.0.",
-      tag: "Kling 3.0",
     },
   ] satisfies Tier1Guideline[],
 } as const;

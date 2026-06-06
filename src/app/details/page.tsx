@@ -11,6 +11,7 @@ import {
   dayOneSchedule,
   dayTwoSchedule,
   tierChallenges,
+  tierProcessIntro,
 } from "@/lib/event-details";
 import { applyFormUrl, eventDateLabel } from "@/lib/site";
 
@@ -157,7 +158,7 @@ export default function Details() {
             </h2>
             <p className="prose-body mb-14 max-w-[640px]">
               Day One runs Tier 1 and Tier 2 at CEMTECH and Vyro. Day Two is Tier 3,
-              final submissions, and the $5,000 prize announcement.
+              final film submissions, and the $5,000 prize announcement.
             </p>
           </ScrollReveal>
 
@@ -221,11 +222,10 @@ export default function Details() {
               <h2 className="title-display mb-4 descender-safe">
                 Three tiers.
                 <br />
-                <em>Prove it at every stage.</em>
+                <em>Idea to film.</em>
               </h2>
               <p className="prose-body mb-10 max-w-[640px]">
-                Each tier narrows the room. Credits, tools, and time limits shift
-                — only the strongest stories make it to the final cut.
+                {tierProcessIntro}
               </p>
 
               <div className="stages-shell stages-shell--tiers">

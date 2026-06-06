@@ -50,21 +50,21 @@ const segments = [
 const stages = [
   {
     num: "S-01",
-    title: "Open Canvas",
-    desc: "After the ImagineArt workshop, every attendee gets 20,000 credits and premium models. Build anything from your imagination, 50 seconds to 1 minute. Shortlists come from here.",
-    pills: ["20k Credits", "50s to 1min", "Solo", "Premium Models"],
+    title: "Concept & Storyboard",
+    desc: "Choose a spec ad or a film — then pitch it with concept images, a storyboard, and brief text. Open-ended exploration; no video yet.",
+    pills: ["Spec ad · Film", "Solo", "Storyboard", "Day 1"],
   },
   {
     num: "S-02",
-    title: "Form & Frame",
-    desc: "Shortlisted creators meet on-site and form teams of exactly 5. Write the story and script for your film. Day 1 closes with submission.",
-    pills: ["Teams of 5", "Shortlisted Only", "Script Submission", "Day 1 Close"],
+    title: "Script Polish",
+    desc: "Qualifiers refine their Tier 1 concept into a polished script — the clearest version of the film they want to make.",
+    pills: ["Teams of 3–5", "Tier 1 Qualifiers", "Script", "Day 1 Close"],
   },
   {
     num: "S-03",
     title: "Make the Film",
-    desc: "Day 2. Teams generate assets, post-produce, and present to ImagineArt's creative directors and judges. Non-shortlisted attendees join parallel workshops.",
-    pills: ["Day 2", "75k to 100k Credits", "Judge Presentation", "$5,000 Prize Pool"],
+    desc: "Day 2. Teams generate video from their concept and script, assemble the short film, and present to judges.",
+    pills: ["Day 2", "Video Generation", "Final Film", "$5,000 Prize Pool"],
   },
 ];
 

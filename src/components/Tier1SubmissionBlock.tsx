@@ -25,10 +25,10 @@ export function Tier1SubmissionBlock() {
 
       <div className="tier1-submit-shell__form">
         <p className="label-day mb-4">Submission</p>
-        <h3 className="title-lg descender-safe mb-3">Submit your film</h3>
+        <h3 className="title-lg descender-safe mb-3">Submit your concept</h3>
         <p className="prose-body-sm mb-6 max-w-[420px]">
-          When your clip is ready, submit through the Google Form — on your phone
-          via QR or on desktop via the link below.
+          When your storyboard and pitch are ready, submit through the Google Form
+          — on your phone via QR or on desktop via the link below.
         </p>
 
         <div className="tier1-submit-form-row">

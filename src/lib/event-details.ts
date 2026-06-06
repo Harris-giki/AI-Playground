@@ -13,6 +13,10 @@ export type TierChallenge = {
   hover: string;
 };
 
+/** Brief overview of how the three tiers connect — used on /details. */
+export const tierProcessIntro =
+  "Three steps, one film. Tier 1 is pure exploration — pitch a spec ad or a film concept with images and words. Tier 2 sharpens that into a script. Tier 3 is where you generate video and make it for real.";
+
 export const dayOneSchedule: ScheduleItem[] = [
   {
     time: "9:00 AM",
@@ -28,7 +32,7 @@ export const dayOneSchedule: ScheduleItem[] = [
   },
   {
     time: "11:00 AM",
-    desc: "Bingo, coffee, and networking. Tier 1 credits assigned — challenge goes live.",
+    desc: "Bingo, coffee, and networking. Tier 1 credits assigned — concept challenge goes live.",
     tag: "Tier 1",
   },
   {
@@ -38,7 +42,7 @@ export const dayOneSchedule: ScheduleItem[] = [
   },
   {
     time: "12:00 PM",
-    desc: "Tier 1 begins — four hours on the clock.",
+    desc: "Tier 1 begins — four hours to build your concept pitch.",
     tag: "Tier 1",
   },
   {
@@ -48,7 +52,7 @@ export const dayOneSchedule: ScheduleItem[] = [
   },
   {
     time: "4:00 PM",
-    desc: "Tier 1 submissions due. Lunch break @ INNO.",
+    desc: "Tier 1 concept submissions due. Lunch break @ INNO.",
     tag: "Tier 1",
   },
   {
@@ -58,12 +62,12 @@ export const dayOneSchedule: ScheduleItem[] = [
   },
   {
     time: "5:30 PM",
-    desc: "Tier 2 begins — story and script challenge issued.",
+    desc: "Tier 2 begins — refine your concept into a polished script.",
     tag: "Tier 2",
   },
   {
     time: "7:30 PM",
-    desc: "Submit your story, script, or concept.",
+    desc: "Submit your polished script.",
     tag: "Tier 2",
   },
   {
@@ -79,7 +83,7 @@ export const dayTwoSchedule: ScheduleItem[] = [
   },
   {
     time: "10:00 AM",
-    desc: "Orientation and reminder to access your Tier 2 submissions.",
+    desc: "Orientation and reminder to access your Tier 2 script submissions.",
     tag: "Tier 2",
   },
   {
@@ -88,7 +92,7 @@ export const dayTwoSchedule: ScheduleItem[] = [
   },
   {
     time: "11:00 AM",
-    desc: "Tier 3 begins — six hours to make your film.",
+    desc: "Tier 3 begins — six hours to generate video and make your film.",
     tag: "Tier 3",
   },
   {
@@ -102,12 +106,12 @@ export const dayTwoSchedule: ScheduleItem[] = [
   },
   {
     time: "3:00 PM",
-    desc: "Back to CEMTECH for post-production.",
+    desc: "Back to CEMTECH for post-production and assembly.",
     tag: "Tier 3",
   },
   {
     time: "6:00 PM",
-    desc: "Tier 3 submissions close.",
+    desc: "Tier 3 film submissions close.",
     tag: "Tier 3",
   },
   {
@@ -122,24 +126,24 @@ export const tierChallenges: TierChallenge[] = [
     id: "01",
     day: "Day 01",
     format: "Solo",
-    name: "One Prompt Challenge",
-    desc: "Curate and generate a 15-second clip in ImagineArt Creative Suite using Seedance or Kling 3.0. Everyone competes individually — this is the first filter.",
+    name: "Concept & Storyboard",
+    desc: "Choose your track — a spec ad or a film — and pitch it with concept images plus a short write-up that sells the vision. No video yet; this is pure ideation.",
     hover: "TIER 01",
   },
   {
     id: "02",
     day: "Day 01",
     format: "Teams of 3–5",
-    name: "Story + Script",
-    desc: "Qualifiers from Tier 1 form teams and craft the story and script for their short film. Narrative clarity matters as much as the idea.",
+    name: "Script Polish",
+    desc: "Take your Tier 1 concept and refine it into a polished script — the clearest, most intentional version of the film you want to make.",
     hover: "TIER 02",
   },
   {
     id: "03",
     day: "Day 02",
     format: "Teams",
-    name: "Assets + Post Production",
-    desc: "Six hours to generate assets, post-produce, and present a complete short film using Workflows. This is where the room becomes a studio.",
+    name: "Make the Film",
+    desc: "Turn concept and script into reality. Generate video, assemble your short film, and present the finished piece.",
     hover: "TIER 03",
   },
 ];

@@ -4,12 +4,12 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Tier1SubmissionBlock } from "@/components/Tier1SubmissionBlock";
 import { IconArrowRight } from "@/components/icons";
 import { tier1Challenge } from "@/lib/tier1-challenge";
-import { workflowsUrl } from "@/lib/site";
+import { filmStudioUrl, workflowsUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Tier 1 Challenge · AI Playground · ImagineArt",
   description:
-    "The Tier 1 One Prompt Film challenge for AI Playground. Introduce yourself as a superhero in 20–30 seconds using ImagineArt Creative Suite.",
+    "Tier 1 of AI Playground: pitch a spec ad or film concept with storyboard images and brief text. Choose your track and explore.",
 };
 
 export default function Tier1ChallengePage() {
@@ -49,10 +49,10 @@ export default function Tier1ChallengePage() {
               {tier1Challenge.subtitle}
             </p>
             <div className="flex flex-wrap gap-3">
-              <span className="meta-tag">{tier1Challenge.duration}</span>
+              <span className="meta-tag">Spec ad</span>
+              <span className="meta-tag">Film</span>
               <span className="meta-tag">Solo</span>
               <span className="meta-tag">Day 01</span>
-              <span className="meta-tag">ImagineArt Creative Suite</span>
             </div>
           </ScrollReveal>
         </div>
@@ -72,7 +72,7 @@ export default function Tier1ChallengePage() {
               <span className="label-eyebrow">{tier1Challenge.prompt.label}</span>
             </div>
             <h2 className="title-display mb-10 descender-safe max-w-[720px]">
-              Your script
+              Your concept
               <br />
               <em>starts here.</em>
             </h2>
@@ -106,8 +106,8 @@ export default function Tier1ChallengePage() {
               <em>this tier.</em>
             </h2>
             <p className="prose-body mb-12 max-w-[560px]">
-              Read the brief, pick your workflow, and stay inside the time limit.
-              Credits matter — choose your model wisely.
+              Pick spec ad or film, build your storyboard, write your pitch, and
+              submit when the concept feels clear. Video comes later.
             </p>
           </ScrollReveal>
 
@@ -145,8 +145,17 @@ export default function Tier1ChallengePage() {
                 data-hover="OPEN"
                 className="btn-primary"
               >
-                Open Workflows
+                Open Workflows (Flow)
                 <IconArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href={filmStudioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-hover="STUDIO"
+                className="btn-ghost"
+              >
+                Film Studio
               </a>
               <Link
                 href="/details"
@@ -176,10 +185,11 @@ export default function Tier1ChallengePage() {
             <h2 className="title-display mb-4 descender-safe max-w-[640px]">
               Clock&apos;s ready.
               <br />
-              <em>Submit when you&apos;re done.</em>
+              <em>Submit your pitch.</em>
             </h2>
             <p className="prose-body mb-10 max-w-[560px]">
-              Scan the QR code or open the form link below. Need the full schedule?{" "}
+              Storyboard images and written concept — scan the QR code or open the
+              form below. Need the full schedule?{" "}
               <Link href="/details" className="text-accent font-medium">
                 See The Event
               </Link>
