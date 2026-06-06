@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { Tier1SubmissionBlock } from "@/components/Tier1SubmissionBlock";
 import { IconArrowRight } from "@/components/icons";
 import { tier1Challenge } from "@/lib/tier1-challenge";
-import { filmStudioUrl } from "@/lib/site";
+import { workflowsUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Tier 1 Challenge · AI Playground · ImagineArt",
@@ -139,13 +139,13 @@ export default function Tier1ChallengePage() {
           <ScrollReveal delay={0.15}>
             <div className="challenge-cta-row mt-14 flex flex-wrap gap-4">
               <a
-                href={filmStudioUrl}
+                href={workflowsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-hover="OPEN"
                 className="btn-primary"
               >
-                Open Film Studio
+                Open Workflows
                 <IconArrowRight className="w-4 h-4" />
               </a>
               <Link

@@ -27,6 +27,9 @@ export const imagineArtUrl = "https://imagine.art";
 /** Film Studio product URL. */
 export const filmStudioUrl = "https://imagine.art/film-studio";
 
+/** Workflows product URL. */
+export const workflowsUrl = "https://imagine.art/workflows";
+
 /** Film Studio getting-started tutorial (YouTube). */
 export const filmStudioTutorialUrl =
   "https://youtu.be/rNOTx0K9mzQ?si=PeAnIhtR6IYJ2Bpz";
