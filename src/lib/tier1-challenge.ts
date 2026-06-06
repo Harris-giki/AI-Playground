@@ -18,7 +18,7 @@ export type Tier1Guideline = {
 export const tier1Challenge = {
   title: "Concept & Storyboard",
   subtitle:
-    "Choose a spec ad or a film — then pitch it with concept images, a storyboard, and a brief write-up. No video required yet.",
+    "Choose a spec ad or a film — then pitch it with concept images, a storyboard, and a brief write-up. Everyone continues to Tier 2; Tier 1 is not evaluated on its own.",
   prompt: {
     label: "The Brief",
     heading: "Spec ad or film — your call",

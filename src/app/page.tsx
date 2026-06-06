@@ -51,20 +51,20 @@ const stages = [
   {
     num: "S-01",
     title: "Concept & Storyboard",
-    desc: "Choose a spec ad or a film — then pitch it with concept images, a storyboard, and brief text. Open-ended exploration; no video yet.",
-    pills: ["Spec ad · Film", "Solo", "Storyboard", "Day 1"],
+    desc: "Choose a spec ad or a film — pitch with concept images, a storyboard, and brief text. Not evaluated alone; everyone continues to Tier 2.",
+    pills: ["Spec ad · Film", "Solo", "No cut", "Day 1"],
   },
   {
     num: "S-02",
     title: "Script Polish",
-    desc: "Qualifiers refine their Tier 1 concept into a polished script — the clearest version of the film they want to make.",
-    pills: ["Teams of 3–5", "Tier 1 Qualifiers", "Script", "Day 1 Close"],
+    desc: "Everyone refines their Tier 1 concept into a polished script. Tier 1 and Tier 2 are reviewed together — shortlist decided here.",
+    pills: ["Teams of 3–5", "Combined review", "Script", "Day 1 Close"],
   },
   {
     num: "S-03",
     title: "Make the Film",
-    desc: "Day 2. Teams generate video from their concept and script, assemble the short film, and present to judges.",
-    pills: ["Day 2", "Video Generation", "Final Film", "$5,000 Prize Pool"],
+    desc: "Shortlisted participants only. Day 2 — generate video, assemble the film, and present to judges.",
+    pills: ["Shortlisted only", "Day 2", "Video Generation", "$5,000 Prize Pool"],
   },
 ];
 

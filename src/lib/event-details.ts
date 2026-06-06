@@ -15,7 +15,11 @@ export type TierChallenge = {
 
 /** Brief overview of how the three tiers connect — used on /details. */
 export const tierProcessIntro =
-  "Three steps, one film. Tier 1 is pure exploration — pitch a spec ad or a film concept with images and words. Tier 2 sharpens that into a script. Tier 3 is where you generate video and make it for real.";
+  "Three steps, one film. Tier 1 is exploration — pitch a spec ad or film with images and words. Tier 2 sharpens that into a script. Tier 1 and Tier 2 are reviewed together; only shortlisted participants move on to Tier 3, where you generate video and make it for real.";
+
+/** How participants advance between tiers. */
+export const tierEvaluationNote =
+  "Tier 1 is not evaluated on its own. Tier 1 and Tier 2 submissions are reviewed together. Tier 3 is invite-only for shortlisted participants.";
 
 export const dayOneSchedule: ScheduleItem[] = [
   {
@@ -57,7 +61,7 @@ export const dayOneSchedule: ScheduleItem[] = [
   },
   {
     time: "5:00 PM",
-    desc: "Tier 1 results announced at CEMTECH, 4th floor.",
+    desc: "Tier 1 closes — everyone continues to Tier 2. No standalone Tier 1 evaluation.",
     tag: "Tier 1",
   },
   {
@@ -67,12 +71,12 @@ export const dayOneSchedule: ScheduleItem[] = [
   },
   {
     time: "7:30 PM",
-    desc: "Submit your polished script.",
+    desc: "Tier 2 script submissions due — Tier 1 and Tier 2 reviewed together.",
     tag: "Tier 2",
   },
   {
     time: "Evening",
-    desc: "Wrap for the day. Rest up — Day Two moves fast.",
+    desc: "Wrap for the day. Tier 3 shortlist announced on Day 2 morning.",
   },
 ];
 
@@ -83,8 +87,8 @@ export const dayTwoSchedule: ScheduleItem[] = [
   },
   {
     time: "10:00 AM",
-    desc: "Orientation and reminder to access your Tier 2 script submissions.",
-    tag: "Tier 2",
+    desc: "Tier 3 shortlist announced — shortlisted participants only proceed.",
+    tag: "Shortlist",
   },
   {
     time: "10:30 AM",
@@ -92,7 +96,7 @@ export const dayTwoSchedule: ScheduleItem[] = [
   },
   {
     time: "11:00 AM",
-    desc: "Tier 3 begins — six hours to generate video and make your film.",
+    desc: "Tier 3 begins for shortlisted teams — six hours to generate video and make your film.",
     tag: "Tier 3",
   },
   {
@@ -125,9 +129,9 @@ export const tierChallenges: TierChallenge[] = [
   {
     id: "01",
     day: "Day 01",
-    format: "Solo",
+    format: "Solo · Not evaluated alone",
     name: "Concept & Storyboard",
-    desc: "Choose your track — a spec ad or a film — and pitch it with concept images plus a short write-up that sells the vision. No video yet; this is pure ideation.",
+    desc: "Choose your track — a spec ad or a film — and pitch it with concept images plus a short write-up. Not evaluated on its own; this feeds directly into Tier 2.",
     hover: "TIER 01",
   },
   {
@@ -135,15 +139,15 @@ export const tierChallenges: TierChallenge[] = [
     day: "Day 01",
     format: "Teams of 3–5",
     name: "Script Polish",
-    desc: "Take your Tier 1 concept and refine it into a polished script — the clearest, most intentional version of the film you want to make.",
+    desc: "Refine your Tier 1 concept into a polished script. Tier 1 and Tier 2 are reviewed together — this is your combined pitch to the judges.",
     hover: "TIER 02",
   },
   {
     id: "03",
     day: "Day 02",
-    format: "Teams",
+    format: "Shortlisted only",
     name: "Make the Film",
-    desc: "Turn concept and script into reality. Generate video, assemble your short film, and present the finished piece.",
+    desc: "Shortlisted participants only. Turn your concept and script into a finished film — generate video, assemble, and present.",
     hover: "TIER 03",
   },
 ];
