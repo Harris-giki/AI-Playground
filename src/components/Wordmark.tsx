@@ -21,6 +21,7 @@ export function Wordmark() {
       href="/"
       data-hover="HOME"
       aria-label="AI Playground, by ImagineArt"
+      className="wordmark-offset"
       style={{
         position: "fixed",
         top: "max(1.4rem, env(safe-area-inset-top, 0px))",
