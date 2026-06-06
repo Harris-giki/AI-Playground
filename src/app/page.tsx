@@ -57,8 +57,8 @@ const stages = [
   {
     num: "S-02",
     title: "Script Polish",
-    desc: "Everyone refines their Tier 1 concept into a polished script. Tier 1 and Tier 2 are reviewed together — shortlist decided here.",
-    pills: ["Teams of 3–5", "Combined review", "Script", "Day 1 Close"],
+    desc: "Everyone refines their Tier 1 concept into a polished script. Tier 1 and Tier 2 reviewed together — shortlist announced Day 1 evening.",
+    pills: ["Teams of 3–5", "Combined review", "Shortlist Day 1", "Script"],
   },
   {
     num: "S-03",

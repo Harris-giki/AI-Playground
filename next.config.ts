@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/tier-1-challenge",
+        destination: "/tier-1-2",
+        permanent: true,
+      },
+      {
         source: "/apply",
         // Placeholder Google Form — replace with the real form URL when ready.
         destination: "https://forms.gle/your-form-id",

@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { Tier1SubmissionBlock } from "@/components/Tier1SubmissionBlock";
+import { TiersSubmissionBlock } from "@/components/TiersSubmissionBlock";
 import { IconArrowRight } from "@/components/icons";
-import { tier1Challenge } from "@/lib/tier1-challenge";
+import { tiersChallenge } from "@/lib/tiers-challenge";
 import { filmStudioUrl, workflowsUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Tier 1 Challenge · AI Playground · ImagineArt",
+  title: "Tier 1 & 2 · AI Playground · ImagineArt",
   description:
-    "Tier 1 of AI Playground: pitch a spec ad or film concept with storyboard images and brief text. Choose your track and explore.",
+    "Tier 1 and Tier 2 of AI Playground: visual storyboard, concept pitch, and polished script. Reviewed together on Day 1.",
 };
 
-export default function Tier1ChallengePage() {
+export default function TiersChallengePage() {
+  const { tier1, tier2 } = tiersChallenge;
+
   return (
     <>
       {/* HERO */}
@@ -26,10 +28,10 @@ export default function Tier1ChallengePage() {
           style={{ background: "var(--accent-dim)" }}
         />
         <div
-          className="challenge-hero__ghost absolute left-6 sm:left-12 top-24 sm:top-28 select-none pointer-events-none"
+          className="challenge-hero__ghost challenge-hero__ghost--duo absolute left-6 sm:left-12 top-24 sm:top-28 select-none pointer-events-none"
           aria-hidden
         >
-          01
+          01·02
         </div>
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
@@ -38,20 +40,20 @@ export default function Tier1ChallengePage() {
               <span className="section-index">
                 <span className="num">01</span>
                 <span className="slash">/</span>
-                <span>01</span>
+                <span>02</span>
               </span>
-              <span className="label-eyebrow">Tier 1 Challenge</span>
+              <span className="label-eyebrow">{tiersChallenge.heroEyebrow}</span>
             </div>
             <h1 className="title-hero mb-5 descender-safe max-w-[900px]">
-              {tier1Challenge.title}
+              {tiersChallenge.title}
             </h1>
-            <p className="prose-body mb-8 max-w-[580px]">
-              {tier1Challenge.subtitle}
+            <p className="prose-body mb-8 max-w-[620px]">
+              {tiersChallenge.subtitle}
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="meta-tag">Spec ad</span>
               <span className="meta-tag">Film</span>
-              <span className="meta-tag">Solo</span>
+              <span className="meta-tag">Teams of 3–5</span>
               <span className="meta-tag">Day 01</span>
             </div>
           </ScrollReveal>
@@ -60,7 +62,7 @@ export default function Tier1ChallengePage() {
 
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
-      {/* PROMPT */}
+      {/* TIER 1 */}
       <section
         data-scroll-section
         className="site-section px-6 sm:px-12 py-28"
@@ -69,20 +71,50 @@ export default function Tier1ChallengePage() {
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
-              <span className="label-eyebrow">{tier1Challenge.prompt.label}</span>
+              <span className="label-eyebrow">{tier1.label}</span>
             </div>
             <h2 className="title-display mb-10 descender-safe max-w-[720px]">
-              Your concept
-              <br />
-              <em>starts here.</em>
+              {tier1.title}
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={0.05}>
             <article className="challenge-prompt" data-hover="READ">
-              <p className="label-day mb-4">{tier1Challenge.prompt.heading}</p>
+              <p className="label-day mb-4">{tier1.heading}</p>
+              <ul className="tier-row__tracks mb-5">
+                {tier1.tracks.map((track) => (
+                  <li key={track}>{track}</li>
+                ))}
+              </ul>
               <div className="challenge-prompt__body">
-                {tier1Challenge.prompt.paragraphs.map((paragraph, index) => (
+                {tier1.paragraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
+
+      {/* TIER 2 */}
+      <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
+        <div className="max-w-[1200px] mx-auto">
+          <ScrollReveal>
+            <div className="section-head mb-6">
+              <span className="label-eyebrow">{tier2.label}</span>
+            </div>
+            <h2 className="title-display mb-10 descender-safe max-w-[720px]">
+              {tier2.title}
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.05}>
+            <article className="challenge-prompt" data-hover="READ">
+              <p className="label-day mb-4">{tier2.heading}</p>
+              <div className="challenge-prompt__body">
+                {tier2.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -94,25 +126,30 @@ export default function Tier1ChallengePage() {
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* GUIDELINES */}
-      <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
+      <section
+        data-scroll-section
+        className="site-section px-6 sm:px-12 py-28"
+        style={{ background: "var(--bg-raised)" }}
+      >
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
               <span className="label-eyebrow">Guidelines</span>
             </div>
             <h2 className="title-display mb-4 descender-safe">
-              How to play
+              How Day 1
               <br />
-              <em>this tier.</em>
+              <em>works.</em>
             </h2>
             <p className="prose-body mb-12 max-w-[560px]">
-              Pick spec ad or film, build your storyboard, write your pitch, and
-              submit when the concept feels clear. Video comes later.
+              Tier 1 builds the visual storyboard and concept. Tier 2 adds your
+              full script and story. Submit everything together — video comes on
+              Day 2 for shortlisted teams only.
             </p>
           </ScrollReveal>
 
           <div className="guideline-grid">
-            {tier1Challenge.guidelines.map((item, index) => (
+            {tiersChallenge.guidelines.map((item, index) => (
               <ScrollReveal key={item.id} delay={index * 0.05}>
                 <article
                   className={`guideline-card${item.recommended ? " guideline-card--featured" : ""}`}
@@ -157,11 +194,7 @@ export default function Tier1ChallengePage() {
               >
                 Film Studio
               </a>
-              <Link
-                href="/details"
-                data-hover="EVENT"
-                className="btn-ghost"
-              >
+              <Link href="/details" data-hover="EVENT" className="btn-ghost">
                 Back to The Event
               </Link>
             </div>
@@ -172,24 +205,20 @@ export default function Tier1ChallengePage() {
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
       {/* SUBMISSION */}
-      <section
-        data-scroll-section
-        className="site-section px-6 sm:px-12 py-28"
-        style={{ background: "var(--bg-raised)" }}
-      >
+      <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
               <span className="label-eyebrow">Submission</span>
             </div>
             <h2 className="title-display mb-4 descender-safe max-w-[640px]">
-              Clock&apos;s ready.
+              One form.
               <br />
-              <em>Submit your pitch.</em>
+              <em>Everything included.</em>
             </h2>
             <p className="prose-body mb-10 max-w-[560px]">
-              Storyboard images and written concept — scan the QR code or open the
-              form below. Need the full schedule?{" "}
+              Visual storyboard, full script, and story — scan the QR code or open
+              the form below. Need the full schedule?{" "}
               <Link href="/details" className="text-accent font-medium">
                 See The Event
               </Link>
@@ -197,7 +226,7 @@ export default function Tier1ChallengePage() {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.05}>
-            <Tier1SubmissionBlock />
+            <TiersSubmissionBlock />
           </ScrollReveal>
         </div>
       </section>

@@ -5,43 +5,48 @@ import { IconArrowRight } from "@/components/icons";
 import { useTheme } from "@/components/ThemeProvider";
 import { Tier1ChallengeTimer } from "@/components/Tier1ChallengeTimer";
 import {
-  tier1ChallengeDurationHours,
-  tier1SubmissionFormUrl,
-} from "@/lib/tier1-challenge";
+  tiersChallenge,
+  tiersChallengeDurationHours,
+  tiersSubmissionFormUrl,
+} from "@/lib/tiers-challenge";
 
-export function Tier1SubmissionBlock() {
+export function TiersSubmissionBlock() {
   const { resolvedTheme } = useTheme();
   const fg = resolvedTheme === "dark" ? "#f4efe8" : "#14110e";
   const bg = resolvedTheme === "dark" ? "#121010" : "#ffffff";
+  const { submission } = tiersChallenge;
 
   return (
     <div className="tier1-submit-shell">
       <div className="tier1-submit-shell__timer" data-hover="WAIT">
-        <p className="label-day mb-4">Challenge Timer</p>
-        <Tier1ChallengeTimer hours={tier1ChallengeDurationHours} />
+        <p className="label-day mb-4">Day 1 Timer</p>
+        <Tier1ChallengeTimer hours={tiersChallengeDurationHours} />
       </div>
 
       <div className="tier1-submit-shell__divider" aria-hidden />
 
       <div className="tier1-submit-shell__form">
         <p className="label-day mb-4">Submission</p>
-        <h3 className="title-lg descender-safe mb-3">Submit your concept</h3>
-        <p className="prose-body-sm mb-6 max-w-[420px]">
-          When your storyboard and pitch are ready, submit through the Google Form
-          — on your phone via QR or on desktop via the link below.
-        </p>
+        <h3 className="title-lg descender-safe mb-3">{submission.title}</h3>
+        <p className="prose-body-sm mb-5 max-w-[460px]">{submission.intro}</p>
+
+        <ul className="tier-submit-deliverables mb-6">
+          {submission.deliverables.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
 
         <div className="tier1-submit-form-row">
           <a
-            href={tier1SubmissionFormUrl}
+            href={tiersSubmissionFormUrl}
             target="_blank"
             rel="noopener noreferrer"
             data-hover="SUBMIT"
             className="tier1-qr-link"
-            aria-label="Open Tier 1 submission form (QR code)"
+            aria-label="Open Tier 1 and 2 submission form (QR code)"
           >
             <QRCodeSVG
-              value={tier1SubmissionFormUrl}
+              value={tiersSubmissionFormUrl}
               size={168}
               level="M"
               fgColor={fg}
@@ -53,7 +58,7 @@ export function Tier1SubmissionBlock() {
 
           <div className="tier1-submit-actions">
             <a
-              href={tier1SubmissionFormUrl}
+              href={tiersSubmissionFormUrl}
               target="_blank"
               rel="noopener noreferrer"
               data-hover="SUBMIT"
@@ -67,7 +72,7 @@ export function Tier1SubmissionBlock() {
               <span className="tier1-submit-url__sep" aria-hidden>
                 ·
               </span>
-              Tier 1 portal
+              {submission.portalLabel}
             </p>
           </div>
         </div>

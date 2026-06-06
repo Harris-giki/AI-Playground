@@ -1701,6 +1701,35 @@ strong { color: var(--ink); font-weight: 500; }
   flex-wrap: wrap;
 }
 
+.tier-row__tracks {
+  list-style: none;
+  margin: 0 0 0.85rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tier-row__tracks li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--text-body-sm);
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.tier-row__tracks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
 /* Extra breathing room between tier blocks on /details */
 .stages-shell--tiers .stage-row {
   border-bottom: 0;
@@ -1747,7 +1776,7 @@ strong { color: var(--ink); font-weight: 500; }
   background: color-mix(in srgb, var(--accent) 6%, white);
 }
 
-/* ── Tier 1 Challenge page ─────────────────── */
+/* ── Tier 1 & 2 Challenge page ─────────────────── */
 
 .challenge-hero__ghost {
   font-family: var(--font-display), sans-serif;
@@ -1760,6 +1789,41 @@ strong { color: var(--ink); font-weight: 500; }
   text-stroke: 0.035em color-mix(in srgb, var(--accent) 22%, transparent);
   opacity: 0.55;
   z-index: 0;
+}
+
+.challenge-hero__ghost--duo {
+  font-size: clamp(5rem, 14vw, 11rem);
+  letter-spacing: -0.04em;
+}
+
+.tier-submit-deliverables {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 460px;
+}
+
+.tier-submit-deliverables li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: var(--text-body-sm);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.tier-submit-deliverables li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .challenge-prompt {
