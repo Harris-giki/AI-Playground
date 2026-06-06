@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { ChallengeTimerBar } from "@/components/ChallengeTimerBar";
 import { TiersSubmissionBlock } from "@/components/TiersSubmissionBlock";
 import { IconArrowRight } from "@/components/icons";
 import { tiersChallenge } from "@/lib/tiers-challenge";
@@ -17,10 +18,12 @@ export default function TiersChallengePage() {
 
   return (
     <>
+      <ChallengeTimerBar />
+
       {/* HERO */}
       <section
         data-scroll-section
-        className="relative pt-28 sm:pt-32 pb-12 sm:pb-16 px-6 sm:px-12 overflow-hidden hero-rule challenge-hero"
+        className="relative pt-28 sm:pt-32 pb-12 sm:pb-16 px-6 sm:px-12 overflow-hidden hero-rule challenge-hero challenge-page-hero"
       >
         <div className="hero-grain" aria-hidden />
         <div

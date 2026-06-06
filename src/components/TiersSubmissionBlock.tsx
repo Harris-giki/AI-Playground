@@ -3,7 +3,6 @@
 import { QRCodeSVG } from "qrcode.react";
 import { IconArrowRight } from "@/components/icons";
 import { useTheme } from "@/components/ThemeProvider";
-import { Tier1ChallengeTimer } from "@/components/Tier1ChallengeTimer";
 import {
   tiersChallenge,
   tiersSubmissionFormUrl,
@@ -16,14 +15,7 @@ export function TiersSubmissionBlock() {
   const { submission } = tiersChallenge;
 
   return (
-    <div className="tier1-submit-shell">
-      <div className="tier1-submit-shell__timer" data-hover="WAIT">
-        <p className="label-day mb-4">Day 1 Timer</p>
-        <Tier1ChallengeTimer />
-      </div>
-
-      <div className="tier1-submit-shell__divider" aria-hidden />
-
+    <div className="tier1-submit-shell tier1-submit-shell--form-only">
       <div className="tier1-submit-shell__form">
         <p className="label-day mb-4">Submission</p>
         <h3 className="title-lg descender-safe mb-3">{submission.title}</h3>

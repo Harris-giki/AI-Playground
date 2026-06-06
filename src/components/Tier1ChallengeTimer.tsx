@@ -51,7 +51,7 @@ function getRemainingMs(now: number, phase: TimerPhase) {
   return END - now;
 }
 
-export function Tier1ChallengeTimer() {
+export function Tier1ChallengeTimer({ compact = false }: { compact?: boolean }) {
   const [now, setNow] = useState(0);
 
   useLayoutEffect(() => {
@@ -89,7 +89,7 @@ export function Tier1ChallengeTimer() {
 
   return (
     <div
-      className={`tier1-timer${phase !== "live" ? " tier1-timer--idle" : ""}${phase === "ended" ? " tier1-timer--ended" : ""}`}
+      className={`tier1-timer${compact ? " tier1-timer--compact" : ""}${phase !== "live" ? " tier1-timer--idle" : ""}${phase === "ended" ? " tier1-timer--ended" : ""}`}
       aria-live="polite"
     >
       <p className="tier1-timer__status">
@@ -97,9 +97,19 @@ export function Tier1ChallengeTimer() {
           className={`tier1-timer__dot${phase === "live" ? " tier1-timer__dot--live" : ""}`}
           aria-hidden
         />
+        {compact ? (
+          <>
+            <span className="tier1-timer__day">Day 1</span>
+            <span className="tier1-timer__sep" aria-hidden>
+              ·
+            </span>
+          </>
+        ) : null}
         {statusLabel}
       </p>
-      <div className="cd-clock cd-clock--wrap tier1-timer__clock">
+      <div
+        className={`cd-clock cd-clock--wrap tier1-timer__clock${compact ? " cd-clock--compact" : ""}`}
+      >
         {units.map((unit) => (
           <div key={unit.label} className="cd-unit">
             <RollPair value={unit.value} />
@@ -107,7 +117,9 @@ export function Tier1ChallengeTimer() {
           </div>
         ))}
       </div>
-      <p className="tier1-timer__hint prose-body-sm">{hint}</p>
+      {!compact ? (
+        <p className="tier1-timer__hint prose-body-sm">{hint}</p>
+      ) : null}
     </div>
   );
 }
