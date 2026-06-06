@@ -6,7 +6,6 @@ import { useTheme } from "@/components/ThemeProvider";
 import { Tier1ChallengeTimer } from "@/components/Tier1ChallengeTimer";
 import {
   tiersChallenge,
-  tiersChallengeDurationHours,
   tiersSubmissionFormUrl,
 } from "@/lib/tiers-challenge";
 
@@ -20,7 +19,7 @@ export function TiersSubmissionBlock() {
     <div className="tier1-submit-shell">
       <div className="tier1-submit-shell__timer" data-hover="WAIT">
         <p className="label-day mb-4">Day 1 Timer</p>
-        <Tier1ChallengeTimer hours={tiersChallengeDurationHours} />
+        <Tier1ChallengeTimer />
       </div>
 
       <div className="tier1-submit-shell__divider" aria-hidden />

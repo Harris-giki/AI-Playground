@@ -3,8 +3,11 @@
 export const tiersSubmissionFormUrl =
   "https://docs.google.com/forms/d/e/1FAIpQLSdm26HJRepvofvq0vz4naO87BXtADGkT0GuIyLyuqdR9WIZlQ/viewform";
 
-/** Challenge window once the timer starts (display only until then). */
+/** Challenge window length in hours. */
 export const tiersChallengeDurationHours = 4;
+
+/** When Day 1 Tier 1 & 2 timer started (Asia/Karachi). */
+export const tiersChallengeStartISO = "2026-06-06T13:17:00+05:00";
 
 export type TiersGuideline = {
   id: string;

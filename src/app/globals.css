@@ -2099,6 +2099,14 @@ strong { color: var(--ink); font-weight: 500; }
   opacity: 0.72;
 }
 
+.tier1-timer--ended .cd-num {
+  opacity: 0.45;
+}
+
+.tier1-timer__dot--live {
+  animation: tier1-pulse 1.4s ease-in-out infinite;
+}
+
 .tier1-timer__hint {
   margin: 0;
   max-width: 18rem;
