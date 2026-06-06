@@ -11,6 +11,7 @@ import { applyFormUrl } from "@/lib/site";
 const links = [
   { href: "/", label: "Home", hover: "HOME" },
   { href: "/details", label: "The Event", hover: "EVENT" },
+  { href: "/tier-1-challenge", label: "Tier 1 Challenge", hover: "TIER 01" },
   { href: "/film-studio", label: "Film Studio", hover: "STUDIO" },
 ];
 

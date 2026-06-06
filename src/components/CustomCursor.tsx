@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const HOVER_SELECTOR =
-  "[data-hover], a, button, .segment-card, .stage-row, .fs-film-card, .quality-item";
+  "[data-hover], a, button, .segment-card, .stage-row, .fs-film-card, .quality-item, .challenge-prompt, .guideline-card, .tier1-qr-link";
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
