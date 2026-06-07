@@ -83,7 +83,8 @@ export default function ShortlistPage() {
             <p className="prose-body mb-10 max-w-[580px]">
               You made it through Tier 1 — now find two other
               shortlisted creators and lock in your trio. Only people on this
-              list should come tomorrow for Tier 2 on Day 2.
+              list should come tomorrow for Tier 2 — two hours to write and submit
+              your script.
             </p>
           </ScrollReveal>
 
