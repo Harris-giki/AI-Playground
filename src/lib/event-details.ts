@@ -134,7 +134,7 @@ export const tierChallenges: TierChallenge[] = [
     day: "Day 02",
     format: "Teams of 3 · Shortlisted only",
     name: "Teams & Script",
-    desc: "Make your team of three and write a script based on the prompt. Submit it — then take a break.",
+    desc: "Make your team of three and write a 2–3 minute script based on the prompt. Submit it — then take a break.",
     hover: "TIER 02",
   },
 ];

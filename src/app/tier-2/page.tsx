@@ -9,7 +9,7 @@ import { filmStudioUrl, workflowsUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Tier 2 · AI Playground · ImagineArt",
   description:
-    "Tier 2 for shortlisted teams: form your trio and write a script from the prompt. Submit, then take a break.",
+    "Tier 2 for shortlisted teams: form your trio and write a 2–3 minute script from the prompt. Submit, then take a break.",
 };
 
 export default function Tier2Page() {
@@ -53,6 +53,7 @@ export default function Tier2Page() {
             <div className="flex flex-wrap gap-3">
               <span className="meta-tag">Shortlisted only</span>
               <span className="meta-tag">Teams of 3</span>
+              <span className="meta-tag">2–3 mins</span>
               <span className="meta-tag">Day 02</span>
             </div>
           </ScrollReveal>
