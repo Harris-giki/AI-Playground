@@ -3,6 +3,12 @@
 export const tier2SubmissionFormUrl =
   "https://forms.gle/kkFfnLixWbLecVw48";
 
+/** Tier 2 challenge window length in hours. */
+export const tier2ChallengeDurationHours = 2;
+
+/** When Tier 2 timer started (Asia/Karachi). Update when the window opens. */
+export const tier2ChallengeStartISO = "2026-06-07T13:11:00+05:00";
+
 export const tier2Challenge = {
   heroEyebrow: "Tier 2",
   title: "Teams & Script",

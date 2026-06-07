@@ -19,7 +19,7 @@ export default function ShortlistPage() {
     <>
       <section
         data-scroll-section
-        className="relative pt-28 sm:pt-32 pb-12 sm:pb-16 px-6 sm:px-12 overflow-hidden hero-rule shortlist-hero"
+        className="relative pt-28 sm:pt-32 pb-12 sm:pb-16 px-6 sm:px-12 overflow-hidden hero-rule shortlist-hero challenge-page-hero"
       >
         <div className="hero-grain" aria-hidden />
         <div
