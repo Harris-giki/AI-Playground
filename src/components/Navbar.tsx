@@ -13,7 +13,7 @@ const links = [
   { href: "/details", label: "The Event", shortLabel: "Event", hover: "EVENT" },
   { href: "/tier-1", label: "Tier 1", shortLabel: "Tier 1", hover: "TIER 1" },
   { href: "/shortlist", label: "Shortlist", shortLabel: "Shortlist", hover: "LIST" },
-  { href: "/tier-2-3", label: "Tier 2 & 3", shortLabel: "T2 & T3", hover: "FILM" },
+  { href: "/tier-2", label: "Tier 2", shortLabel: "Tier 2", hover: "TIER 2" },
   { href: "/film-studio", label: "Film Studio", shortLabel: "Studio", hover: "STUDIO" },
 ];
 

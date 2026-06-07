@@ -26,7 +26,7 @@ export const tier12ShortlistNextSteps: ShortlistNextStep[] = [
   {
     step: "03",
     title: "Read the brief",
-    desc: "The Tier 2 and Tier 3 brief is live — form your team, write your script, then sprint to make the film.",
+    desc: "The Tier 2 brief is live — form your team and write your script from the prompt.",
   },
 ];
 

@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Shortlist · AI Playground · ImagineArt",
   description:
-    "Shortlisted participants from Tier 1. Network, form a team of three, and return tomorrow for Tier 2 and Tier 3.",
+    "Shortlisted participants from Tier 1. Network, form a team of three, and return tomorrow for Tier 2.",
 };
 
 export default function ShortlistPage() {
@@ -52,13 +52,12 @@ export default function ShortlistPage() {
               you&apos;re in — but Day 2 is{" "}
               <span className="text-accent">shortlisted participants only</span>.
               Network tonight, form a team of three, and come back tomorrow for
-              Tier 2 — script from the prompt — then Tier 3, the four-hour
-              sprint to make the film.
+              Tier 2 — write your script from the prompt and submit.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="meta-tag">{tier12ShortlistCount} shortlisted</span>
               <span className="meta-tag">Teams of 3</span>
-              <span className="meta-tag">Day 02 · Tier 2 & 3</span>
+              <span className="meta-tag">Day 02 · Tier 2</span>
             </div>
           </ScrollReveal>
         </div>
@@ -83,8 +82,7 @@ export default function ShortlistPage() {
             <p className="prose-body mb-10 max-w-[580px]">
               You made it through Tier 1 — now find two other
               shortlisted creators and lock in your trio. Only people on this
-              list should come tomorrow; Tier 2 and Tier 3 run back to back on
-              Day 2.
+              list should come tomorrow for Tier 2 on Day 2.
             </p>
           </ScrollReveal>
 
@@ -151,8 +149,8 @@ export default function ShortlistPage() {
 
           <ScrollReveal delay={0.1}>
             <div className="shortlist-cta mt-14 flex flex-wrap gap-4">
-              <Link href="/tier-2-3" data-hover="TIER 2 & 3" className="btn-primary">
-                Read Tier 2 & 3 brief
+              <Link href="/tier-2" data-hover="TIER 2" className="btn-primary">
+                Read Tier 2 brief
                 <IconArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/details" data-hover="EVENT" className="btn-ghost">

@@ -22,7 +22,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/tier-3",
-        destination: "/tier-2-3",
+        destination: "/tier-2",
+        permanent: false,
+      },
+      {
+        source: "/tier-2-3",
+        destination: "/tier-2",
         permanent: true,
       },
       {

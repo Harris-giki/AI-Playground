@@ -17,11 +17,11 @@ export type TierChallenge = {
 
 /** Brief overview of how the tiers connect — used on /details. */
 export const tierProcessIntro =
-  "Three tiers, one film. Tier 1 is your script and visual storyboard on Day 1. Shortlisted participants return for Tier 2 — teams, script, submit, break — then Tier 3, a four-hour sprint to generate assets and make the film.";
+  "Tier 1 is your script and visual storyboard on Day 1. Shortlisted participants return for Tier 2 on Day 2 — form your team, write a script from the prompt, submit, and take a break.";
 
 /** How participants advance between tiers. */
 export const tierEvaluationNote =
-  "Tier 1 submissions are reviewed on Day 1, and shortlisted participants are announced that same evening. Tier 2 and Tier 3 are for shortlisted participants only.";
+  "Tier 1 submissions are reviewed on Day 1, and shortlisted participants are announced that same evening. Tier 2 is for shortlisted participants only.";
 
 export const dayOneSchedule: ScheduleItem[] = [
   {
@@ -83,7 +83,7 @@ export const dayOneSchedule: ScheduleItem[] = [
   },
   {
     time: "Evening",
-    desc: "Wrap for the day. Shortlisted teams prep for Tier 2 and Tier 3 on Day 2.",
+    desc: "Wrap for the day. Shortlisted teams prep for Tier 2 on Day 2.",
   },
 ];
 
@@ -112,20 +112,6 @@ export const dayTwoSchedule: ScheduleItem[] = [
     tag: "Tier 2",
   },
   {
-    time: "1:30 PM",
-    desc: "Break.",
-  },
-  {
-    time: "2:00 PM",
-    desc: "Tier 3 begins — four-hour sprint. Half the time on assets, half on the film.",
-    tag: "Tier 3",
-  },
-  {
-    time: "6:00 PM",
-    desc: "Tier 3 film submissions close.",
-    tag: "Tier 3",
-  },
-  {
     time: "8:00 PM",
     desc: "Results, $5,000 in prizes, and closing.",
     tag: "Awards",
@@ -148,15 +134,7 @@ export const tierChallenges: TierChallenge[] = [
     day: "Day 02",
     format: "Teams of 3 · Shortlisted only",
     name: "Teams & Script",
-    desc: "Make your team of three and write a script based on the prompt. Submit it — then take a break before Tier 3.",
+    desc: "Make your team of three and write a script based on the prompt. Submit it — then take a break.",
     hover: "TIER 02",
-  },
-  {
-    id: "03",
-    day: "Day 02",
-    format: "4-hour sprint · Shortlisted only",
-    name: "Make the Film",
-    desc: "Half the time generating assets, half the time making the film. Generate video, assemble, and present.",
-    hover: "TIER 03",
   },
 ];

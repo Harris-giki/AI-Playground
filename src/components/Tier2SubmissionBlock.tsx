@@ -4,15 +4,15 @@ import { QRCodeSVG } from "qrcode.react";
 import { IconArrowRight } from "@/components/icons";
 import { useTheme } from "@/components/ThemeProvider";
 import {
-  tier23Challenge,
+  tier2Challenge,
   tier2SubmissionFormUrl,
-} from "@/lib/tier23-challenge";
+} from "@/lib/tier2-challenge";
 
 export function Tier2SubmissionBlock() {
   const { resolvedTheme } = useTheme();
   const fg = resolvedTheme === "dark" ? "#f4efe8" : "#14110e";
   const bg = resolvedTheme === "dark" ? "#121010" : "#ffffff";
-  const { tier2: submission } = tier23Challenge.submission;
+  const submission = tier2Challenge.submission;
 
   return (
     <div className="tier1-submit-shell tier1-submit-shell--form-only mt-10">
