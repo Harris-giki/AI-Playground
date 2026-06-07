@@ -20,17 +20,17 @@ export const tier12ShortlistNextSteps: ShortlistNextStep[] = [
   {
     step: "02",
     title: "Teams of three",
-    desc: "Tier 3 runs as a trio. Pick people whose scripts and storyboards you want to build on together. Come tomorrow with your team locked in.",
+    desc: "Tier 2 runs as a trio. Pick people whose scripts and storyboards you want to build on together. Come tomorrow with your team locked in.",
     featured: true,
   },
   {
     step: "03",
-    title: "Brief drops tomorrow",
-    desc: "The Tier 3 challenge is for shortlisted participants only — and the full brief will be shared tomorrow morning. Nothing else to prep tonight beyond finding your crew.",
+    title: "Read the brief",
+    desc: "The Tier 2 and Tier 3 brief is live — form your team, write your script, then sprint to make the film.",
   },
 ];
 
-/** Tier 1 & 2 shortlist — deduplicated by email, "Good" submissions only. */
+/** Tier 1 shortlist — deduplicated by email, "Good" submissions only. */
 export const tier12Shortlist: ShortlistEntry[] = [
   { name: "Usama Mustafa Shahid", email: "usama.mustafa93@gmail.com" },
   { name: "Ehsan Ali Khan", email: "ehsankhan644@gmail.com" },

@@ -158,8 +158,8 @@ export default function Details() {
               <em>moving fast.</em>
             </h2>
             <p className="prose-body mb-14 max-w-[640px]">
-              Day One runs Tier 1 and Tier 2 at CEMTECH and Vyro, with shortlisted
-              participants announced that evening. Day Two is Tier 3 for shortlisted
+              Day One runs Tier 1 at CEMTECH and Vyro, with shortlisted
+              participants announced that evening. Day Two is Tier 2 and Tier 3 for shortlisted
               teams only, then final film submissions and the $5,000 prize announcement.
             </p>
           </ScrollReveal>
@@ -169,7 +169,7 @@ export default function Details() {
               <div className="day-card">
                 <p className="label-day mb-3">Day 01</p>
                 <h3 className="title-lg descender-safe mb-8">
-                  Tier 1, Tier 2 & Shortlist
+                  Tier 1 & Shortlist
                 </h3>
                 <div className="timeline">
                   {dayOneSchedule.map((item, index) => (
@@ -194,7 +194,7 @@ export default function Details() {
               <div className="day-card">
                 <p className="label-day mb-3">Day 02</p>
                 <h3 className="title-lg descender-safe mb-8">
-                  Tier 3 & Awards
+                  Tier 2, Tier 3 & Awards
                 </h3>
                 <div className="timeline">
                   {dayTwoSchedule.map((item, index) => (

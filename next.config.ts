@@ -12,7 +12,17 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/tier-1-challenge",
-        destination: "/tier-1-2",
+        destination: "/tier-1",
+        permanent: true,
+      },
+      {
+        source: "/tier-1-2",
+        destination: "/tier-1",
+        permanent: true,
+      },
+      {
+        source: "/tier-3",
+        destination: "/tier-2-3",
         permanent: true,
       },
       {

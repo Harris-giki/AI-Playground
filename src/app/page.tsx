@@ -50,21 +50,21 @@ const segments = [
 const stages = [
   {
     num: "S-01",
-    title: "Script Polish",
-    desc: "Choose a spec ad or a film — write your full script and story first. Not evaluated alone; everyone continues to Tier 2.",
-    pills: ["Spec ad · Film", "Solo", "Full script", "Day 1"],
+    title: "Script & Storyboard",
+    desc: "Choose a spec ad or a film — write your full script and story, then build the visual storyboard. Reviewed on Day 1; shortlist announced that evening.",
+    pills: ["Spec ad · Film", "Teams of 3–5", "Day 1"],
   },
   {
     num: "S-02",
-    title: "Concept & Storyboard",
-    desc: "Build the visual storyboard and concept from your script. Tier 1 and Tier 2 reviewed together — shortlist announced Day 1 evening.",
-    pills: ["Teams of 3–5", "Storyboard", "Combined review", "Shortlist Day 1"],
+    title: "Teams & Script",
+    desc: "Shortlisted only. Form your team of three and write a script from the prompt. Submit — then take a break.",
+    pills: ["Shortlisted only", "Teams of 3", "Day 2"],
   },
   {
     num: "S-03",
     title: "Make the Film",
-    desc: "Shortlisted participants only. Day 2 — generate video, assemble the film, and present to judges.",
-    pills: ["Shortlisted only", "Day 2", "Video Generation", "$5,000 Prize Pool"],
+    desc: "A four-hour sprint — half the time generating assets, half making the film. Present to judges.",
+    pills: ["4-hour sprint", "Day 2", "$5,000 Prize Pool"],
   },
 ];
 
@@ -119,7 +119,7 @@ export default function Home() {
                 >
                   Pakistan&apos;s Biggest{" "}
                   <span className="hero-accent">AI Film Making Competition</span>
-                  . Two days, three stages, one short film, built live with
+                  . Two days, three tiers, one short film, built live with
                   generative AI. For{" "}
                   <span className="hero-accent">Content Creators</span>,{" "}
                   <span className="hero-accent">Film Makers</span>,{" "}
@@ -158,7 +158,7 @@ export default function Home() {
                   <span className="sep" aria-hidden />
                   <span>Two Days</span>
                   <span className="sep" aria-hidden />
-                  <span>Three Stages</span>
+                  <span>Three Tiers</span>
                   <span className="sep" aria-hidden />
                   <span>Limited Slots . 150 Seats</span>
                 </div>
@@ -200,7 +200,7 @@ export default function Home() {
               <span className="star" />
               <em>6 June 2026</em>
               <span className="star" />
-              <span>Two Days · Three Stages</span>
+              <span>Two Days · Three Tiers</span>
               <span className="star" />
               <span className="accent">$5,000 Prize Pool</span>
               <span className="star" />
@@ -277,7 +277,7 @@ export default function Home() {
                   <span className="label-eyebrow">The Structure</span>
                 </div>
                 <h2 className="title-display descender-safe">
-                  Two days. Three stages.
+                  Two days. Three tiers.
                   <br />
                   <em
                     className="text-outline accent"
@@ -295,7 +295,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Glass ledger that holds all three stages — replaces the bare
+          {/* Glass ledger that holds all three tiers — replaces the bare
               hairline-divided rows with a single deliberate container. */}
           <div className="stages-shell">
             {stages.map((t, i) => (

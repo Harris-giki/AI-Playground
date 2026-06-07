@@ -4,18 +4,18 @@ import { QRCodeSVG } from "qrcode.react";
 import { IconArrowRight } from "@/components/icons";
 import { useTheme } from "@/components/ThemeProvider";
 import {
-  tiersChallenge,
-  tiersSubmissionFormUrl,
-} from "@/lib/tiers-challenge";
+  tier23Challenge,
+  tier2SubmissionFormUrl,
+} from "@/lib/tier23-challenge";
 
-export function TiersSubmissionBlock() {
+export function Tier2SubmissionBlock() {
   const { resolvedTheme } = useTheme();
   const fg = resolvedTheme === "dark" ? "#f4efe8" : "#14110e";
   const bg = resolvedTheme === "dark" ? "#121010" : "#ffffff";
-  const { submission } = tiersChallenge;
+  const { tier2: submission } = tier23Challenge.submission;
 
   return (
-    <div className="tier1-submit-shell tier1-submit-shell--form-only">
+    <div className="tier1-submit-shell tier1-submit-shell--form-only mt-10">
       <div className="tier1-submit-shell__form">
         <p className="label-day mb-4">Submission</p>
         <h3 className="title-lg descender-safe mb-3">{submission.title}</h3>
@@ -29,15 +29,15 @@ export function TiersSubmissionBlock() {
 
         <div className="tier1-submit-form-row">
           <a
-            href={tiersSubmissionFormUrl}
+            href={tier2SubmissionFormUrl}
             target="_blank"
             rel="noopener noreferrer"
             data-hover="SUBMIT"
             className="tier1-qr-link"
-            aria-label="Open Tier 1 submission form (QR code)"
+            aria-label="Open Tier 2 submission form (QR code)"
           >
             <QRCodeSVG
-              value={tiersSubmissionFormUrl}
+              value={tier2SubmissionFormUrl}
               size={168}
               level="M"
               fgColor={fg}
@@ -49,7 +49,7 @@ export function TiersSubmissionBlock() {
 
           <div className="tier1-submit-actions">
             <a
-              href={tiersSubmissionFormUrl}
+              href={tier2SubmissionFormUrl}
               target="_blank"
               rel="noopener noreferrer"
               data-hover="SUBMIT"

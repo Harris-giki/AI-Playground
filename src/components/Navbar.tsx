@@ -9,11 +9,12 @@ import { IconSun, IconMoon } from "./icons";
 import { applyFormUrl } from "@/lib/site";
 
 const links = [
-  { href: "/", label: "Home", hover: "HOME" },
-  { href: "/details", label: "The Event", hover: "EVENT" },
-  { href: "/tier-1-2", label: "Tier 1 & 2", hover: "TIERS" },
-  { href: "/shortlist", label: "Shortlist", hover: "LIST" },
-  { href: "/film-studio", label: "Film Studio", hover: "STUDIO" },
+  { href: "/", label: "Home", shortLabel: "Home", hover: "HOME" },
+  { href: "/details", label: "The Event", shortLabel: "Event", hover: "EVENT" },
+  { href: "/tier-1", label: "Tier 1", shortLabel: "Tier 1", hover: "TIER 1" },
+  { href: "/shortlist", label: "Shortlist", shortLabel: "Shortlist", hover: "LIST" },
+  { href: "/tier-2-3", label: "Tier 2 & 3", shortLabel: "T2 & T3", hover: "FILM" },
+  { href: "/film-studio", label: "Film Studio", shortLabel: "Studio", hover: "STUDIO" },
 ];
 
 export function Navbar() {
@@ -48,8 +49,8 @@ export function Navbar() {
 
       {/* Floating centre pill — true viewport center */}
       <nav className="nav-pill fixed top-4 left-1/2 z-[90] -translate-x-1/2">
-        <div className="nav-pill__inner flex items-center gap-1.5 rounded-full px-2 py-2">
-          <div className="hidden md:flex items-center gap-1">
+        <div className="nav-pill__inner">
+          <div className="nav-pill__row hidden lg:flex">
             {links.map((link) => {
               const active = pathname === link.href;
               return (
@@ -57,12 +58,15 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   data-hover={link.hover}
-                  className="nav-pill__link relative px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-colors"
-                  style={{
-                    color: active ? "var(--ink)" : "var(--ink-muted)",
-                  }}
+                  className={`nav-pill__link${active ? " nav-pill__link--active" : ""}`}
+                  aria-current={active ? "page" : undefined}
                 >
-                  {link.label}
+                  <span className="nav-pill__label nav-pill__label--short">
+                    {link.shortLabel}
+                  </span>
+                  <span className="nav-pill__label nav-pill__label--full">
+                    {link.label}
+                  </span>
                 </Link>
               );
             })}
@@ -71,47 +75,27 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               data-hover="APPLY"
-              className="ml-0.5 px-4 py-2 rounded-full font-mono text-[12px] uppercase tracking-[0.1em] transition-all hover:brightness-110"
-              style={{
-                color: "#ffffff",
-                background: "var(--accent)",
-                border: "1px solid var(--accent)",
-              }}
+              className="nav-pill__cta"
             >
-              Apply Now
+              Apply
             </a>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile / tablet hamburger */}
           <button
-            className="md:hidden flex flex-col gap-[5px] p-2.5"
+            className="nav-pill__menu-btn lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle navigation"
+            aria-expanded={mobileOpen}
           >
             <span
-              className="block w-6 h-0.5 rounded transition-all"
-              style={{
-                background: "var(--ink)",
-                transform: mobileOpen
-                  ? "rotate(45deg) translate(5px, 5px)"
-                  : "none",
-              }}
+              className={`nav-pill__menu-line${mobileOpen ? " nav-pill__menu-line--top" : ""}`}
             />
             <span
-              className="block w-6 h-0.5 rounded transition-all"
-              style={{
-                background: "var(--ink)",
-                opacity: mobileOpen ? 0 : 1,
-              }}
+              className={`nav-pill__menu-line${mobileOpen ? " nav-pill__menu-line--mid" : ""}`}
             />
             <span
-              className="block w-6 h-0.5 rounded transition-all"
-              style={{
-                background: "var(--ink)",
-                transform: mobileOpen
-                  ? "rotate(-45deg) translate(5px, -5px)"
-                  : "none",
-              }}
+              className={`nav-pill__menu-line${mobileOpen ? " nav-pill__menu-line--bot" : ""}`}
             />
           </button>
         </div>
@@ -125,14 +109,14 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
             onClick={() => setMobileOpen(false)}
           />
         )}
       </AnimatePresence>
 
       <ul
-        className={`md:hidden fixed top-0 w-[300px] h-screen backdrop-blur-xl flex flex-col pt-28 px-6 gap-1.5 transition-all duration-300 z-[45] ${
+        className={`lg:hidden fixed top-0 w-[300px] h-screen backdrop-blur-xl flex flex-col pt-28 px-6 gap-1.5 transition-all duration-300 z-[45] ${
           mobileOpen ? "right-0" : "-right-full"
         }`}
         style={{
@@ -148,10 +132,8 @@ export function Navbar() {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 data-hover={link.hover}
-                className="nav-pill__link block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] transition-colors"
-                  style={{
-                    color: active ? "var(--ink)" : "var(--ink-muted)",
-                  }}
+                className={`nav-pill__link nav-pill__link--drawer block px-5 py-3.5 rounded-md${active ? " nav-pill__link--active" : ""}`}
+                  aria-current={active ? "page" : undefined}
               >
                 {link.label}
               </Link>
@@ -165,12 +147,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
             data-hover="APPLY"
-            className="block px-5 py-3.5 rounded-md font-mono text-[13px] uppercase tracking-[0.1em] text-center transition-all hover:brightness-110"
-            style={{
-              color: "#ffffff",
-              background: "var(--accent)",
-              border: "1px solid var(--accent)",
-            }}
+            className="nav-pill__cta nav-pill__cta--drawer block px-5 py-3.5 rounded-md text-center"
           >
             Apply Now
           </a>

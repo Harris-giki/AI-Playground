@@ -9,9 +9,9 @@ import {
 } from "@/lib/tier12-shortlist";
 
 export const metadata: Metadata = {
-  title: "Tier 3 Shortlist · AI Playground · ImagineArt",
+  title: "Shortlist · AI Playground · ImagineArt",
   description:
-    "Shortlisted participants from Tier 1 & 2. Network, form a team of three, and return tomorrow for Tier 3 — Make the Film.",
+    "Shortlisted participants from Tier 1. Network, form a team of three, and return tomorrow for Tier 2 and Tier 3.",
 };
 
 export default function ShortlistPage() {
@@ -35,7 +35,7 @@ export default function ShortlistPage() {
                 <span className="slash">/</span>
                 <span>03</span>
               </span>
-              <span className="label-eyebrow">Tier 3 Shortlist</span>
+              <span className="label-eyebrow">Day 2 Shortlist</span>
             </div>
             <h1 className="title-hero mb-5 descender-safe max-w-[900px]">
               You made it
@@ -48,16 +48,17 @@ export default function ShortlistPage() {
               </em>
             </h1>
             <p className="prose-body mb-8 max-w-[620px]">
-              Tier 1 and Tier 2 were reviewed together. If your name is below,
+              Tier 1 was reviewed on Day 1. If your name is below,
               you&apos;re in — but Day 2 is{" "}
               <span className="text-accent">shortlisted participants only</span>.
-              Network tonight, form a team of three, and come back tomorrow. The
-              Tier 3 challenge brief will be shared then.
+              Network tonight, form a team of three, and come back tomorrow for
+              Tier 2 — script from the prompt — then Tier 3, the four-hour
+              sprint to make the film.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="meta-tag">{tier12ShortlistCount} shortlisted</span>
               <span className="meta-tag">Teams of 3</span>
-              <span className="meta-tag">Day 02 · Tier 3</span>
+              <span className="meta-tag">Day 02 · Tier 2 & 3</span>
             </div>
           </ScrollReveal>
         </div>
@@ -80,10 +81,10 @@ export default function ShortlistPage() {
               <em>Team up. Return.</em>
             </h2>
             <p className="prose-body mb-10 max-w-[580px]">
-              You made it through Tier 1 and Tier 2 — now find two other
+              You made it through Tier 1 — now find two other
               shortlisted creators and lock in your trio. Only people on this
-              list should come tomorrow; the Tier 3 brief goes live in the
-              morning.
+              list should come tomorrow; Tier 2 and Tier 3 run back to back on
+              Day 2.
             </p>
           </ScrollReveal>
 
@@ -150,12 +151,15 @@ export default function ShortlistPage() {
 
           <ScrollReveal delay={0.1}>
             <div className="shortlist-cta mt-14 flex flex-wrap gap-4">
-              <Link href="/details" data-hover="EVENT" className="btn-primary">
-                See Day 2 schedule
+              <Link href="/tier-2-3" data-hover="TIER 2 & 3" className="btn-primary">
+                Read Tier 2 & 3 brief
                 <IconArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/tier-1-2" data-hover="TIERS" className="btn-ghost">
-                Tier 1 & 2 brief
+              <Link href="/details" data-hover="EVENT" className="btn-ghost">
+                See Day 2 schedule
+              </Link>
+              <Link href="/tier-1" data-hover="TIER 1" className="btn-ghost">
+                Tier 1 brief
               </Link>
             </div>
           </ScrollReveal>

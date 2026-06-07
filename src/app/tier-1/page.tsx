@@ -1,25 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { ChallengeTimerBar } from "@/components/ChallengeTimerBar";
 import { TiersSubmissionBlock } from "@/components/TiersSubmissionBlock";
 import { IconArrowRight } from "@/components/icons";
 import { tiersChallenge } from "@/lib/tiers-challenge";
 import { filmStudioUrl, workflowsUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Tier 1 & 2 · AI Playground · ImagineArt",
+  title: "Tier 1 · AI Playground · ImagineArt",
   description:
-    "Tier 1 and Tier 2 of AI Playground: full script first, then visual storyboard. Reviewed together on Day 1.",
+    "Tier 1 of AI Playground: full script and visual storyboard. Reviewed together on Day 1.",
 };
 
-export default function TiersChallengePage() {
-  const { tier1, tier2 } = tiersChallenge;
+export default function Tier1Page() {
+  const { script, storyboard } = tiersChallenge;
 
   return (
     <>
-      <ChallengeTimerBar />
-
       {/* HERO */}
       <section
         data-scroll-section
@@ -31,10 +28,10 @@ export default function TiersChallengePage() {
           style={{ background: "var(--accent-dim)" }}
         />
         <div
-          className="challenge-hero__ghost challenge-hero__ghost--duo absolute left-6 sm:left-12 top-24 sm:top-28 select-none pointer-events-none"
+          className="challenge-hero__ghost absolute left-6 sm:left-12 top-24 sm:top-28 select-none pointer-events-none"
           aria-hidden
         >
-          01·02
+          01
         </div>
 
         <div className="relative z-10 max-w-[1200px] mx-auto">
@@ -43,7 +40,7 @@ export default function TiersChallengePage() {
               <span className="section-index">
                 <span className="num">01</span>
                 <span className="slash">/</span>
-                <span>02</span>
+                <span>03</span>
               </span>
               <span className="label-eyebrow">{tiersChallenge.heroEyebrow}</span>
             </div>
@@ -65,7 +62,7 @@ export default function TiersChallengePage() {
 
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
-      {/* TIER 1 */}
+      {/* SCRIPT */}
       <section
         data-scroll-section
         className="site-section px-6 sm:px-12 py-28"
@@ -74,23 +71,23 @@ export default function TiersChallengePage() {
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
-              <span className="label-eyebrow">{tier1.label}</span>
+              <span className="label-eyebrow">{script.label}</span>
             </div>
             <h2 className="title-display mb-10 descender-safe max-w-[720px]">
-              {tier1.title}
+              {script.title}
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={0.05}>
             <article className="challenge-prompt" data-hover="READ">
-              <p className="label-day mb-4">{tier1.heading}</p>
+              <p className="label-day mb-4">{script.heading}</p>
               <ul className="tier-row__tracks mb-5">
-                {tier1.tracks.map((track) => (
+                {script.tracks.map((track) => (
                   <li key={track}>{track}</li>
                 ))}
               </ul>
               <div className="challenge-prompt__body">
-                {tier1.paragraphs.map((paragraph, index) => (
+                {script.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -101,23 +98,23 @@ export default function TiersChallengePage() {
 
       <div className="film-divider mx-6 sm:mx-12" aria-hidden />
 
-      {/* TIER 2 */}
+      {/* STORYBOARD */}
       <section data-scroll-section className="site-section px-6 sm:px-12 py-28">
         <div className="max-w-[1200px] mx-auto">
           <ScrollReveal>
             <div className="section-head mb-6">
-              <span className="label-eyebrow">{tier2.label}</span>
+              <span className="label-eyebrow">{storyboard.label}</span>
             </div>
             <h2 className="title-display mb-10 descender-safe max-w-[720px]">
-              {tier2.title}
+              {storyboard.title}
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={0.05}>
             <article className="challenge-prompt" data-hover="READ">
-              <p className="label-day mb-4">{tier2.heading}</p>
+              <p className="label-day mb-4">{storyboard.heading}</p>
               <div className="challenge-prompt__body">
-                {tier2.paragraphs.map((paragraph, index) => (
+                {storyboard.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
@@ -145,9 +142,9 @@ export default function TiersChallengePage() {
               <em>works.</em>
             </h2>
             <p className="prose-body mb-12 max-w-[560px]">
-              Tier 1 is your script and story. Tier 2 is the visual storyboard.
-              Submit everything together — video comes on Day 2 for shortlisted
-              teams only.
+              Tier 1 is your script, story, and visual storyboard. Submit
+              everything together — video comes on Day 2 for shortlisted teams
+              only.
             </p>
           </ScrollReveal>
 
