@@ -155,6 +155,9 @@ export default function ShortlistPage() {
                 Read Tier 2 brief
                 <IconArrowRight className="w-4 h-4" />
               </Link>
+              <Link href="/tier-3" data-hover="TIER 3" className="btn-ghost">
+                Tier 3 brief
+              </Link>
               <Link href="/details" data-hover="EVENT" className="btn-ghost">
                 See Day 2 schedule
               </Link>

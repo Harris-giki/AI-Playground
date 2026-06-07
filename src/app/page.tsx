@@ -60,6 +60,12 @@ const stages = [
     desc: "Shortlisted only. Two hours to form your team of three and write a 2–3 minute script from the prompt. Submit — then take a break.",
     pills: ["Shortlisted only", "Teams of 3", "2 hours", "Day 2"],
   },
+  {
+    num: "S-03",
+    title: "Make the Film",
+    desc: "A five-hour sprint — half the time generating assets, half making the film. Present to judges.",
+    pills: ["5-hour sprint", "2–3 mins", "Day 2", "$5,000 Prize Pool"],
+  },
 ];
 
 export default function Home() {
@@ -113,7 +119,7 @@ export default function Home() {
                 >
                   Pakistan&apos;s Biggest{" "}
                   <span className="hero-accent">AI Film Making Competition</span>
-                  . Two days, two tiers, one short film, built live with
+                  . Two days, three tiers, one short film, built live with
                   generative AI. For{" "}
                   <span className="hero-accent">Content Creators</span>,{" "}
                   <span className="hero-accent">Film Makers</span>,{" "}
@@ -152,7 +158,7 @@ export default function Home() {
                   <span className="sep" aria-hidden />
                   <span>Two Days</span>
                   <span className="sep" aria-hidden />
-                  <span>Two Tiers</span>
+                  <span>Three Tiers</span>
                   <span className="sep" aria-hidden />
                   <span>Limited Slots . 150 Seats</span>
                 </div>
@@ -194,7 +200,7 @@ export default function Home() {
               <span className="star" />
               <em>6 June 2026</em>
               <span className="star" />
-              <span>Two Days · Two Tiers</span>
+              <span>Two Days · Three Tiers</span>
               <span className="star" />
               <span className="accent">$5,000 Prize Pool</span>
               <span className="star" />
@@ -271,7 +277,7 @@ export default function Home() {
                   <span className="label-eyebrow">The Structure</span>
                 </div>
                 <h2 className="title-display descender-safe">
-                  Two days. Two tiers.
+                  Two days. Three tiers.
                   <br />
                   <em
                     className="text-outline accent"
@@ -289,7 +295,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          {/* Glass ledger that holds both tiers — replaces the bare
+          {/* Glass ledger that holds all three tiers — replaces the bare
               hairline-divided rows with a single deliberate container. */}
           <div className="stages-shell">
             {stages.map((t, i) => (

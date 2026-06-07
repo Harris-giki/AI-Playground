@@ -14,6 +14,7 @@ const links = [
   { href: "/tier-1", label: "Tier 1", shortLabel: "Tier 1", hover: "TIER 1" },
   { href: "/shortlist", label: "Shortlist", shortLabel: "Shortlist", hover: "LIST" },
   { href: "/tier-2", label: "Tier 2", shortLabel: "Tier 2", hover: "TIER 2" },
+  { href: "/tier-3", label: "Tier 3", shortLabel: "Tier 3", hover: "TIER 3" },
   { href: "/film-studio", label: "Film Studio", shortLabel: "Studio", hover: "STUDIO" },
 ];
 

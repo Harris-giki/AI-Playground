@@ -158,6 +158,9 @@ export default function Tier2Page() {
               >
                 Film Studio
               </a>
+              <Link href="/tier-3" data-hover="TIER 3" className="btn-ghost">
+                Tier 3 brief
+              </Link>
               <Link href="/shortlist" data-hover="LIST" className="btn-ghost">
                 View Shortlist
               </Link>
