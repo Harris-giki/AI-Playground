@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { ScrollOrbit } from "./ScrollOrbit";
 import { SiteAmbience } from "./SiteAmbience";
 import { ScrollPerfs } from "./ScrollPerfs";
-import { Tier3CreditClaimTimerBar } from "./Tier3CreditClaimTimerBar";
+import { Tier3TimerBar } from "./Tier3TimerBar";
 
 /** Global motion + ambience for main site pages — not Film Studio. */
 export function SiteChrome() {
@@ -13,7 +13,7 @@ export function SiteChrome() {
 
   return (
     <>
-      <Tier3CreditClaimTimerBar />
+      <Tier3TimerBar />
       <SiteAmbience />
       <ScrollPerfs />
       <ScrollOrbit />

@@ -9,6 +9,12 @@ export const tier3CreditClaimDurationMinutes = 15;
 /** When the credit claim window opens (Asia/Karachi). Update when the window opens. */
 export const tier3CreditClaimStartISO = "2026-06-07T15:58:00+05:00";
 
+/** Tier 3 sprint window length in hours. */
+export const tier3ChallengeDurationHours = 5;
+
+/** When Tier 3 sprint timer started (Asia/Karachi). Update when the window opens. */
+export const tier3ChallengeStartISO = "2026-06-07T16:24:00+05:00";
+
 export type Tier3Criterion = {
   id: string;
   title: string;

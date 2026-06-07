@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { IconArrowRight } from "@/components/icons";
 import { Tier3CreditClaimBlock } from "@/components/Tier3CreditClaimBlock";
-import { Tier3CreditClaimTimer } from "@/components/Tier3CreditClaimTimer";
+import { Tier3ChallengeTimer } from "@/components/Tier3ChallengeTimer";
 import { tier3Challenge } from "@/lib/tier3-challenge";
 import { filmStudioUrl, workflowsUrl } from "@/lib/site";
 
@@ -89,12 +89,6 @@ export default function Tier3Page() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.05}>
-            <div className="tier3-credit-claim-timer mb-8">
-              <Tier3CreditClaimTimer />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.08}>
             <Tier3CreditClaimBlock />
           </ScrollReveal>
         </div>
@@ -149,6 +143,12 @@ export default function Tier3Page() {
             <h2 className="title-display mb-10 descender-safe max-w-[720px]">
               {sprint.title}
             </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.03}>
+            <div className="mb-10">
+              <Tier3ChallengeTimer />
+            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.05}>
