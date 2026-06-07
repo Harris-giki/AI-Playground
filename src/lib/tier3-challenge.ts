@@ -1,14 +1,5 @@
 /** Tier 3 challenge copy — single source of truth for /tier-3 */
 
-export const tier3CreditClaimFormUrl =
-  "https://forms.gle/H6b3VJTwQwrKHP4S7";
-
-/** Credit claim window length in minutes — one ImagineArt email per team. */
-export const tier3CreditClaimDurationMinutes = 15;
-
-/** When the credit claim window opens (Asia/Karachi). Update when the window opens. */
-export const tier3CreditClaimStartISO = "2026-06-07T15:58:00+05:00";
-
 /** Tier 3 sprint window length in hours. */
 export const tier3ChallengeDurationHours = 5;
 
@@ -33,15 +24,7 @@ export const tier3Challenge = {
   heroEyebrow: "Tier 3",
   title: "Make the Film",
   subtitle:
-    "Shortlisted teams only. First: claim credits — one ImagineArt email per team. Then a five-hour sprint: half generating assets, half making the film.",
-  creditClaim: {
-    title: "Claim your credits",
-    intro:
-      "Before you generate anything, each team submits this form once. One ImagineArt account email per team — the whole trio works on that single account. You can sign in on multiple devices with the same email.",
-    fields: ["Team name", "One ImagineArt account email (per team)"],
-    portalLabel: "Team name + one ImagineArt email",
-    windowLabel: "15-minute window",
-  },
+    "Shortlisted teams only. Your script is in — now a five-hour sprint. Half the time generating assets, half making the film.",
   direction: "Every story worth telling has more than one hero.",
   brief: {
     heading: "The brief",

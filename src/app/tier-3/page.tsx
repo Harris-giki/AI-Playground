@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { IconArrowRight } from "@/components/icons";
-import { Tier3CreditClaimBlock } from "@/components/Tier3CreditClaimBlock";
 import { Tier3ChallengeTimer } from "@/components/Tier3ChallengeTimer";
 import { tier3Challenge } from "@/lib/tier3-challenge";
 import { filmStudioUrl, workflowsUrl } from "@/lib/site";
@@ -58,38 +57,8 @@ export default function Tier3Page() {
               <span className="meta-tag">Teams of 3</span>
               <span className="meta-tag">2–3 mins</span>
               <span className="meta-tag">5 hours</span>
-              <span className="meta-tag">1 email / team</span>
               <span className="meta-tag">Day 02</span>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <div className="film-divider mx-6 sm:mx-12" aria-hidden />
-
-      {/* CREDIT CLAIM */}
-      <section
-        data-scroll-section
-        className="site-section px-6 sm:px-12 py-28"
-        style={{ background: "var(--bg-raised)" }}
-      >
-        <div className="max-w-[1200px] mx-auto">
-          <ScrollReveal>
-            <div className="section-head mb-6">
-              <span className="label-eyebrow">Before you start</span>
-            </div>
-            <h2 className="title-display mb-4 descender-safe max-w-[720px]">
-              Claim credits
-              <br />
-              <em>for your team.</em>
-            </h2>
-            <p className="prose-body mb-8 max-w-[560px]">
-              {tier3Challenge.creditClaim.intro}
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.05}>
-            <Tier3CreditClaimBlock />
           </ScrollReveal>
         </div>
       </section>
