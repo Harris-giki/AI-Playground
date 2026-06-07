@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { IconArrowRight } from "@/components/icons";
 import { Tier3ChallengeTimer } from "@/components/Tier3ChallengeTimer";
+import { Tier3SubmissionBlock } from "@/components/Tier3SubmissionBlock";
 import { tier3Challenge } from "@/lib/tier3-challenge";
 import { filmStudioUrl, workflowsUrl } from "@/lib/site";
 
@@ -304,6 +305,10 @@ export default function Tier3Page() {
                 <li key={item}>{item}</li>
               ))}
             </ul>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.08}>
+            <Tier3SubmissionBlock />
           </ScrollReveal>
         </div>
       </section>

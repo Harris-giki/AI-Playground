@@ -1,5 +1,8 @@
 /** Tier 3 challenge copy — single source of truth for /tier-3 */
 
+export const tier3SubmissionFormUrl =
+  "https://forms.gle/bM3nj3bSE89sazPT9";
+
 /** Tier 3 sprint window length in hours. */
 export const tier3ChallengeDurationHours = 5;
 
@@ -113,5 +116,6 @@ export const tier3Challenge = {
     intro:
       "At the end of Tier 3, submit your finished film along with the ImagineArt workflow you used to make it.",
     deliverables: ["Finished film (2–3 mins)", "ImagineArt workflow link or export"],
+    portalLabel: "Tier 3 portal",
   },
 } as const;
