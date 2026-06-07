@@ -7,7 +7,7 @@ export const tier2Challenge = {
   heroEyebrow: "Tier 2",
   title: "Teams & Script",
   subtitle:
-    "Shortlisted teams only. Form your trio, write a 2–3 minute script from the prompt, and submit — then take a break.",
+    "Shortlisted teams only. Two hours on the clock — form your trio, write a 2–3 minute script from the prompt, submit, and take a break.",
   direction: "Every story worth telling has more than one hero.",
   brief: {
     heading: "The prompt",
@@ -25,13 +25,13 @@ export const tier2Challenge = {
     heading: "Write from the prompt",
     paragraphs: [
       "Make your team of three and write a script based on the prompt above — a full 2–3 minute script, your story before a single frame gets generated.",
-      "Submit it when you're done. Then take a break.",
+      "You have two hours. Submit when you're done, then take a break.",
     ],
-    meta: ["Teams of 3", "2–3 min script", "Take a break"],
+    meta: ["Teams of 3", "2–3 min script", "2 hours"],
   },
   submission: {
     title: "Submit your script",
-    intro: "Submit your team script (2–3 mins) — scan the QR code or open the form below.",
+    intro: "Submit your team script (2–3 mins) within the 2-hour window — scan the QR code or open the form below.",
     deliverables: ["Team script based on the prompt (2–3 mins)"],
     portalLabel: "Tier 2 portal",
   },

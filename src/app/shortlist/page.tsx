@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Shortlist · AI Playground · ImagineArt",
   description:
-    "Shortlisted participants from Tier 1. Network, form a team of three, and return tomorrow for Tier 2.",
+    "Shortlisted participants from Tier 1. Network, form a team of three, and return tomorrow for Tier 2 — two hours to write your script.",
 };
 
 export default function ShortlistPage() {
@@ -52,11 +52,12 @@ export default function ShortlistPage() {
               you&apos;re in — but Day 2 is{" "}
               <span className="text-accent">shortlisted participants only</span>.
               Network tonight, form a team of three, and come back tomorrow for
-              Tier 2 — write your script from the prompt and submit.
+              Tier 2 — two hours to write your 2–3 minute script from the prompt and submit.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="meta-tag">{tier12ShortlistCount} shortlisted</span>
               <span className="meta-tag">Teams of 3</span>
+              <span className="meta-tag">2 hours</span>
               <span className="meta-tag">Day 02 · Tier 2</span>
             </div>
           </ScrollReveal>

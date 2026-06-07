@@ -17,7 +17,7 @@ export type TierChallenge = {
 
 /** Brief overview of how the tiers connect — used on /details. */
 export const tierProcessIntro =
-  "Tier 1 is your script and visual storyboard on Day 1. Shortlisted participants return for Tier 2 on Day 2 — form your team, write a script from the prompt, submit, and take a break.";
+  "Tier 1 is your script and visual storyboard on Day 1. Shortlisted participants return for Tier 2 on Day 2 — two hours to form your team, write a 2–3 minute script from the prompt, submit, and take a break.";
 
 /** How participants advance between tiers. */
 export const tierEvaluationNote =
@@ -103,11 +103,11 @@ export const dayTwoSchedule: ScheduleItem[] = [
   },
   {
     time: "11:00 AM",
-    desc: "Tier 2 begins — form your team of three and write a script from the prompt.",
+    desc: "Tier 2 begins — two hours to form your team of three and write a 2–3 minute script from the prompt.",
     tag: "Tier 2",
   },
   {
-    time: "12:30 PM",
+    time: "1:00 PM",
     desc: "Tier 2 script submissions due — take a break.",
     tag: "Tier 2",
   },
@@ -132,9 +132,9 @@ export const tierChallenges: TierChallenge[] = [
   {
     id: "02",
     day: "Day 02",
-    format: "Teams of 3 · Shortlisted only",
+    format: "Teams of 3 · 2 hours · Shortlisted only",
     name: "Teams & Script",
-    desc: "Make your team of three and write a 2–3 minute script based on the prompt. Submit it — then take a break.",
+    desc: "Make your team of three and write a 2–3 minute script based on the prompt. Two hours on the clock — submit, then take a break.",
     hover: "TIER 02",
   },
 ];

@@ -160,7 +160,7 @@ export default function Details() {
             <p className="prose-body mb-14 max-w-[640px]">
               Day One runs Tier 1 at CEMTECH and Vyro, with shortlisted
               participants announced that evening. Day Two is Tier 2 for shortlisted
-              teams — script submission, then awards and closing.
+              teams — two hours to write and submit your script, then awards and closing.
             </p>
           </ScrollReveal>
 

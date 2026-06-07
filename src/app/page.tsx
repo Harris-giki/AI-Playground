@@ -57,8 +57,8 @@ const stages = [
   {
     num: "S-02",
     title: "Teams & Script",
-    desc: "Shortlisted only. Form your team of three and write a script from the prompt. Submit — then take a break.",
-    pills: ["Shortlisted only", "Teams of 3", "Day 2"],
+    desc: "Shortlisted only. Two hours to form your team of three and write a 2–3 minute script from the prompt. Submit — then take a break.",
+    pills: ["Shortlisted only", "Teams of 3", "2 hours", "Day 2"],
   },
 ];
 
